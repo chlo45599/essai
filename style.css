@@ -1,7 +1,7 @@
-/* --- CONFIGURATION GÉNÉRALE --- */
+/* --- CONFIGURATION GÉNÉRALE & CURSEUR --- */
 html, body {
-  background-color: #ffffff; /* Fond blanc comme demandé */
-  font-family: 'Montserrat', sans-serif; /* Montserrat par défaut */
+  background-color: #ffffff; /* Fond blanc pur */
+  font-family: 'Montserrat', sans-serif; /* Montserrat Regular par défaut */
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,127 +9,129 @@ html, body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
-  /* Curseur Fleur (Vert #71815A) intégré directement */
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path d='M12 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM12 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM24 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%2371815a'/></svg>") 16 16, auto;
+  
+  /* Ton curseur personnalisé (fichier importé) */
+  cursor: url('fleur.svg') 16 16, auto !important;
 }
 
-/* Force le curseur fleur sur les éléments cliquables */
-a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover, .logo {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path d='M12 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM12 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM24 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%2371815a'/></svg>") 16 16, pointer !important;
+/* Force le curseur fleur sur tous les éléments cliquables */
+a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover, .logo, .bandeau-header {
+  cursor: url('fleur.svg') 16 16, pointer !important;
 }
 
 /* --- BANDEAU SUPÉRIEUR --- */
 .bandeau-header {
   width: 100%;
-  background-color: #71815a; /* Vert officiel */
-  padding: 15px 0;
+  background-color: #71815a; /* Vert Martels */
+  padding: 20px 0;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .logo {
-  height: 60px; /* Taille ajustée pour le bandeau */
+  height: 55px;
   width: auto;
-  filter: brightness(0) invert(1); /* Rend le logo blanc s'il est sombre */
+  filter: brightness(0) invert(1); /* Rend le logo blanc pour contraster sur le vert */
 }
 
-/* --- TITRES --- */
+/* --- TITRES (Vert #71815A) --- */
 .titre-kit, .titre-section {
   font-family: 'Cormorant Garamond', serif;
-  color: #71815a; /* Titres en vert */
+  color: #71815a;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.titre-kit { font-size: 48px; }
-.titre-section { font-size: 42px; margin-top: 40px; }
+.titre-kit { font-size: 48px; margin-top: 20px; }
+.titre-section { font-size: 40px; margin-top: 50px; }
 
-/* --- STYLE POÉTIQUE (Slogan & Phrases) --- */
+/* --- TEXTE POÉTIQUE (Cormorant Italique) --- */
 .style-poetique {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
   font-style: italic;
   font-weight: 400;
   line-height: 1.5;
-  color: #71815a; /* Texte poétique en vert doux */
-  margin: 10px auto;
+  color: #71815a;
+  margin: 15px auto;
 }
 
-/* --- ANIMATION APPARITION RAPIDE --- */
+/* --- ANIMATION APPARITION RAPIDE (Ocre #D0863C) --- */
 .fade-in-fast {
-  color: #d0863c; /* Touche ocre pour l'accent */
+  color: #d0863c;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 19px;
   opacity: 0;
   animation: fadeInFast 1.5s ease-in forwards; 
-  margin: 40px 0;
+  margin: 45px 0;
 }
 
 @keyframes fadeInFast {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* --- EFFET LUEUR DE SOLEIL --- */
-.sun-hover {
-  transition: all 0.5s ease;
-}
-
-.sun-hover:hover {
-  text-shadow: 0 0 15px rgba(113, 129, 90, 0.3); 
-  transform: scale(1.01);
 }
 
 /* --- NOTE DE CONTEXTE --- */
 .contexte-note {
-  max-width: 700px;
+  max-width: 650px;
   opacity: 0.7;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 
 .contexte-note p {
   font-size: 12px;
   font-style: italic;
   line-height: 1.8;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .divider {
-  width: 50px;
+  width: 60px;
   height: 1px;
   background-color: #71815a;
   margin: 40px auto;
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
-/* --- PROCESSUS DE CRÉATION --- */
+/* --- PHRASE MAGIQUE --- */
+.phrase-magique {
+  margin: 30px auto 50px auto;
+}
+
+.soleil-reveal {
+  color: #d0863c;
+  font-weight: 700;
+}
+
+/* --- PROCESSUS DE CRÉATION (GRID) --- */
 .guide-anthotype {
-  max-width: 1000px;
-  margin-bottom: 80px;
+  max-width: 1100px;
+  margin-bottom: 100px;
 }
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 0 30px;
 }
 
 .card-step {
-  background-color: #f9f9f9; /* Gris très clair pour les cartes */
-  padding: 40px 25px;
-  border-top: 4px solid #71815a;
-  transition: all 0.3s ease;
+  background-color: #fcfcfc;
+  padding: 45px 30px;
+  border-top: 5px solid #71815a;
+  transition: all 0.4s ease;
 }
 
 .card-step:hover { 
   transform: translateY(-5px); 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
 }
 
 .step-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
   color: #d0863c; 
   display: block;
@@ -137,14 +139,17 @@ a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover, .logo {
 }
 
 .card-step h4 {
+  font-family: 'Montserrat', sans-serif;
   color: #71815a;
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .card-step p { 
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px; 
   line-height: 1.7;
 }
@@ -158,17 +163,29 @@ a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover, .logo {
 }
 
 /* --- FOOTER --- */
-.credits { margin-top: 80px; margin-bottom: 60px; border-top: 1px solid #eee; width: 100%; padding-top: 40px;}
-.credits h2 { font-size: 14px; font-weight: 400; color: #71815a; margin-bottom: 20px; }
+.credits { 
+  margin-top: 40px; 
+  margin-bottom: 60px; 
+  border-top: 1px solid #eee; 
+  width: 100%; 
+  padding-top: 50px;
+}
+.credits h2 { 
+  font-size: 15px; 
+  font-weight: 400; 
+  color: #71815a; 
+  margin-bottom: 25px; 
+}
 
 .btn-github {
   color: #71815a;
   text-decoration: none;
   border: 1px solid #71815a;
-  padding: 12px 25px;
-  font-size: 12px;
+  padding: 14px 28px;
+  font-size: 11px;
   text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: 1px;
   transition: all 0.3s;
 }
 
