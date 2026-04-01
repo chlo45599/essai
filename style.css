@@ -26,21 +26,22 @@ h1 {
   line-height: 1.1;
 }
 
-/* --- 4. LE SLOGAN --- */
+/* --- 4. LE SLOGAN (En minuscules pour plus de douceur) --- */
 .slogan {
-  color: #d0863c; /* Même couleur que le titre pour l'harmonie */
-  font-size: 14px;
-  text-transform: uppercase; /* En majuscules */
-  letter-spacing: 5px;       /* Espace entre les lettres pour le côté chic */
-  margin-top: 15px;
-  font-weight: bold;
+  color: #d0863c; 
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;    /* Un peu plus grand puisqu'il est en minuscules */
+  font-style: italic; /* Optionnel : tu peux l'enlever si tu préfères droit */
+  letter-spacing: 1px; /* Moins d'espace pour que ce soit lisible */
+  margin-top: 10px;
+  font-weight: 400;
 }
 
 /* --- 5. TEXTES SECONDAIRES ET LIENS --- */
 h2 {
-  color: #4a4a4a; /* Un gris foncé pour ton prénom, plus doux que le noir pur */
+  color: #4a4a4a; 
   font-size: 20px;
-  margin-top: 50px;
+  margin-top: 60px;
   font-weight: 400;
 }
 
@@ -55,19 +56,15 @@ a {
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
-  transition: opacity 0.3s;
 }
 
 a:hover {
   text-decoration: underline;
-  opacity: 0.8;
 }
 
-/* --- 6. PETIT CRÉDIT EN BAS --- */
 footer {
-  margin-top: auto; /* Pousse le footer en bas de page */
+  margin-top: auto;
   padding-bottom: 30px;
   font-size: 12px;
   opacity: 0.5;
 }
-
