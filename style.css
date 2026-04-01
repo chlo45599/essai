@@ -1,6 +1,6 @@
 /* --- 1. IMPORT DES POLICES --- */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
 
 /* --- 2. STYLE GÉNÉRAL DU CORPS --- */
 body {
@@ -28,7 +28,7 @@ h1 {
   color: #d0863c;      
   font-family: 'EB Garamond', serif;
   font-style: italic;
-  font-weight: 400;    /* PAS EN GRAS */
+  font-weight: 400;    
   font-size: 64px;     
   margin-top: 0;       
   margin-bottom: 0;
@@ -40,18 +40,70 @@ h1 {
   color: #d0863c; 
   font-family: 'Inter', sans-serif;
   font-size: 18px; 
-  font-style: normal;  /* PAS EN ITALIQUE */
-  font-weight: 700;    /* BIEN EN GRAS */
+  font-style: normal;  
+  font-weight: 700;    
   letter-spacing: 0.5px; 
   margin-top: 10px;    
 }
 
-/* --- 6. TEXTES SECONDAIRES ET LIENS --- */
+/* --- 6. SECTION BIENVENUE & KIT --- */
+.bienvenue {
+    margin-top: 50px;
+    padding: 0 20px;
+    max-width: 600px;
+}
+
+.divider {
+    width: 40px;
+    height: 1px;
+    background-color: #d0863c;
+    margin: 40px auto;
+    opacity: 0.5;
+}
+
+.intro-text {
+    font-size: 17px;
+    color: #4a4a4a;
+    margin-bottom: 40px;
+}
+
+.kit-box {
+    border: 1px solid #d0863c;
+    padding: 40px 30px;
+    background-color: rgba(208, 134, 60, 0.05); /* Fond très léger */
+}
+
+.kit-box h3 {
+    font-family: 'EB Garamond', serif;
+    color: #d0863c;
+    font-size: 32px;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.kit-box p {
+    font-size: 18px;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+/* Mise en avant de certains mots */
+.highlight {
+    color: #d0863c;
+    font-weight: 700;
+}
+
+/* --- 7. TEXTES SECONDAIRES ET LIENS --- */
 h2 {
   color: #4a4a4a; 
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 80px;    
   font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 p {
@@ -71,10 +123,10 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --- 7. FOOTER --- */
+/* --- 8. FOOTER --- */
 footer {
   margin-top: auto;
-  padding-bottom: 40px;
+  padding: 60px 0 40px 0;
   font-size: 12px;
   opacity: 0.5;
 }
