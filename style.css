@@ -1,188 +1,65 @@
-/* --- 1. IMPORT DES POLICES --- */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&family=EB+Garamond:ital@1&display=swap');
 
-/* --- 2. STYLE GÉNÉRAL --- */
 body {
   background-color: #fcf4d9;
   font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center; 
-  min-height: 100vh;
   text-align: center;
 }
 
-/* --- 3. LE LOGO --- */
 .logo {
-  width: 65px;         
+  width: 150px; /* On le limite ici pour qu'il ne soit plus géant */
   height: auto;
-  margin-top: 50px;    
-  margin-bottom: 20px; 
+  margin-top: 50px;
 }
 
-/* --- 4. NOUVEAU TITRE (MONTSERRAT GRAS) --- */
 .titre-kit {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;    /* BIEN EN GRAS */
+  font-weight: 700;
   color: #d0863c;
-  font-size: 42px;     /* Légèrement plus petit car Montserrat est large */
-  margin: 0;
-  text-transform: none;
-  font-style: normal;  /* Pas d'italique ici */
+  font-size: 40px;
+  margin-top: 20px;
 }
 
 .slogan {
-  color: #d0863c; 
-  font-size: 18px; 
-  font-weight: 700;    
-  margin-top: 10px;    
+  color: #d0863c;
+  font-weight: 700;
+  font-size: 18px;
 }
 
-/* --- 5. SECTION CONTEXTE (POUR LE PROF) --- */
 .contexte {
-    background-color: rgba(0, 0, 0, 0.03);
-    margin-top: 30px;
-    padding: 20px;
-    max-width: 550px;
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #666;
+  background-color: rgba(208, 134, 60, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-size: 14px;
 }
 
-.contexte strong {
-    color: #333;
-}
-
-/* --- 6. BIENVENUE & KIT --- */
 .divider {
-    width: 40px;
-    height: 1px;
-    background-color: #d0863c;
-    margin: 40px auto;
-    opacity: 0.5;
-}
-
-.intro-text {
-    font-size: 17px;
-    color: #4a4a4a;
-    max-width: 600px;
-    margin-bottom: 30px;
+  width: 50px;
+  height: 2px;
+  background: #d0863c;
+  margin: 40px 0;
 }
 
 .kit-box {
-    border: 1px solid #d0863c;
-    padding: 40px 30px;
-    background-color: rgba(208, 134, 60, 0.05);
-    max-width: 500px;
-}
-
-.kit-box p {
-    font-size: 18px;
-    color: #4a4a4a;
-    line-height: 1.6;
+  border: 1px solid #d0863c;
+  padding: 30px;
+  max-width: 500px;
+  margin-bottom: 40px;
 }
 
 .highlight {
-    color: #d0863c;
-    font-weight: 700;
-}
-
-/* --- 7. FOOTER & CREDITS --- */
-h2 {
-  color: #4a4a4a; 
-  font-size: 16px;
-  margin-top: 60px;    
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-a {
   color: #d0863c;
-  text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-.credits {
-    padding-bottom: 50px;
-}
-.slogan {
-  color: #d0863c; 
-  font-size: 18px; 
-  font-weight: 700;    
-  margin-top: 10px;    
-}
-
-/* --- 5. SECTION CONTEXTE (POUR LE PROF) --- */
-.contexte {
-    background-color: rgba(0, 0, 0, 0.03);
-    margin-top: 30px;
-    padding: 20px;
-    max-width: 550px;
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #666;
-}
-
-.contexte strong {
-    color: #333;
-}
-
-/* --- 6. BIENVENUE & KIT --- */
-.divider {
-    width: 40px;
-    height: 1px;
-    background-color: #d0863c;
-    margin: 40px auto;
-    opacity: 0.5;
-}
-
-.intro-text {
-    font-size: 17px;
-    color: #4a4a4a;
-    max-width: 600px;
-    margin-bottom: 30px;
-}
-
-.kit-box {
-    border: 1px solid #d0863c;
-    padding: 40px 30px;
-    background-color: rgba(208, 134, 60, 0.05);
-    max-width: 500px;
-}
-
-.kit-box p {
-    font-size: 18px;
-    color: #4a4a4a;
-    line-height: 1.6;
-}
-
-.highlight {
-    color: #d0863c;
-    font-weight: 700;
-}
-
-/* --- 7. FOOTER & CREDITS --- */
-h2 {
-  color: #4a4a4a; 
-  font-size: 16px;
-  margin-top: 60px;    
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-a {
-  color: #d0863c;
-  text-decoration: none;
-  font-weight: bold;
-}
+h2 { font-size: 18px; margin-top: 40px; }
+a { color: #d0863c; text-decoration: none; font-weight: bold; }
 
 .credits {
     padding-bottom: 50px;
