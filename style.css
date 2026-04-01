@@ -1,205 +1,86 @@
-/* --- CONFIGURATION GÉNÉRALE --- */
-html, body {
-  background-color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centrage horizontal de tout le body */
-  text-align: center;  /* Centrage de tous les textes */
-  color: #4a4a4a;
-  cursor: url('fleur svg.svg') 16 16, auto !important;
-  overflow-x: hidden; 
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>L'éveil du Printemps - Kit Anthotype</title>
 
-/* Conteneur pour s'assurer que tout reste bien au milieu */
-.section-wrapper {
-  width: 100%;
-  max-width: 1100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Force les enfants directs à se centrer */
-  margin: 0 auto;
-}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
-  cursor: url('fleur svg.svg') 16 16, pointer !important;
-}
+    <div class="bandeau-header">
+        <img src="jdl.png" alt="Logo Jardins des Martels" class="logo">
+    </div>
 
-/* --- BANDEAU VERT --- */
-.bandeau-header {
-  width: 100vw;
-  background-color: #71815a;
-  padding: 35px 0;
-  display: flex;
-  justify-content: center;
-  margin: 0 0 80px 0;
-}
+    <div class="section-wrapper">
+        
+        <header class="main-header">
+            <h1 class="titre-kit">Le Kit de l’Éveil du Printemps</h1>
+            <p class="slogan style-poetique">Regarde le printemps s’éveiller sur ta feuille !</p>
+        </header>
 
-.logo {
-  height: 75px;
-  width: auto;
-  filter: brightness(0) invert(1);
-}
+        <section class="contexte-note">
+            <p>
+                Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels (1er avril 2026), basée sur la technique de l’anthotype. J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé. Cette page est accessible via un QR code présent dans ce kit et accompagne cette expérience.
+            </p>
+        </section>
 
-/* --- ESPACEMENT DES SECTIONS --- */
-header, section, .credits {
-  width: 100%; /* S'assure que la section prend toute la largeur du wrapper */
-  margin-bottom: 80px;
-}
+        <section class="bienvenue">
+            <h3 class="intro-text-style fade-in-fast">Vous avez flashé le qr code de votre kit, l'expérience commence ici.</h3>
+        </section>
 
-/* --- TITRES --- */
-.titre-kit, .titre-section {
-  font-family: 'Cormorant Garamond', serif;
-  color: #71815a;
-  font-weight: 700;
-  margin: 0 auto 15px auto;
-}
+        <section class="guide-anthotype">
+            <h2 class="titre-section">Processus de création</h2>
+            
+            <div class="phrase-magique">
+                <p class="style-poetique">
+                    Semez votre empreinte sur cette feuille,<br> 
+                    laissez le <span class="soleil-reveal">soleil</span> la révéler<br> 
+                    et regardez le printemps s'éveiller sous vos yeux.
+                </p>
+            </div>
 
-.titre-kit { font-size: 52px; }
-.titre-section { font-size: 42px; }
+            <div class="steps-grid">
+                <div class="card-step">
+                    <span class="step-num">01</span>
+                    <h4>Préparer votre feuille</h4>
+                    <p>Posez votre feuille pré‑imprégnée de curcuma sur une surface plane. Choisissez quelques éléments naturels à déposer dessus pour créer votre composition.</p>
+                    <span class="tip">Chaque arrangement est unique.</span>
+                </div>
 
-/* --- STYLE INTRO (Centré) --- */
-.intro-text-style {
-  font-family: 'Cormorant Garamond', serif;
-  color: #71815a;
-  font-weight: 700;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  max-width: 800px;
-  margin: 0 auto;
-}
+                <div class="card-step">
+                    <span class="step-num">02</span>
+                    <h4>Laisser le soleil révéler</h4>
+                    <p>Exposez votre feuille au soleil pendant quelques heures. Observez les formes et nuances se révéler peu à peu.</p>
+                </div>
 
-/* --- STYLE POÉTIQUE --- */
-.style-poetique {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.5;
-  color: #71815a;
-  margin: 0 auto;
-}
+                <div class="card-step">
+                    <span class="step-num">03</span>
+                    <h4>Découvrir votre empreinte</h4>
+                    <p>Retirez doucement les éléments. Rincez légèrement avec un mélange d’eau et de bicarbonate de soude pour fixer le motif.</p>
+                </div>
 
-/* --- NOTE DE CONTEXTE --- */
-.contexte-note {
-  max-width: 650px;
-  opacity: 0.7;
-  padding: 0 25px;
-  margin: 0 auto; /* Centrage auto */
-}
+                <div class="card-step">
+                    <span class="step-num">04</span>
+                    <h4>Conserver ou partager</h4>
+                    <p>Votre création devient un joli souvenir à garder ou à offrir ! Le jardin reste avec vous.</p>
+                </div>
+            </div>
+        </section>
 
-.contexte-note p { 
-  font-size: 13px; 
-  line-height: 1.8; 
-  font-style: italic; 
-  margin: 0;
-}
+        <footer class="credits">
+            <h2>Par Chloé</h2>
+            <a href="https://chlo45599.github.io/essai/index.html" class="btn-github">Ma page GitHub</a>
+        </footer>
 
-/* --- PROCESSUS DE CRÉATION --- */
-.phrase-magique {
-  margin: 30px auto 50px auto;
-}
+    </div>
 
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-  padding: 0 30px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.card-step {
-  background-color: #efece6;
-  padding: 45px 30px;
-  border-top: 5px solid #71815a;
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centre le contenu interne des cartes */
-}
-
-.card-step:hover { 
-  transform: translateY(-5px); 
-  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-}
-
-.step-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 38px;
-  font-weight: 700;
-  color: #d0863c; 
-  margin-bottom: 10px;
-}
-
-.card-step h4 {
-  font-family: 'Cormorant Garamond', serif;
-  color: #71815a;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.card-step p { font-size: 14px; line-height: 1.7; color: #4a4a4a; margin: 0; }
-
-.tip {
-  display: block;
-  margin-top: 15px;
-  font-style: italic;
-  color: #d0863c;
-  font-size: 12px;
-}
-
-.soleil-reveal { color: #d0863c; font-weight: 700; }
-
-/* --- FOOTER & BOUTON --- */
-.credits { 
-  border-top: 1px solid #eee; 
-  width: 100%; 
-  padding-top: 60px;
-  margin-bottom: 100px;
-}
-
-.credits h2 { 
-  font-size: 15px; 
-  font-weight: 400; 
-  color: #71815a; 
-  margin-bottom: 25px; 
-}
-
-.btn-github {
-  font-family: 'Montserrat', sans-serif;
-  color: #71815a;
-  background-color: #ffffff;
-  text-decoration: none;
-  border: 1px solid #71815a;
-  padding: 14px 32px;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin: 0 auto;
-}
-
-.btn-github:hover { 
-  background-color: #71815a; 
-  color: #ffffff; 
-}
-
-/* --- ANIMATIONS --- */
-.fade-in-fast {
-  opacity: 0;
-  animation: fadeInFast 1.5s ease-in forwards; 
-}
-
-@keyframes fadeInFast {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+</body>
+</html>
