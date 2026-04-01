@@ -1,4 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>L'éveil du Printemps</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Inter:wght@400;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
+
     <header>
         <img src="jdl.png" alt="Logo Jardins des Martels" class="logo">
         <h1 class="titre-kit">Le Kit de l’Éveil du Printemps</h1>
@@ -26,10 +42,42 @@
         </div>
     </section>
 
-    <div class="credits">
+    <section class="guide-anthotype">
+        <h3 class="titre-section">Le Rituel de Création</h3>
+        
+        <div class="steps-grid">
+            <div class="card-step">
+                <span class="step-num">01</span>
+                <h4>La Cueillette</h4>
+                <p>Retirez le film du plexiglas. Partez en exploration pour ramasser feuilles et fleurs, ou utilisez celles fournies.</p>
+            </div>
+
+            <div class="card-step">
+                <span class="step-num">02</span>
+                <h4>La Composition</h4>
+                <p>Posez votre feuille au curcuma sur le carton brun. Disposez vos trésors, couvrez avec le plexiglas et fixez les pinces dorées.</p>
+            </div>
+
+            <div class="card-step">
+                <span class="step-num">03</span>
+                <h4>L'Insolation</h4>
+                <p>Exposez au soleil (30 min si intense, 2h si voilé). <br> 
+                <span class="tip">Astuce : Si le jaune devient très clair sur les bords, c'est prêt !</span></p>
+            </div>
+
+            <div class="card-step">
+                <span class="step-num">04</span>
+                <h4>La Révélation</h4>
+                <p>Trempez le papier dans un mélange d'eau et de bicarbonate. Magie : il devient rouge ! Laissez sécher à plat sur le plexiglas.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="credits">
         <h2>Par Chloé</h2>
-        <a href="https://chlo45599.github.io/essai/index.html">Ma page GitHub</a>
-    </div>
+        <a href="https://chlo45599.github.io/essai/index.html" class="btn-github">Ma page GitHub</a>
+    </footer>
 
     <script src="sketch.js"></script>
 </body>
+</html>
