@@ -1,4 +1,4 @@
-/* --- CONFIGURATION GÉNÉRALE --- */
+/* --- 1. CONFIGURATION GÉNÉRALE --- */
 html, body {
   background-color: #ffffff;
   font-family: 'Montserrat', sans-serif;
@@ -10,10 +10,26 @@ html, body {
   text-align: center;
   color: #4a4a4a;
   cursor: url('fleur svg.svg') 16 16, auto !important;
-  overflow-x: hidden; /* Empêche le scroll horizontal dû au bandeau */
+  overflow-x: hidden; 
 }
 
-/* --- BANDEAU LOGO --- */
+a, button, .card-step, .btn-github, .logo, .bandeau-header, .texte-survol, .marquee-container, .titre-kit, .titre-section {
+  cursor: url('fleur svg.svg') 16 16, pointer !important;
+}
+
+/* --- 2. STRUCTURE & ESPACEMENTS --- */
+.section-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Espacement fixe de 90px entre chaque bloc */
+.marquee-container, .main-header, .contexte-note, .guide-anthotype {
+  margin-bottom: 90px;
+}
+
+/* --- 3. BANDEAU LOGO & DÉFILANT --- */
 .bandeau-header {
   width: 100vw;
   background-color: #71815a;
@@ -22,27 +38,23 @@ html, body {
   justify-content: center;
 }
 
-.logo {
-  height: 75px;
-  filter: brightness(0) invert(1);
-}
+.logo { height: 75px; filter: brightness(0) invert(1); transition: transform 0.3s ease; }
+.logo:hover { transform: scale(1.05); }
 
-/* --- LE BANDEAU DÉFILANT (L'EXPÉRIENCE COMMENCE ICI) --- */
 .marquee-container {
   width: 100vw;
   background-color: #71815a;
   color: #ffffff;
   overflow: hidden;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   padding: 15px 0;
-  margin-bottom: 90px;
 }
 
 .marquee-content {
   display: flex;
-  white-space: nowrap;
-  animation: scroll-loop 20s linear infinite; /* 20s pour une vitesse élégante */
+  animation: scroll-loop 25s linear infinite;
 }
 
 .marquee-content span {
@@ -51,37 +63,49 @@ html, body {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 18px;
-  padding-right: 40px; /* Espace entre les répétitions */
+  padding-right: 40px;
 }
 
 @keyframes scroll-loop {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* On déplace la moitié pour l'illusion d'infini */
+  100% { transform: translateX(-50%); }
 }
 
-/* --- STRUCTURE CONTENU --- */
-.section-wrapper {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-}
+/* --- 4. TITRES AVEC SURVOL OCRE --- */
+h1, h2, h3, h4, p { margin-top: 0; }
 
-.main-header, .contexte-note, .guide-anthotype {
-  margin-bottom: 90px;
-}
-
-/* --- TITRES --- */
 .titre-kit, .titre-section {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
   font-weight: 700;
   margin-bottom: 20px;
+  transition: color 0.5s ease; /* Transition douce pour le changement de couleur */
 }
 
 .titre-kit { font-size: 52px; }
 .titre-section { font-size: 42px; }
 
-/* --- TEXTE CONTEXTE & NOM (SURVOL OCRE) --- */
+/* L'effet au survol demandé sur les titres */
+.titre-kit:hover, .titre-section:hover {
+  color: #d0863c; /* Ton ocre/curcuma */
+}
+
+.style-poetique {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-style: italic;
+  color: #71815a;
+  line-height: 1.6;
+}
+
+/* --- 5. TEXTES & NOM (SURVOL OCRE) --- */
+.contexte-note {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
 .texte-survol {
   font-size: 13.5px;
   line-height: 1.8;
@@ -97,7 +121,7 @@ html, body {
   opacity: 1;
 }
 
-/* --- GRILLE ÉTAPES --- */
+/* --- 6. ÉTAPES --- */
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -120,6 +144,7 @@ html, body {
   font-weight: 700;
   color: #d0863c;
   margin-bottom: 10px;
+  display: block;
 }
 
 .card-step h4 {
@@ -129,13 +154,14 @@ html, body {
   margin-bottom: 15px;
 }
 
-/* --- FOOTER --- */
+.soleil-reveal { color: #d0863c; font-weight: 700; }
+
+/* --- 7. FOOTER --- */
 .credits { 
   border-top: 1px solid #eeeeee; 
   padding: 70px 0 100px 0;
 }
 
-/* Ton nom avec le même style que le contexte */
 .credits h2.texte-survol {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
