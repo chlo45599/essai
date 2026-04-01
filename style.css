@@ -17,19 +17,18 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   cursor: url('fleur svg.svg') 16 16, pointer !important;
 }
 
-/* --- BANDEAU VERT PLEINE LARGEUR ÉLARGI --- */
+/* --- BANDEAU VERT PLEINE LARGEUR --- */
 .bandeau-header {
   width: 100vw;
   background-color: #71815a;
-  padding: 35px 0; /* Plus de hauteur (était à 20px) */
+  padding: 35px 0;
   display: flex;
   justify-content: center;
   margin: 0;
 }
 
-/* LOGO PLUS GRAND */
 .logo {
-  height: 75px; /* Plus grand (était à 55px) */
+  height: 75px;
   width: auto;
   filter: brightness(0) invert(1);
 }
@@ -45,6 +44,18 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 .titre-kit { font-size: 52px; margin-top: 60px; }
 .titre-section { font-size: 42px; margin-top: 50px; }
 
+/* --- STYLE INTRO (Identique aux titres d'étapes) --- */
+.intro-text-style {
+  font-family: 'Cormorant Garamond', serif;
+  color: #71815a;
+  font-weight: 700;
+  font-size: 18px; /* Taille adaptée pour une phrase d'intro */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 60px auto 40px auto;
+  max-width: 800px;
+}
+
 /* --- STYLE POÉTIQUE --- */
 .style-poetique {
   font-family: 'Cormorant Garamond', serif;
@@ -58,13 +69,8 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 
 /* --- ANIMATION APPARITION RAPIDE --- */
 .fade-in-fast {
-  font-family: 'Montserrat', sans-serif;
-  color: #d0863c;
-  font-weight: 700;
-  font-size: 19px;
   opacity: 0;
   animation: fadeInFast 1.5s ease-in forwards; 
-  margin: 45px 0;
 }
 
 @keyframes fadeInFast {
@@ -82,15 +88,9 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 
 .contexte-note p { font-size: 13px; line-height: 1.8; font-style: italic; }
 
-/* --- FILET D'OR --- */
-.divider {
-  width: 150px;
-  height: 1px;
-  background-color: #c4a989;
-  margin: 50px auto;
-}
+/* Filet supprimé comme demandé */
 
-/* --- CARTES ET BOUTON (#efece6) --- */
+/* --- CARTES ÉTAPES (#efece6) --- */
 .guide-anthotype { max-width: 1100px; margin-bottom: 100px; }
 
 .steps-grid {
@@ -122,9 +122,9 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 }
 
 .card-step h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', serif; /* Changé pour correspondre à ton souhait */
   color: #71815a;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 700;
