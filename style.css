@@ -1,4 +1,4 @@
-/* --- RESET & BASES --- */
+/* --- 1. BASES & TYPOGRAPHIE --- */
 html, body {
   background-color: #ffffff;
   font-family: 'Montserrat', sans-serif;
@@ -9,61 +9,62 @@ html, body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
+  /* Curseur personnalisé (vérifie bien le nom exact du fichier) */
   cursor: url('fleur svg.svg') 16 16, auto !important;
   overflow-x: hidden; 
 }
 
-/* --- LE WRAPPER (LA COLONNE CENTRALE) --- */
+/* Force le curseur sur tous les éléments cliquables */
+a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header, .texte-survol {
+  cursor: url('fleur svg.svg') 16 16, pointer !important;
+}
+
+/* --- 2. MISE EN PAGE & STRUCTURE --- */
 .section-wrapper {
   width: 100%;
-  max-width: 900px; /* Largeur idéale pour la lecture */
+  max-width: 900px; /* Largeur optimale pour la lecture */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Force le curseur sur les éléments interactifs */
-a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
-  cursor: url('fleur svg.svg') 16 16, pointer !important;
+/* Espacement fixe de 90px entre CHAQUE bloc majeur de la page */
+.bandeau-header, 
+.main-header, 
+.contexte-note, 
+.bienvenue, 
+.guide-anthotype {
+  margin-bottom: 90px;
+  width: 100%;
 }
 
-/* --- BANDEAU VERT PLEINE LARGEUR --- */
+/* --- 3. BANDEAU & LOGO --- */
 .bandeau-header {
   width: 100vw;
   background-color: #71815a;
   padding: 35px 0;
   display: flex;
   justify-content: center;
-  margin: 0 0 90px 0; /* Écart fixe après le bandeau */
+  margin-top: 0;
 }
 
 .logo {
   height: 75px;
   width: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1); /* Logo blanc */
   transition: transform 0.3s ease;
 }
 
 .logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Petit effet dynamique au survol */
 }
 
-/* --- RYTHME DES SECTIONS (ESPACEMENTS RÉGULIERS) --- */
-.main-header, 
-.contexte-note, 
-.bienvenue, 
-.guide-anthotype {
-  margin-bottom: 90px; /* L'écart constant entre chaque bloc */
-  width: 100%;
-}
-
-/* Nettoyage des marges navigateur pour éviter les décalages aléatoires */
+/* --- 4. TITRES & TEXTES --- */
 h1, h2, h3, h4, p {
-  margin-top: 0;
+  margin-top: 0; /* Supprime les décalages par défaut des navigateurs */
 }
 
-/* --- TITRES --- */
 .titre-kit, .titre-section {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
@@ -74,7 +75,7 @@ h1, h2, h3, h4, p {
 .titre-kit { font-size: 52px; }
 .titre-section { font-size: 42px; }
 
-/* --- PHRASE BIENVENUE (STYLE TITRE ÉTAPE) --- */
+/* Phrase Bienvenue (Style Titre Étape en vert) */
 .intro-text-style {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
@@ -86,7 +87,7 @@ h1, h2, h3, h4, p {
   margin: 0 auto;
 }
 
-/* --- STYLE POÉTIQUE (SLOGAN & PHRASE MAGIQUE) --- */
+/* Style Poétique (Slogan & Citations) */
 .style-poetique {
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
@@ -94,129 +95,7 @@ h1, h2, h3, h4, p {
   font-style: italic;
   line-height: 1.6;
   color: #71815a;
-  margin: 0 auto;
 }
 
-/* --- NOTE DE CONTEXTE --- */
-.contexte-note {
-  max-width: 650px;
-  opacity: 0.7;
-  padding: 0 20px;
-}
-
-.contexte-note p { 
-  font-size: 13.5px; 
-  line-height: 1.8; 
-  font-style: italic; 
-}
-
-/* --- GRILLE D'ÉTAPES --- */
-.phrase-magique {
-  margin-top: 30px;
-  margin-bottom: 60px;
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 0 20px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.card-step {
-  background-color: #efece6; /* Ton blanc cassé/crème */
-  padding: 45px 25px;
-  border-top: 5px solid #71815a;
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card-step:hover { 
-  transform: translateY(-8px); 
-  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
-}
-
-.step-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-  font-weight: 700;
-  color: #d0863c; 
-  margin-bottom: 10px;
-}
-
-.card-step h4 {
-  font-family: 'Cormorant Garamond', serif;
-  color: #71815a;
-  font-size: 17px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.card-step p { 
-    font-size: 14px; 
-    line-height: 1.7; 
-    color: #4a4a4a; 
-    margin: 0;
-}
-
-.tip {
-  display: block;
-  margin-top: 15px;
-  font-style: italic;
-  color: #d0863c;
-  font-size: 12px;
-}
-
-.soleil-reveal { color: #d0863c; font-weight: 700; }
-
-/* --- FOOTER & BOUTON GITHUB --- */
-.credits { 
-  border-top: 1px solid #eeeeee; 
-  width: 100%; 
-  padding: 70px 0 100px 0;
-  margin-bottom: 0;
-}
-
-.credits h2 { 
-  font-size: 16px; 
-  font-weight: 400; 
-  color: #71815a; 
-  margin-bottom: 30px; 
-}
-
-.btn-github {
-  font-family: 'Montserrat', sans-serif;
-  color: #71815a;
-  background-color: #ffffff; /* Bouton blanc pur */
-  text-decoration: none;
-  border: 1px solid #71815a;
-  padding: 15px 35px;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn-github:hover { 
-  background-color: #71815a; /* Devient vert au survol */
-  color: #ffffff; /* Texte devient blanc */
-}
-
-/* --- ANIMATIONS --- */
-.fade-in-fast {
-  opacity: 0;
-  animation: fadeIn 1.8s ease-out forwards; 
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* --- 5. EFFET SPÉCIAL SUR LE CONTEXTE --- */
+.
