@@ -1,4 +1,4 @@
-/* --- CONFIGURATION GÉNÉRALE & CURSEUR FLEUR --- */
+/* --- CONFIGURATION GÉNÉRALE & CURSEUR --- */
 body {
   background-color: #fcf4d9;
   font-family: 'Inter', sans-serif;
@@ -8,24 +8,24 @@ body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
-  /* Curseur Fleur Ocre par défaut */
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path d='M12 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM12 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM24 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%23d0863c'/></svg>") 16 16, auto;
+  
+  /* L'espace est remplacé par %20 pour que le navigateur comprenne bien */
+  cursor: url('fleur%20svg') 16 16, auto;
 }
 
-/* Fleur Verte au survol des éléments cliquables */
-a, button, .card-step, .btn-github, .soleil-reveal {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path d='M12 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM12 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM24 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%2371815a'/></svg>") 16 16, pointer;
+/* Force le curseur sur les éléments interactifs */
+a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover {
+  cursor: url('fleur%20svg') 16 16, pointer;
 }
 
 /* --- EFFET LUEUR DE SOLEIL --- */
 .sun-hover {
-  transition: all 0.6s ease; /* Transition douce */
-  cursor: pointer;
+  transition: all 0.6s ease;
 }
 
 .sun-hover:hover {
-  color: #ffb86c; /* Ocre plus clair, "ensoleillé" */
-  text-shadow: 0 0 20px rgba(255, 208, 112, 0.7); /* Lueur dorée */
+  color: #ffb86c; 
+  text-shadow: 0 0 25px rgba(255, 208, 112, 0.8); 
 }
 
 /* --- HEADER --- */
@@ -125,11 +125,10 @@ a, button, .card-step, .btn-github, .soleil-reveal {
   box-shadow: 0 10px 20px rgba(113, 129, 90, 0.08);
 }
 
-/* Numéros Gras en #C4A989 */
 .step-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 32px;
-  font-weight: 700; 
+  font-weight: 700;
   font-style: italic;
   color: #c4a989; 
   display: block;
@@ -150,7 +149,6 @@ a, button, .card-step, .btn-github, .soleil-reveal {
   line-height: 1.6;
 }
 
-/* Astuce en #C4A989 */
 .tip {
   display: block;
   margin-top: 15px;
