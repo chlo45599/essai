@@ -111,3 +111,79 @@ a {
 .credits {
     padding-bottom: 50px;
 }
+.slogan {
+  color: #d0863c; 
+  font-size: 18px; 
+  font-weight: 700;    
+  margin-top: 10px;    
+}
+
+/* --- 5. SECTION CONTEXTE (POUR LE PROF) --- */
+.contexte {
+    background-color: rgba(0, 0, 0, 0.03);
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 550px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.contexte strong {
+    color: #333;
+}
+
+/* --- 6. BIENVENUE & KIT --- */
+.divider {
+    width: 40px;
+    height: 1px;
+    background-color: #d0863c;
+    margin: 40px auto;
+    opacity: 0.5;
+}
+
+.intro-text {
+    font-size: 17px;
+    color: #4a4a4a;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.kit-box {
+    border: 1px solid #d0863c;
+    padding: 40px 30px;
+    background-color: rgba(208, 134, 60, 0.05);
+    max-width: 500px;
+}
+
+.kit-box p {
+    font-size: 18px;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #d0863c;
+    font-weight: 700;
+}
+
+/* --- 7. FOOTER & CREDITS --- */
+h2 {
+  color: #4a4a4a; 
+  font-size: 16px;
+  margin-top: 60px;    
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a {
+  color: #d0863c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.credits {
+    padding-bottom: 50px;
+}
