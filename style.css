@@ -9,7 +9,6 @@ html, body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
-  /* Curseur personnalisé (vérifie bien le nom exact du fichier) */
   cursor: url('fleur svg.svg') 16 16, auto !important;
   overflow-x: hidden; 
 }
@@ -19,17 +18,17 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header, .tex
   cursor: url('fleur svg.svg') 16 16, pointer !important;
 }
 
-/* --- 2. MISE EN PAGE & STRUCTURE --- */
+/* --- 2. STRUCTURE --- */
 .section-wrapper {
   width: 100%;
-  max-width: 900px; /* Largeur optimale pour la lecture */
+  max-width: 900px; 
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Espacement fixe de 90px entre CHAQUE bloc majeur de la page */
+/* Espacement fixe de 90px entre chaque bloc */
 .bandeau-header, 
 .main-header, 
 .contexte-note, 
@@ -46,23 +45,22 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header, .tex
   padding: 35px 0;
   display: flex;
   justify-content: center;
-  margin-top: 0;
 }
 
 .logo {
   height: 75px;
   width: auto;
-  filter: brightness(0) invert(1); /* Logo blanc */
+  filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
 }
 
 .logo:hover {
-  transform: scale(1.05); /* Petit effet dynamique au survol */
+  transform: scale(1.05);
 }
 
-/* --- 4. TITRES & TEXTES --- */
+/* --- 4. TEXTES --- */
 h1, h2, h3, h4, p {
-  margin-top: 0; /* Supprime les décalages par défaut des navigateurs */
+  margin-top: 0;
 }
 
 .titre-kit, .titre-section {
@@ -75,7 +73,6 @@ h1, h2, h3, h4, p {
 .titre-kit { font-size: 52px; }
 .titre-section { font-size: 42px; }
 
-/* Phrase Bienvenue (Style Titre Étape en vert) */
 .intro-text-style {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
@@ -83,11 +80,8 @@ h1, h2, h3, h4, p {
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
-/* Style Poétique (Slogan & Citations) */
 .style-poetique {
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
@@ -97,5 +91,101 @@ h1, h2, h3, h4, p {
   color: #71815a;
 }
 
-/* --- 5. EFFET SPÉCIAL SUR LE CONTEXTE --- */
-.
+/* --- 5. EFFET SURVOL CONTEXTE --- */
+.contexte-note {
+  max-width: 650px;
+  padding: 0 20px;
+}
+
+.texte-survol {
+  font-size: 13.5px;
+  line-height: 1.8;
+  font-style: italic;
+  color: #4a4a4a;
+  opacity: 0.7;
+  transition: all 0.5s ease;
+}
+
+.texte-survol:hover {
+  color: #d0863c; /* Couleur ocre/curcuma au survol */
+  opacity: 1;
+}
+
+/* --- 6. GRILLE ÉTAPES --- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-step {
+  background-color: #efece6; /* Couleur crème comme ton bouton Pépinière */
+  padding: 45px 25px;
+  border-top: 5px solid #71815a;
+  transition: all 0.4s ease;
+}
+
+.card-step:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #d0863c; 
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card-step h4 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #71815a;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.soleil-reveal { color: #d0863c; font-weight: 700; }
+
+/* --- 7. FOOTER & BOUTON GITHUB --- */
+.credits { 
+  border-top: 1px solid #eeeeee; 
+  width: 100%; 
+  padding: 70px 0 100px 0;
+}
+
+.btn-github {
+  font-family: 'Montserrat', sans-serif;
+  color: #71815a;
+  background-color: #ffffff; /* Fond blanc */
+  text-decoration: none;
+  border: 1px solid #71815a;
+  padding: 15px 35px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-github:hover { 
+  background-color: #71815a; /* Devient vert */
+  color: #ffffff; /* Texte blanc */
+}
+
+/* --- 8. ANIMATIONS --- */
+.fade-in-fast {
+  opacity: 0;
+  animation: fadeIn 1.8s ease-out forwards; 
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
