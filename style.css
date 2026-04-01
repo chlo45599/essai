@@ -79,7 +79,7 @@ body {
   text-shadow: 0 0 15px rgba(208, 134, 60, 0.4);
 }
 
-/* --- PROCESSUS DE CRÉATION (CARTES #C4A989) --- */
+/* --- PROCESSUS DE CRÉATION (CARTES BLANCHES) --- */
 .guide-anthotype {
   max-width: 1000px;
   margin-bottom: 80px;
@@ -103,30 +103,31 @@ body {
 }
 
 .card-step {
-  background-color: #c4a989; /* Ta nouvelle couleur */
+  background-color: #ffffff; /* Cartes bien blanches */
   padding: 40px 25px;
   border-bottom: 3px solid #71815a;
   transition: all 0.3s ease;
-  color: #ffffff; /* On passe le texte en blanc pour la lisibilité sur fond foncé */
+  color: #4a4a4a; /* Texte gris foncé lisible */
 }
 
 .card-step:hover { 
   transform: translateY(-8px); 
-  filter: brightness(1.05); /* Légère illumination au survol */
+  box-shadow: 0 10px 20px rgba(113, 129, 90, 0.08); /* Douce ombre au survol */
 }
 
+/* --- NUMÉROS EN #C4A989 --- */
 .step-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
   font-style: italic;
-  color: #fcf4d9; /* Couleur claire pour le numéro */
+  color: #c4a989; /* Ta nouvelle couleur sable/terre */
   display: block;
   margin-bottom: 10px;
 }
 
 .card-step h4 {
   font-family: 'Montserrat', sans-serif;
-  color: #ffffff; /* Titre en blanc */
+  color: #71815a; /* Titre en vert forêt */
   font-size: 13px;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -135,16 +136,16 @@ body {
 .card-step p { 
   font-size: 13px; 
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9); /* Texte blanc légèrement transparent */
 }
 
+/* --- ASTUCE EN #C4A989 --- */
 .tip {
   display: block;
   margin-top: 15px;
   font-style: italic;
-  color: #fcf4d9;
+  color: #c4a989; /* Ta nouvelle couleur sable/terre */
   font-size: 11px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(196, 169, 137, 0.2); /* Ligne séparatrice assortie */
   padding-top: 10px;
 }
 
