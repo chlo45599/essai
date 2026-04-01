@@ -13,18 +13,27 @@ html, body {
   overflow-x: hidden; 
 }
 
+/* Conteneur pour aligner proprement tous les blocs de texte */
+.section-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   cursor: url('fleur svg.svg') 16 16, pointer !important;
 }
 
-/* --- BANDEAU VERT PLEINE LARGEUR --- */
+/* --- BANDEAU VERT --- */
 .bandeau-header {
   width: 100vw;
   background-color: #71815a;
   padding: 35px 0;
   display: flex;
   justify-content: center;
-  margin: 0;
+  margin: 0 0 80px 0; /* Écart fixe après le bandeau */
 }
 
 .logo {
@@ -33,27 +42,32 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   filter: brightness(0) invert(1);
 }
 
+/* --- ESPACEMENT HARMONISÉ ENTRE LES SECTIONS --- */
+header, section, .credits {
+  margin-bottom: 80px; /* Écart identique partout sur la page */
+}
+
 /* --- TITRES --- */
 .titre-kit, .titre-section {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin: 0 0 15px 0;
 }
 
-.titre-kit { font-size: 52px; margin-top: 60px; }
-.titre-section { font-size: 42px; margin-top: 50px; }
+.titre-kit { font-size: 52px; }
+.titre-section { font-size: 42px; }
 
-/* --- STYLE INTRO (Identique aux titres d'étapes) --- */
+/* --- STYLE INTRO (Phrase Bienvenue) --- */
 .intro-text-style {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
   font-weight: 700;
-  font-size: 18px; /* Taille adaptée pour une phrase d'intro */
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin: 60px auto 40px auto;
   max-width: 800px;
+  margin: 0;
 }
 
 /* --- STYLE POÉTIQUE --- */
@@ -64,18 +78,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   font-style: italic;
   line-height: 1.5;
   color: #71815a;
-  margin: 15px auto;
-}
-
-/* --- ANIMATION APPARITION RAPIDE --- */
-.fade-in-fast {
-  opacity: 0;
-  animation: fadeInFast 1.5s ease-in forwards; 
-}
-
-@keyframes fadeInFast {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  margin: 0 auto;
 }
 
 /* --- NOTE DE CONTEXTE --- */
@@ -83,15 +86,20 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   max-width: 650px;
   opacity: 0.7;
   padding: 0 25px;
-  margin-top: 20px;
 }
 
-.contexte-note p { font-size: 13px; line-height: 1.8; font-style: italic; }
+.contexte-note p { 
+  font-size: 13px; 
+  line-height: 1.8; 
+  font-style: italic; 
+  margin: 0;
+}
 
-/* Filet supprimé comme demandé */
-
-/* --- CARTES ÉTAPES (#efece6) --- */
-.guide-anthotype { max-width: 1100px; margin-bottom: 100px; }
+/* --- PROCESSUS DE CRÉATION --- */
+.phrase-magique {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
 
 .steps-grid {
   display: grid;
@@ -105,6 +113,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   padding: 45px 30px;
   border-top: 5px solid #71815a;
   transition: all 0.4s ease;
+  text-align: center;
 }
 
 .card-step:hover { 
@@ -122,7 +131,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 }
 
 .card-step h4 {
-  font-family: 'Cormorant Garamond', serif; /* Changé pour correspondre à ton souhait */
+  font-family: 'Cormorant Garamond', serif;
   color: #71815a;
   font-size: 16px;
   text-transform: uppercase;
@@ -131,7 +140,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   margin-bottom: 15px;
 }
 
-.card-step p { font-size: 14px; line-height: 1.7; color: #4a4a4a; }
+.card-step p { font-size: 14px; line-height: 1.7; color: #4a4a4a; margin: 0; }
 
 .tip {
   display: block;
@@ -143,13 +152,20 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 
 .soleil-reveal { color: #d0863c; font-weight: 700; }
 
-/* --- FOOTER & BOUTON GITHUB --- */
+/* --- FOOTER & BOUTON --- */
 .credits { 
-  margin-top: 40px; 
-  margin-bottom: 80px; 
   border-top: 1px solid #eee; 
   width: 100%; 
-  padding-top: 60px; 
+  padding-top: 60px;
+  margin-bottom: 100px; /* Espace en fin de page */
+}
+
+.credits h2 { 
+  font-size: 15px; 
+  font-weight: 400; 
+  color: #71815a; 
+  margin-bottom: 25px; 
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-github {
@@ -170,4 +186,15 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 .btn-github:hover { 
   background-color: #71815a; 
   color: #efece6; 
+}
+
+/* --- ANIMATIONS --- */
+.fade-in-fast {
+  opacity: 0;
+  animation: fadeInFast 1.5s ease-in forwards; 
+}
+
+@keyframes fadeInFast {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
