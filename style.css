@@ -6,20 +6,21 @@ html, body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  text-align: center;
+  align-items: center; /* Centrage horizontal de tout le body */
+  text-align: center;  /* Centrage de tous les textes */
   color: #4a4a4a;
-  /* Correction du nom avec espace si nécessaire */
   cursor: url('fleur svg.svg') 16 16, auto !important;
   overflow-x: hidden; 
 }
 
+/* Conteneur pour s'assurer que tout reste bien au milieu */
 .section-wrapper {
   width: 100%;
   max-width: 1100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Force les enfants directs à se centrer */
+  margin: 0 auto;
 }
 
 a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
@@ -42,8 +43,9 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   filter: brightness(0) invert(1);
 }
 
-/* --- RYTHME DE PAGE (ÉCARTS) --- */
+/* --- ESPACEMENT DES SECTIONS --- */
 header, section, .credits {
+  width: 100%; /* S'assure que la section prend toute la largeur du wrapper */
   margin-bottom: 80px;
 }
 
@@ -52,13 +54,13 @@ header, section, .credits {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
   font-weight: 700;
-  margin: 0 0 15px 0;
+  margin: 0 auto 15px auto;
 }
 
 .titre-kit { font-size: 52px; }
 .titre-section { font-size: 42px; }
 
-/* --- STYLE INTRO --- */
+/* --- STYLE INTRO (Centré) --- */
 .intro-text-style {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
@@ -67,7 +69,7 @@ header, section, .credits {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   max-width: 800px;
-  margin: 0;
+  margin: 0 auto;
 }
 
 /* --- STYLE POÉTIQUE --- */
@@ -86,6 +88,7 @@ header, section, .credits {
   max-width: 650px;
   opacity: 0.7;
   padding: 0 25px;
+  margin: 0 auto; /* Centrage auto */
 }
 
 .contexte-note p { 
@@ -95,10 +98,9 @@ header, section, .credits {
   margin: 0;
 }
 
-/* --- CARTES ÉTAPES (#efece6) --- */
+/* --- PROCESSUS DE CRÉATION --- */
 .phrase-magique {
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin: 30px auto 50px auto;
 }
 
 .steps-grid {
@@ -106,6 +108,8 @@ header, section, .credits {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
   padding: 0 30px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .card-step {
@@ -113,7 +117,9 @@ header, section, .credits {
   padding: 45px 30px;
   border-top: 5px solid #71815a;
   transition: all 0.4s ease;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre le contenu interne des cartes */
 }
 
 .card-step:hover { 
@@ -126,7 +132,6 @@ header, section, .credits {
   font-size: 38px;
   font-weight: 700;
   color: #d0863c; 
-  display: block;
   margin-bottom: 10px;
 }
 
@@ -152,7 +157,7 @@ header, section, .credits {
 
 .soleil-reveal { color: #d0863c; font-weight: 700; }
 
-/* --- FOOTER & BOUTON GITHUB (BLANC -> VERT) --- */
+/* --- FOOTER & BOUTON --- */
 .credits { 
   border-top: 1px solid #eee; 
   width: 100%; 
@@ -165,13 +170,12 @@ header, section, .credits {
   font-weight: 400; 
   color: #71815a; 
   margin-bottom: 25px; 
-  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-github {
   font-family: 'Montserrat', sans-serif;
   color: #71815a;
-  background-color: #ffffff; /* Fond blanc pur */
+  background-color: #ffffff;
   text-decoration: none;
   border: 1px solid #71815a;
   padding: 14px 32px;
@@ -181,11 +185,12 @@ header, section, .credits {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   display: inline-block;
+  margin: 0 auto;
 }
 
 .btn-github:hover { 
-  background-color: #71815a; /* Devient vert au survol */
-  color: #ffffff; /* Le texte passe en blanc */
+  background-color: #71815a; 
+  color: #ffffff; 
 }
 
 /* --- ANIMATIONS --- */
