@@ -12,7 +12,7 @@ body {
 
 /* --- 2. HEADER & LOGO --- */
 .logo {
-  width: 80px; 
+  width: 85px; 
   height: auto;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -35,7 +35,7 @@ body {
 
 /* --- 3. BLOC CONTEXTE (VERT) --- */
 .contexte {
-  background-color: rgba(113, 129, 90, 0.15); 
+  background-color: rgba(113, 129, 90, 0.12); 
   padding: 30px;
   max-width: 550px;
   margin-top: 40px;
@@ -66,7 +66,7 @@ body {
 .kit-box {
   border: 1px solid #d0863c;
   padding: 40px 30px;
-  background-color: rgba(208, 134, 60, 0.05);
+  background-color: rgba(208, 134, 60, 0.03);
   max-width: 500px;
 }
 
@@ -80,7 +80,7 @@ body {
   color: #71815a;
 }
 
-/* --- 5. NOTICE (NUMÉROS ÉLÉGANTS) --- */
+/* --- 5. NOTICE --- */
 .guide-anthotype {
   max-width: 1000px;
   margin: 80px auto;
@@ -102,24 +102,26 @@ body {
 
 .card-step {
   background: white;
-  padding: 40px 20px;
-  border-bottom: 4px solid #71815a;
-  transition: transform 0.3s ease;
+  padding: 40px 25px;
+  border-bottom: 3px solid #71815a;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-step:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(113, 129, 90, 0.08);
 }
 
-/* Style pour les numéros au lieu des emojis */
 .step-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: 30px;
   font-style: italic;
   color: #d0863c;
   display: block;
   margin-bottom: 10px;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .card-step h4 {
@@ -128,10 +130,14 @@ body {
   font-size: 14px;
   margin-bottom: 15px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
-.card-step p { font-size: 13px; line-height: 1.5; }
+.card-step p { 
+  font-size: 13.5px; 
+  line-height: 1.6; 
+  flex-grow: 1;
+}
 
 .tip {
   display: block;
@@ -150,7 +156,7 @@ body {
 }
 
 .credits h2 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   margin-bottom: 25px;
 }
@@ -162,8 +168,9 @@ body {
   border: 1px solid #d0863c;
   padding: 12px 25px;
   transition: all 0.3s;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .btn-github:hover {
