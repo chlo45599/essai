@@ -48,7 +48,7 @@
                 </p>
             </div>
             
-            <p class="texte-survol" style="margin-top: 20px;">
+            <p class="texte-survol" style="margin-top: 40px;">
                 Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels (1er avril 2026), basée sur la technique de l’anthotype. J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé. Cette page est accessible via un QR code présent dans ce kit et accompagne cette expérience.
             </p>
         </section>
@@ -98,3 +98,19 @@
         </footer>
 
     </div>
+
+    <script>
+        function revealDef() {
+            const btn = document.getElementById('btn-reveal');
+            const def = document.getElementById('def-text');
+            btn.classList.add('exit-animation');
+            setTimeout(() => {
+                btn.style.display = 'none';
+                def.style.display = 'block';
+                def.classList.add('fade-in-def');
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
