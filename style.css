@@ -6,46 +6,60 @@ html, body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
   text-align: center;
   color: #4a4a4a;
-  overflow-x: hidden; /* Très important pour éviter le scroll horizontal du bandeau */
+  cursor: url('fleur svg.svg') 16 16, auto !important;
+  overflow-x: hidden; /* Empêche le scroll horizontal dû au bandeau */
 }
 
-/* --- BANDEAU DÉFILANT CORRIGÉ --- */
+/* --- BANDEAU LOGO --- */
+.bandeau-header {
+  width: 100vw;
+  background-color: #71815a;
+  padding: 35px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 75px;
+  filter: brightness(0) invert(1);
+}
+
+/* --- LE BANDEAU DÉFILANT (L'EXPÉRIENCE COMMENCE ICI) --- */
 .marquee-container {
   width: 100vw;
   background-color: #71815a;
   color: #ffffff;
-  overflow: hidden; /* Cache ce qui dépasse du bandeau */
-  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 20px 0;
+  padding: 15px 0;
   margin-bottom: 90px;
 }
 
 .marquee-content {
-  display: flex; /* Aligne les spans sur une seule ligne */
-  white-space: nowrap; /* Empêche le retour à la ligne vu sur ta capture */
-  animation: marquee-animation 30s linear infinite;
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-loop 20s linear infinite; /* 20s pour une vitesse élégante */
 }
 
 .marquee-content span {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-size: 18px;
-  padding-right: 50px; /* Espace entre les phrases */
+  padding-right: 40px; /* Espace entre les répétitions */
 }
 
-@keyframes marquee-animation {
+@keyframes scroll-loop {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Déplace la moitié de la largeur pour la boucle */
+  100% { transform: translateX(-50%); } /* On déplace la moitié pour l'illusion d'infini */
 }
 
-/* --- LE RESTE DU CSS --- */
+/* --- STRUCTURE CONTENU --- */
 .section-wrapper {
   width: 100%;
   max-width: 900px;
@@ -56,14 +70,26 @@ html, body {
   margin-bottom: 90px;
 }
 
+/* --- TITRES --- */
+.titre-kit, .titre-section {
+  font-family: 'Cormorant Garamond', serif;
+  color: #71815a;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.titre-kit { font-size: 52px; }
+.titre-section { font-size: 42px; }
+
+/* --- TEXTE CONTEXTE & NOM (SURVOL OCRE) --- */
 .texte-survol {
   font-size: 13.5px;
   line-height: 1.8;
   font-style: italic;
   opacity: 0.7;
-  transition: all 0.5s ease;
   color: #4a4a4a;
-  margin-bottom: 0;
+  transition: all 0.5s ease;
+  margin: 0;
 }
 
 .texte-survol:hover {
@@ -71,7 +97,45 @@ html, body {
   opacity: 1;
 }
 
-/* Style spécifique pour ton nom en bas (exactement comme le contexte) */
+/* --- GRILLE ÉTAPES --- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.card-step {
+  background-color: #efece6;
+  padding: 45px 25px;
+  border-top: 5px solid #71815a;
+  transition: transform 0.4s ease;
+}
+
+.card-step:hover { transform: translateY(-8px); }
+
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #d0863c;
+  margin-bottom: 10px;
+}
+
+.card-step h4 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #71815a;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* --- FOOTER --- */
+.credits { 
+  border-top: 1px solid #eeeeee; 
+  padding: 70px 0 100px 0;
+}
+
+/* Ton nom avec le même style que le contexte */
 .credits h2.texte-survol {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
