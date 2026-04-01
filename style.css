@@ -1,3 +1,4 @@
+CSS
 /* --- 1. IMPORT DES POLICES --- */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
@@ -15,33 +16,41 @@ body {
   text-align: center;
 }
 
-/* --- 3. TITRE PRINCIPAL --- */
+/* --- 3. LE LOGO --- */
+.logo {
+  width: 65px;         /* Taille discrète et élégante */
+  height: auto;
+  margin-top: 60px;    /* Espace au-dessus du logo */
+  margin-bottom: 10px; /* Espace réduit entre le logo et le titre */
+}
+
+/* --- 4. TITRE PRINCIPAL --- */
 h1 {
-  color: #d0863c; /* Ton orange choisi */
+  color: #d0863c;      /* Ton orange choisi */
   font-family: 'EB Garamond', serif;
   font-style: italic;
-  font-size: 64px; /* Un titre fort et élégant */
-  margin-top: 100px;
+  font-size: 64px;     /* Grand titre impactant */
+  margin-top: 0;       /* On utilise la marge du logo pour l'espace haut */
   margin-bottom: 0;
   line-height: 1.1;
 }
 
-/* --- 4. LE SLOGAN (En minuscules pour plus de douceur) --- */
+/* --- 5. LE SLOGAN --- */
 .slogan {
   color: #d0863c; 
   font-family: 'Inter', sans-serif;
-  font-size: 18px;    /* Un peu plus grand puisqu'il est en minuscules */
-  font-style: italic; /* Optionnel : tu peux l'enlever si tu préfères droit */
-  letter-spacing: 1px; /* Moins d'espace pour que ce soit lisible */
-  margin-top: 10px;
+  font-size: 18px; 
+  font-style: italic;
+  letter-spacing: 0.5px; 
+  margin-top: 10px;    /* Petit espace sous le titre */
   font-weight: 400;
 }
 
-/* --- 5. TEXTES SECONDAIRES ET LIENS --- */
+/* --- 6. TEXTES SECONDAIRES ET LIENS --- */
 h2 {
   color: #4a4a4a; 
   font-size: 20px;
-  margin-top: 60px;
+  margin-top: 80px;    /* Espace avant ton prénom */
   font-weight: 400;
 }
 
@@ -49,6 +58,10 @@ p {
   color: #4a4a4a;
   max-width: 600px;
   line-height: 1.6;
+}
+
+.credits {
+  margin-top: 20px;
 }
 
 a {
@@ -62,9 +75,10 @@ a:hover {
   text-decoration: underline;
 }
 
+/* --- 7. FOOTER --- */
 footer {
   margin-top: auto;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   font-size: 12px;
   opacity: 0.5;
 }
