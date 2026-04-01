@@ -41,50 +41,49 @@ h1, h2, h3, h4, p { margin-top: 0; }
 
 .style-poetique { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: #71815a; line-height: 1.6; }
 
-/* --- 5. LE GROS BOUTON OCRE ARRONDI --- */
+/* --- 5. BOUTON OCRE AFFINÉ --- */
 #container-anthotype {
-    min-height: 120px; 
+    min-height: 100px; 
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
 #btn-reveal {
-    background-color: #d0863c; /* Fond Ocre */
-    color: #ffffff;            /* Texte Blanc */
+    background-color: #d0863c;
+    color: #ffffff;
     border: none;
-    padding: 25px 60px;        /* Gros espace intérieur */
+    padding: 15px 45px;        /* Plus fin et moins large */
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 1px;
-    border-radius: 80px;       /* Très arrondi */
-    box-shadow: 0 10px 20px rgba(208, 134, 60, 0.2);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 13px;           /* Typo un peu plus petite */
+    letter-spacing: 1.5px;
+    border-radius: 40px;       /* Arrondi impeccable mais plus discret */
+    box-shadow: 0 6px 15px rgba(208, 134, 60, 0.2);
+    transition: all 0.3s ease;
+    z-index: 2;
 }
 
 #btn-reveal:hover {
-    transform: scale(1.08);    /* Gonfle un peu au survol */
-    box-shadow: 0 15px 30px rgba(208, 134, 60, 0.3);
+    transform: scale(1.05);
+    background-color: #bc7632;
+    box-shadow: 0 8px 20px rgba(208, 134, 60, 0.3);
 }
 
-/* Animation de sortie "Swipe" */
-.exit-animation {
-    animation: swipeOut 0.5s forwards ease-in;
-}
-
+/* Animations rapides */
 @keyframes swipeOut {
-    0% { transform: translateX(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateX(600px) rotate(15deg); opacity: 0; }
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(800px); opacity: 0; }
 }
 
-.fade-in-def { animation: fadeInDef 0.8s forwards; }
 @keyframes fadeInDef {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Style de la définition (identique au contexte) */
+/* Style de la définition */
 .texte-survol {
   font-size: 13.5px;
   line-height: 1.8;
@@ -112,8 +111,8 @@ h1, h2, h3, h4, p { margin-top: 0; }
   background-color: #ffffff;
   text-decoration: none;
   border: 1px solid #71815a;
-  padding: 15px 35px;
-  font-size: 12px;
+  padding: 12px 30px;
+  font-size: 11px;
   text-transform: uppercase;
   font-weight: 700;
   transition: all 0.3s ease;
