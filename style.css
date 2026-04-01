@@ -8,14 +8,26 @@ body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
-  
-  /* Utilisation de ta fleur.svg comme curseur */
   cursor: url('fleur.svg') 16 16, auto;
 }
 
-/* Force le curseur fleur sur les zones cliquables */
 a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover {
   cursor: url('fleur.svg') 16 16, pointer;
+}
+
+/* --- ANIMATION APPARITION PROGRESSIVE --- */
+.fade-in-text {
+  color: #c4a989;
+  font-weight: 700;
+  font-size: 18px;
+  opacity: 0; /* Caché au début */
+  animation: fadeIn 3s ease-in forwards; /* 3 secondes de fondu */
+  margin: 20px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- EFFET LUEUR DE SOLEIL --- */
@@ -24,8 +36,8 @@ a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover {
 }
 
 .sun-hover:hover {
-  color: #ffb86c; /* Ocre plus chaud */
-  text-shadow: 0 0 25px rgba(255, 208, 112, 0.7); /* Lueur dorée */
+  color: #ffb86c; 
+  text-shadow: 0 0 25px rgba(255, 208, 112, 0.7); 
 }
 
 /* --- HEADER --- */
@@ -128,7 +140,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover {
 .step-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 32px;
-  font-weight: 700; /* Numéros bien en gras */
+  font-weight: 700;
   font-style: italic;
   color: #c4a989; 
   display: block;
