@@ -1,10 +1,11 @@
 /* --- 1. IMPORT DES POLICES --- */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* --- 2. STYLE GÉNÉRAL DU CORPS --- */
+/* --- 2. STYLE GÉNÉRAL --- */
 body {
-  background-color: #fcf4d9; /* Ton beige */
+  background-color: #fcf4d9;
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
@@ -19,40 +20,46 @@ body {
 .logo {
   width: 65px;         
   height: auto;
-  margin-top: 60px;    
-  margin-bottom: 15px; 
+  margin-top: 50px;    
+  margin-bottom: 20px; 
 }
 
-/* --- 4. TITRE PRINCIPAL --- */
-h1 {
-  color: #d0863c;      
-  font-family: 'EB Garamond', serif;
-  font-style: italic;
-  font-weight: 400;    
-  font-size: 64px;     
-  margin-top: 0;       
-  margin-bottom: 0;
-  line-height: 1.1;
+/* --- 4. NOUVEAU TITRE (MONTSERRAT GRAS) --- */
+.titre-kit {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;    /* BIEN EN GRAS */
+  color: #d0863c;
+  font-size: 42px;     /* Légèrement plus petit car Montserrat est large */
+  margin: 0;
+  text-transform: none;
+  font-style: normal;  /* Pas d'italique ici */
 }
 
-/* --- 5. LE SLOGAN --- */
 .slogan {
   color: #d0863c; 
-  font-family: 'Inter', sans-serif;
   font-size: 18px; 
-  font-style: normal;  
   font-weight: 700;    
-  letter-spacing: 0.5px; 
   margin-top: 10px;    
 }
 
-/* --- 6. SECTION BIENVENUE & KIT --- */
-.bienvenue {
-    margin-top: 50px;
-    padding: 0 20px;
-    max-width: 600px;
+/* --- 5. SECTION CONTEXTE (POUR LE PROF) --- */
+.contexte {
+    background-color: rgba(0, 0, 0, 0.03);
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 550px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
 }
 
+.contexte strong {
+    color: #333;
+}
+
+/* --- 6. BIENVENUE & KIT --- */
 .divider {
     width: 40px;
     height: 1px;
@@ -64,69 +71,43 @@ h1 {
 .intro-text {
     font-size: 17px;
     color: #4a4a4a;
-    margin-bottom: 40px;
+    max-width: 600px;
+    margin-bottom: 30px;
 }
 
 .kit-box {
     border: 1px solid #d0863c;
     padding: 40px 30px;
-    background-color: rgba(208, 134, 60, 0.05); /* Fond très léger */
-}
-
-.kit-box h3 {
-    font-family: 'EB Garamond', serif;
-    color: #d0863c;
-    font-size: 32px;
-    font-style: italic;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-weight: 400;
+    background-color: rgba(208, 134, 60, 0.05);
+    max-width: 500px;
 }
 
 .kit-box p {
     font-size: 18px;
     color: #4a4a4a;
     line-height: 1.6;
-    margin: 0 auto;
 }
 
-/* Mise en avant de certains mots */
 .highlight {
     color: #d0863c;
     font-weight: 700;
 }
 
-/* --- 7. TEXTES SECONDAIRES ET LIENS --- */
+/* --- 7. FOOTER & CREDITS --- */
 h2 {
   color: #4a4a4a; 
-  font-size: 18px;
-  margin-top: 80px;    
-  font-weight: 400;
+  font-size: 16px;
+  margin-top: 60px;    
   text-transform: uppercase;
   letter-spacing: 2px;
-}
-
-p {
-  color: #4a4a4a;
-  max-width: 600px;
-  line-height: 1.6;
 }
 
 a {
   color: #d0863c;
   text-decoration: none;
-  font-size: 14px;
   font-weight: bold;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* --- 8. FOOTER --- */
-footer {
-  margin-top: auto;
-  padding: 60px 0 40px 0;
-  font-size: 12px;
-  opacity: 0.5;
+.credits {
+    padding-bottom: 50px;
 }
