@@ -18,94 +18,76 @@ a, button, .card-step, .btn-github, .logo, .bandeau-header, .texte-survol, .marq
 }
 
 /* --- 2. STRUCTURE & ESPACEMENTS --- */
-.section-wrapper {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-}
+.section-wrapper { width: 100%; max-width: 900px; margin: 0 auto; }
+.marquee-container, .main-header, .contexte-note, .guide-anthotype { margin-bottom: 90px; }
 
-/* Espacement fixe de 90px entre chaque bloc */
-.marquee-container, .main-header, .contexte-note, .guide-anthotype {
-  margin-bottom: 90px;
-}
-
-/* --- 3. BANDEAU LOGO & DÉFILANT --- */
-.bandeau-header {
-  width: 100vw;
-  background-color: #71815a;
-  padding: 35px 0;
-  display: flex;
-  justify-content: center;
-}
-
+/* --- 3. BANDEAUX & LOGO --- */
+.bandeau-header { width: 100vw; background-color: #71815a; padding: 35px 0; display: flex; justify-content: center; }
 .logo { height: 75px; filter: brightness(0) invert(1); transition: transform 0.3s ease; }
 .logo:hover { transform: scale(1.05); }
 
-.marquee-container {
-  width: 100vw;
-  background-color: #71815a;
-  color: #ffffff;
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  padding: 15px 0;
-}
+.marquee-container { width: 100vw; background-color: #71815a; color: #ffffff; overflow: hidden; padding: 15px 0; }
+.marquee-content { display: flex; animation: scroll-loop 25s linear infinite; }
+.marquee-content span { font-family: 'Cormorant Garamond', serif; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 18px; padding-right: 40px; }
 
-.marquee-content {
-  display: flex;
-  animation: scroll-loop 25s linear infinite;
-}
+@keyframes scroll-loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-.marquee-content span {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 18px;
-  padding-right: 40px;
-}
-
-@keyframes scroll-loop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* --- 4. TITRES AVEC SURVOL OCRE --- */
+/* --- 4. TITRES & SURVOLS --- */
 h1, h2, h3, h4, p { margin-top: 0; }
-
-.titre-kit, .titre-section {
-  font-family: 'Cormorant Garamond', serif;
-  color: #71815a;
-  font-weight: 700;
-  margin-bottom: 20px;
-  transition: color 0.5s ease; /* Transition douce pour le changement de couleur */
-}
-
+.titre-kit, .titre-section { font-family: 'Cormorant Garamond', serif; color: #71815a; font-weight: 700; margin-bottom: 20px; transition: color 0.5s ease; }
 .titre-kit { font-size: 52px; }
 .titre-section { font-size: 42px; }
+.titre-kit:hover, .titre-section:hover { color: #d0863c; }
 
-/* L'effet au survol demandé sur les titres */
-.titre-kit:hover, .titre-section:hover {
-  color: #d0863c; /* Ton ocre/curcuma */
+.style-poetique { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: #71815a; line-height: 1.6; }
+
+/* --- 5. SECTION BOUTON "L'ANTHOTYPE C'EST QUOI ?" --- */
+#container-anthotype {
+    min-height: 80px; /* Évite que la page ne saute quand le texte apparaît */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.style-poetique {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  font-style: italic;
-  color: #71815a;
-  line-height: 1.6;
+#btn-reveal {
+    background-color: #ffffff;
+    color: #71815a;
+    border: 2px solid #71815a;
+    padding: 15px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 50px; /* Rectangle arrondi */
+    transition: all 0.3s ease;
 }
 
-/* --- 5. TEXTES & NOM (SURVOL OCRE) --- */
-.contexte-note {
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
+#btn-reveal:hover {
+    background-color: #71815a;
+    color: #ffffff;
+    transform: scale(1.05);
 }
 
+/* Animation de sortie : le bouton s'envole vers la droite */
+.exit-animation {
+    animation: swipeOut 0.5s forwards ease-in;
+}
+
+@keyframes swipeOut {
+    0% { transform: translateX(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateX(500px) rotate(20deg); opacity: 0; }
+}
+
+/* Animation d'apparition du texte */
+.fade-in-def {
+    animation: fadeInDef 0.8s forwards;
+}
+
+@keyframes fadeInDef {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style de la définition (identique au contexte) */
 .texte-survol {
   font-size: 13.5px;
   line-height: 1.8;
@@ -113,61 +95,20 @@ h1, h2, h3, h4, p { margin-top: 0; }
   opacity: 0.7;
   color: #4a4a4a;
   transition: all 0.5s ease;
-  margin: 0;
 }
 
-.texte-survol:hover {
-  color: #d0863c;
-  opacity: 1;
-}
+.texte-survol:hover { color: #d0863c; opacity: 1; }
 
 /* --- 6. ÉTAPES --- */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 0 20px;
-}
-
-.card-step {
-  background-color: #efece6;
-  padding: 45px 25px;
-  border-top: 5px solid #71815a;
-  transition: transform 0.4s ease;
-}
-
+.card-step { background-color: #efece6; padding: 45px 25px; border-top: 5px solid #71815a; transition: transform 0.4s ease; }
 .card-step:hover { transform: translateY(-8px); }
-
-.step-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-  font-weight: 700;
-  color: #d0863c;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.card-step h4 {
-  font-family: 'Cormorant Garamond', serif;
-  color: #71815a;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-
+.step-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: #d0863c; margin-bottom: 10px; display: block; }
+.card-step h4 { font-family: 'Cormorant Garamond', serif; color: #71815a; text-transform: uppercase; margin-bottom: 15px; }
 .soleil-reveal { color: #d0863c; font-weight: 700; }
 
-/* --- 7. FOOTER --- */
-.credits { 
-  border-top: 1px solid #eeeeee; 
-  padding: 70px 0 100px 0;
-}
-
-.credits h2.texte-survol {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  margin-bottom: 30px;
-  cursor: pointer;
-}
+/* --- 7. FOOTER & BOUTON GITHUB --- */
+.credits { border-top: 1px solid #eeeeee; padding: 70px 0 100px 0; }
+.credits h2.texte-survol { font-family: 'Montserrat', sans-serif; font-weight: 400; margin-bottom: 30px; cursor: pointer; }
 
 .btn-github {
   font-family: 'Montserrat', sans-serif;
@@ -183,7 +124,4 @@ h1, h2, h3, h4, p { margin-top: 0; }
   display: inline-block;
 }
 
-.btn-github:hover {
-  background-color: #71815a;
-  color: #ffffff;
-}
+.btn-github:hover { background-color: #71815a; color: #ffffff; }
