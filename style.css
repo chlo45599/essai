@@ -41,47 +41,44 @@ h1, h2, h3, h4, p { margin-top: 0; }
 
 .style-poetique { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: #71815a; line-height: 1.6; }
 
-/* --- 5. SECTION BOUTON "L'ANTHOTYPE C'EST QUOI ?" --- */
+/* --- 5. LE GROS BOUTON OCRE ARRONDI --- */
 #container-anthotype {
-    min-height: 80px; /* Évite que la page ne saute quand le texte apparaît */
+    min-height: 120px; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #btn-reveal {
-    background-color: #ffffff;
-    color: #71815a;
-    border: 2px solid #71815a;
-    padding: 15px 30px;
+    background-color: #d0863c; /* Fond Ocre */
+    color: #ffffff;            /* Texte Blanc */
+    border: none;
+    padding: 25px 60px;        /* Gros espace intérieur */
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 14px;
-    border-radius: 50px; /* Rectangle arrondi */
-    transition: all 0.3s ease;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 80px;       /* Très arrondi */
+    box-shadow: 0 10px 20px rgba(208, 134, 60, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #btn-reveal:hover {
-    background-color: #71815a;
-    color: #ffffff;
-    transform: scale(1.05);
+    transform: scale(1.08);    /* Gonfle un peu au survol */
+    box-shadow: 0 15px 30px rgba(208, 134, 60, 0.3);
 }
 
-/* Animation de sortie : le bouton s'envole vers la droite */
+/* Animation de sortie "Swipe" */
 .exit-animation {
     animation: swipeOut 0.5s forwards ease-in;
 }
 
 @keyframes swipeOut {
     0% { transform: translateX(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateX(500px) rotate(20deg); opacity: 0; }
+    100% { transform: translateX(600px) rotate(15deg); opacity: 0; }
 }
 
-/* Animation d'apparition du texte */
-.fade-in-def {
-    animation: fadeInDef 0.8s forwards;
-}
-
+.fade-in-def { animation: fadeInDef 0.8s forwards; }
 @keyframes fadeInDef {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -96,7 +93,6 @@ h1, h2, h3, h4, p { margin-top: 0; }
   color: #4a4a4a;
   transition: all 0.5s ease;
 }
-
 .texte-survol:hover { color: #d0863c; opacity: 1; }
 
 /* --- 6. ÉTAPES --- */
@@ -106,7 +102,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .card-step h4 { font-family: 'Cormorant Garamond', serif; color: #71815a; text-transform: uppercase; margin-bottom: 15px; }
 .soleil-reveal { color: #d0863c; font-weight: 700; }
 
-/* --- 7. FOOTER & BOUTON GITHUB --- */
+/* --- 7. FOOTER --- */
 .credits { border-top: 1px solid #eeeeee; padding: 70px 0 100px 0; }
 .credits h2.texte-survol { font-family: 'Montserrat', sans-serif; font-weight: 400; margin-bottom: 30px; cursor: pointer; }
 
@@ -123,5 +119,4 @@ h1, h2, h3, h4, p { margin-top: 0; }
   transition: all 0.3s ease;
   display: inline-block;
 }
-
 .btn-github:hover { background-color: #71815a; color: #ffffff; }
