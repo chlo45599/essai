@@ -9,15 +9,17 @@ html, body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
-  cursor: url('fleur.svg') 16 16, auto !important;
+  
+  /* Curseur Fleur (Attention : le nom de ton fichier contient un espace) */
+  cursor: url('fleur svg.svg') 16 16, auto !important;
   overflow-x: hidden; 
 }
 
 a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
-  cursor: url('fleur.svg') 16 16, pointer !important;
+  cursor: url('fleur svg.svg') 16 16, pointer !important;
 }
 
-/* --- BANDEAU PLEINE LARGEUR --- */
+/* --- BANDEAU VERT PLEINE LARGEUR --- */
 .bandeau-header {
   width: 100vw;
   background-color: #71815a;
@@ -33,7 +35,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   filter: brightness(0) invert(1);
 }
 
-/* --- TITRES --- */
+/* --- TITRES (Cormorant Bold) --- */
 .titre-kit, .titre-section {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
@@ -44,7 +46,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 .titre-kit { font-size: 52px; margin-top: 60px; }
 .titre-section { font-size: 42px; margin-top: 50px; }
 
-/* --- STYLE POÉTIQUE --- */
+/* --- STYLE POÉTIQUE (Cormorant Regular) --- */
 .style-poetique {
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
@@ -81,16 +83,15 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 
 .contexte-note p { font-size: 13px; line-height: 1.8; font-style: italic; }
 
-/* --- LE NOUVEAU FILET (c4a989) --- */
+/* --- FILET D'OR (c4a989) --- */
 .divider {
-  width: 150px; /* Un peu plus large pour être élégant */
-  height: 1px; /* Très fin */
-  background-color: #c4a989; /* Ta couleur demandée */
-  margin: 50px auto; /* Espace équilibré haut/bas */
-  opacity: 1; /* Bien visible */
+  width: 150px;
+  height: 1px;
+  background-color: #c4a989;
+  margin: 50px auto;
 }
 
-/* --- CARTES ÉTAPES --- */
+/* --- CARTES ET BOUTON (Blanc cassé "La Pépinière" : #efece6) --- */
 .guide-anthotype { max-width: 1100px; margin-bottom: 100px; }
 
 .steps-grid {
@@ -101,7 +102,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 }
 
 .card-step {
-  background-color: #fcf4d9;
+  background-color: #efece6; /* Couleur exacte du site Jardins des Martels */
   padding: 45px 30px;
   border-top: 5px solid #71815a;
   transition: all 0.4s ease;
@@ -109,7 +110,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 
 .card-step:hover { 
   transform: translateY(-5px); 
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
 }
 
 .step-num {
@@ -155,7 +156,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 .btn-github {
   font-family: 'Montserrat', sans-serif;
   color: #71815a;
-  background-color: #fcf4d9;
+  background-color: #efece6; /* Harmonisé avec les cartes */
   text-decoration: none;
   border: 1px solid #71815a;
   padding: 14px 32px;
@@ -169,5 +170,5 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 
 .btn-github:hover { 
   background-color: #71815a; 
-  color: #fcf4d9; 
+  color: #efece6; 
 }
