@@ -1,5 +1,7 @@
 /* --- CONFIGURATION GÉNÉRALE & CURSEUR --- */
-body {
+html, body {
+  /* On applique le curseur sur HTML et BODY pour être sûr */
+  cursor: url('fleur.svg') 16 16, auto;
   background-color: #fcf4d9;
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -8,17 +10,17 @@ body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
-  cursor: url('fleur.svg') 16 16, auto;
 }
 
-a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover {
-  cursor: url('fleur.svg') 16 16, pointer;
+/* Force le curseur sur tous les éléments interactifs */
+a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover, .logo {
+  cursor: url('fleur.svg') 16 16, pointer !important;
 }
 
 /* --- STYLE POÉTIQUE (Slogan & Phrase magique) --- */
 .style-poetique {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; /* Taille moyenne harmonisée */
+  font-size: 22px;
   font-style: italic;
   font-weight: 300;
   line-height: 1.5;
@@ -33,7 +35,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover {
   font-size: 18px;
   opacity: 0;
   animation: fadeIn 3s ease-in forwards;
-  margin: 20px 0;
+  margin: 40px 0;
 }
 
 @keyframes fadeIn {
@@ -41,14 +43,16 @@ a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- EFFET LUEUR DE SOLEIL --- */
+/* --- EFFET LUEUR DE SOLEIL SUR LES TITRES --- */
 .sun-hover {
   transition: all 0.5s ease;
+  display: inline-block;
 }
 
 .sun-hover:hover {
   color: #ffb86c; 
-  text-shadow: 0 0 25px rgba(255, 208, 112, 0.7); 
+  text-shadow: 0 0 25px rgba(255, 208, 112, 0.8); 
+  transform: scale(1.02);
 }
 
 /* --- HEADER --- */
@@ -68,7 +72,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .sun-hover {
 }
 
 .slogan {
-  color: #d0863c; /* On garde la couleur ocre pour le slogan du haut */
+  color: #d0863c;
 }
 
 /* --- NOTE DE CONTEXTE --- */
