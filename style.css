@@ -1,3 +1,4 @@
+/* --- CONFIGURATION GÉNÉRALE & CURSEUR FLEUR --- */
 body {
   background-color: #fcf4d9;
   font-family: 'Inter', sans-serif;
@@ -7,8 +8,27 @@ body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
+  /* Curseur Fleur Ocre par défaut */
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path d='M12 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM12 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM24 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%23d0863c'/></svg>") 16 16, auto;
 }
 
+/* Fleur Verte au survol des éléments cliquables */
+a, button, .card-step, .btn-github, .soleil-reveal {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path d='M12 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM12 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM24 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%2371815a'/></svg>") 16 16, pointer;
+}
+
+/* --- EFFET LUEUR DE SOLEIL --- */
+.sun-hover {
+  transition: all 0.6s ease; /* Transition douce */
+  cursor: pointer;
+}
+
+.sun-hover:hover {
+  color: #ffb86c; /* Ocre plus clair, "ensoleillé" */
+  text-shadow: 0 0 20px rgba(255, 208, 112, 0.7); /* Lueur dorée */
+}
+
+/* --- HEADER --- */
 .logo {
   width: 85px; 
   height: auto;
@@ -16,14 +36,13 @@ body {
   margin-bottom: 20px;
 }
 
-.titre-kit, .titre-section {
+.titre-kit {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
   color: #d0863c;
+  font-size: 48px;
+  margin: 0;
 }
-
-.titre-kit { font-size: 48px; margin: 0; }
-.titre-section { font-size: 42px; margin-top: 20px; margin-bottom: 20px; }
 
 .slogan {
   color: #d0863c;
@@ -32,6 +51,7 @@ body {
   margin-top: 10px;
 }
 
+/* --- NOTE DE CONTEXTE --- */
 .contexte-note {
   max-width: 600px;
   margin-top: 25px;
@@ -39,7 +59,11 @@ body {
   opacity: 0.6;
 }
 
-.contexte-note p { font-size: 11px; font-style: italic; line-height: 1.6; }
+.contexte-note p {
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.6;
+}
 
 .divider {
   width: 40px;
@@ -49,9 +73,11 @@ body {
   opacity: 0.3;
 }
 
-.intro-text { font-size: 17px; margin-bottom: 10px; }
+/* --- PHRASE MAGIQUE --- */
+.phrase-magique {
+  margin: 40px auto 60px auto;
+}
 
-.phrase-magique { margin: 40px auto 60px auto; }
 .phrase-magique p {
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
@@ -61,10 +87,24 @@ body {
   color: #5a5a5a;
 }
 
-.soleil-reveal { color: #d0863c; font-weight: 700; transition: 0.5s; }
-.soleil-reveal:hover { text-shadow: 0 0 15px rgba(208, 134, 60, 0.4); }
+.soleil-reveal {
+  color: #d0863c;
+  font-weight: 700;
+}
 
-.guide-anthotype { max-width: 1000px; margin-bottom: 80px; }
+/* --- PROCESSUS DE CRÉATION --- */
+.guide-anthotype {
+  max-width: 1000px;
+  margin-bottom: 80px;
+}
+
+.titre-section {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  color: #d0863c;
+  font-size: 42px;
+  margin-bottom: 30px;
+}
 
 .steps-grid {
   display: grid;
@@ -77,14 +117,19 @@ body {
   background-color: #ffffff;
   padding: 40px 25px;
   border-bottom: 3px solid #71815a;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.card-step:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.card-step:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 10px 20px rgba(113, 129, 90, 0.08);
+}
 
+/* Numéros Gras en #C4A989 */
 .step-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: 700; 
   font-style: italic;
   color: #c4a989; 
   display: block;
@@ -95,12 +140,17 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #71815a;
   font-size: 13px;
-  text-transform: uppercase;
   margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-.card-step p { font-size: 13px; line-height: 1.6; }
+.card-step p { 
+  font-size: 13px; 
+  line-height: 1.6;
+}
 
+/* Astuce en #C4A989 */
 .tip {
   display: block;
   margin-top: 15px;
@@ -111,6 +161,7 @@ body {
   padding-top: 10px;
 }
 
+/* --- FOOTER --- */
 .credits { margin-top: 60px; margin-bottom: 80px; }
 .credits h2 { font-size: 14px; font-weight: 400; margin-bottom: 25px; }
 
@@ -123,7 +174,10 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
-.btn-github:hover { background: #d0863c; color: #fcf4d9; }
+.btn-github:hover {
+  background: #d0863c;
+  color: #fcf4d9;
+}
