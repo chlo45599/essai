@@ -1,7 +1,7 @@
-/* --- CONFIGURATION GÉNÉRALE & CURSEUR --- */
+/* --- CONFIGURATION GÉNÉRALE --- */
 html, body {
   background-color: #ffffff;
-  font-family: 'Montserrat', sans-serif; /* Montserrat par défaut pour les paragraphes */
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,23 +9,25 @@ html, body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
-  
-  /* Utilisation du fichier personnalisé importé */
+  /* Curseur personnalisé fleur.svg */
   cursor: url('fleur.svg') 16 16, auto !important;
+  /* Empêche le défilement horizontal si le bandeau dépasse */
+  overflow-x: hidden; 
 }
 
-/* Force le curseur sur les éléments interactifs */
+/* Force le curseur fleur partout */
 a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   cursor: url('fleur.svg') 16 16, pointer !important;
 }
 
-/* --- BANDEAU --- */
+/* --- BANDEAU PLEINE LARGEUR --- */
 .bandeau-header {
-  width: 100%;
+  width: 100vw; /* Prend 100% de la largeur de la fenêtre */
   background-color: #71815a;
   padding: 20px 0;
   display: flex;
   justify-content: center;
+  margin: 0; /* Pas de marge pour coller aux bords */
 }
 
 .logo {
@@ -34,23 +36,22 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   filter: brightness(0) invert(1);
 }
 
-/* --- TITRES (Cormorant Garamond BOLD + Vert) --- */
+/* --- TITRES (Cormorant Bold) --- */
 .titre-kit, .titre-section {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
-.titre-kit { font-size: 52px; margin-top: 40px; }
+.titre-kit { font-size: 52px; margin-top: 60px; }
 .titre-section { font-size: 42px; margin-top: 50px; }
 
-/* --- STYLE POÉTIQUE (Slogan & Phrase magique) --- */
-/* Cormorant Garamond Regular + Vert */
+/* --- STYLE POÉTIQUE (Cormorant Regular) --- */
 .style-poetique {
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
-  font-weight: 400; /* Regular */
+  font-weight: 400;
   font-style: italic;
   line-height: 1.5;
   color: #71815a;
@@ -73,16 +74,12 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- CORPS DE TEXTE --- */
-.contexte-note p, .card-step p {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-}
-
+/* --- NOTE DE CONTEXTE --- */
 .contexte-note {
   max-width: 650px;
   opacity: 0.7;
   padding: 0 25px;
+  margin-top: 20px;
 }
 
 .contexte-note p { font-size: 13px; line-height: 1.8; font-style: italic; }
@@ -95,7 +92,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   opacity: 0.3;
 }
 
-/* --- PROCESSUS DE CRÉATION --- */
+/* --- CARTES ÉTAPES (Fond #fcf4d9) --- */
 .guide-anthotype { max-width: 1100px; margin-bottom: 100px; }
 
 .steps-grid {
@@ -106,17 +103,21 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
 }
 
 .card-step {
-  background-color: #fcfcfc;
+  background-color: #fcf4d9; /* Ta couleur crème demandée */
   padding: 45px 30px;
   border-top: 5px solid #71815a;
   transition: all 0.4s ease;
 }
 
-/* NUMÉROS EN CORMORANT BOLD */
+.card-step:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
 .step-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 38px;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   color: #d0863c; 
   display: block;
   margin-bottom: 10px;
@@ -132,7 +133,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   margin-bottom: 15px;
 }
 
-.card-step p { font-size: 14px; line-height: 1.7; }
+.card-step p { font-size: 14px; line-height: 1.7; color: #4a4a4a; }
 
 .tip {
   display: block;
@@ -140,25 +141,35 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   font-style: italic;
   color: #d0863c;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .soleil-reveal { color: #d0863c; font-weight: 700; }
 
-/* --- FOOTER --- */
-.credits { margin-top: 40px; margin-bottom: 60px; border-top: 1px solid #eee; width: 100%; padding-top: 50px; }
-.credits h2 { font-size: 15px; font-weight: 400; color: #71815a; margin-bottom: 25px; font-family: 'Montserrat', sans-serif; }
+/* --- FOOTER & BOUTON GITHUB (Fond #fcf4d9) --- */
+.credits { 
+  margin-top: 40px; 
+  margin-bottom: 80px; 
+  border-top: 1px solid #eee; 
+  width: 100%; 
+  padding-top: 60px; 
+}
 
 .btn-github {
   font-family: 'Montserrat', sans-serif;
   color: #71815a;
+  background-color: #fcf4d9; /* Fond crème demandé */
   text-decoration: none;
   border: 1px solid #71815a;
-  padding: 14px 28px;
-  font-size: 11px;
+  padding: 14px 32px;
+  font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
-  transition: all 0.3s;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
-.btn-github:hover { background: #71815a; color: #ffffff; }
+.btn-github:hover { 
+  background-color: #71815a; 
+  color: #fcf4d9; 
+}
