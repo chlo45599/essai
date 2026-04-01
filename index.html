@@ -41,16 +41,19 @@
 
         <section class="contexte-note">
             <div id="container-anthotype">
+                
                 <button id="btn-reveal" onclick="revealDef()">L'ANTHOTYPE C'EST QUOI ?</button>
                 
-                <div id="def-wrapper" style="display:none;">
-                    <p class="texte-survol">
+                <div id="def-bubble" class="bulle-definition" style="display:none;">
+                    <span class="guillemet guillemet-gauche">“</span>
+                    <p class="texte-definition">
                         C'est un processus photographique qui permet de créer des images à partir de la réaction entre les pigments contenus dans les végétaux et la lumière du soleil.
                     </p>
+                    <span class="guillemet guillemet-droite">”</span>
                 </div>
             </div>
             
-            <p class="texte-survol" style="margin-top: 40px;">
+            <p class="texte-survol" style="margin-top: 50px;">
                 Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels (1er avril 2026), basée sur la technique de l’anthotype. J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé. Cette page est accessible via un QR code présent dans ce kit et accompagne cette expérience.
             </p>
         </section>
@@ -103,27 +106,30 @@
 
     <script>
         const btn = document.getElementById('btn-reveal');
-        const def = document.getElementById('def-wrapper');
+        const bulle = document.getElementById('def-bubble');
 
         function revealDef() {
+            // Animation de sortie rapide du bouton
             btn.style.animation = "swipeOut 0.4s forwards cubic-bezier(0.4, 0, 0.2, 1)";
+            
+            // Apparition de la bulle
             setTimeout(() => {
                 btn.style.display = 'none';
-                def.style.display = 'block';
-                def.style.animation = "fadeInDef 0.6s forwards";
+                bulle.style.display = 'flex'; // On utilise flex pour aligner les guillemets
+                bulle.style.animation = "fadeInDef 0.6s forwards";
             }, 400);
         }
 
-        // Système de Reset au Scroll
+        // Reset au Scroll (remonter en haut)
         window.onscroll = function() {
-            // Si on remonte tout en haut (scroll < 100px)
-            if (window.scrollY < 100) {
+            if (window.scrollY < 80) { // Un peu plus sensible
                 if (btn.style.display === 'none') {
-                    // On remet le bouton
+                    // Remettre le bouton
                     btn.style.display = 'block';
                     btn.style.animation = "fadeInDef 0.5s forwards";
-                    // On cache la définition
-                    def.style.display = 'none';
+                    // Cacher la bulle
+                    bulle.style.display = 'none';
+                    bulle.style.animation = "none"; // Reset animation
                 }
             }
         };
