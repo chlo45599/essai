@@ -1,4 +1,4 @@
-/* --- 1. CONFIGURATION GÉNÉRALE --- */
+/* --- CONFIGURATION GÉNÉRALE --- */
 html, body {
   background-color: #ffffff;
   font-family: 'Montserrat', sans-serif;
@@ -6,101 +6,54 @@ html, body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   text-align: center;
   color: #4a4a4a;
-  cursor: url('fleur svg.svg') 16 16, auto !important;
-  overflow-x: hidden; 
+  overflow-x: hidden; /* Très important pour éviter le scroll horizontal du bandeau */
 }
 
-a, button, .card-step, .btn-github, .logo, .bandeau-header, .texte-survol, .marquee-container {
-  cursor: url('fleur svg.svg') 16 16, pointer !important;
+/* --- BANDEAU DÉFILANT CORRIGÉ --- */
+.marquee-container {
+  width: 100vw;
+  background-color: #71815a;
+  color: #ffffff;
+  overflow: hidden; /* Cache ce qui dépasse du bandeau */
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 90px;
 }
 
-/* --- 2. STRUCTURE & ESPACEMENTS --- */
+.marquee-content {
+  display: flex; /* Aligne les spans sur une seule ligne */
+  white-space: nowrap; /* Empêche le retour à la ligne vu sur ta capture */
+  animation: marquee-animation 30s linear infinite;
+}
+
+.marquee-content span {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  padding-right: 50px; /* Espace entre les phrases */
+}
+
+@keyframes marquee-animation {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Déplace la moitié de la largeur pour la boucle */
+}
+
+/* --- LE RESTE DU CSS --- */
 .section-wrapper {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Espacement fixe de 90px entre chaque grand bloc */
-.marquee-container, 
-.main-header, 
-.contexte-note, 
-.guide-anthotype {
+.main-header, .contexte-note, .guide-anthotype {
   margin-bottom: 90px;
-}
-
-/* --- 3. BANDEAU LOGO & DÉFILANT --- */
-.bandeau-header {
-  width: 100vw;
-  background-color: #71815a;
-  padding: 35px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.logo {
-  height: 75px;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s ease;
-}
-
-.logo:hover { transform: scale(1.05); }
-
-/* Bandeau Défilant */
-.marquee-container {
-  width: 100vw;
-  background-color: #71815a;
-  color: #ffffff;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 15px 0;
-}
-
-.marquee-content {
-  display: inline-block;
-  animation: marquee 25s linear infinite;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 18px;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* --- 4. TEXTES & TITRES --- */
-h1, h2, h3, h4, p { margin-top: 0; }
-
-.titre-kit, .titre-section {
-  font-family: 'Cormorant Garamond', serif;
-  color: #71815a;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.titre-kit { font-size: 52px; }
-.titre-section { font-size: 42px; }
-
-.style-poetique {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  font-style: italic;
-  color: #71815a;
-  line-height: 1.6;
-}
-
-/* --- 5. EFFET SURVOL OCRE --- */
-.contexte-note {
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
 }
 
 .texte-survol {
@@ -109,53 +62,21 @@ h1, h2, h3, h4, p { margin-top: 0; }
   font-style: italic;
   opacity: 0.7;
   transition: all 0.5s ease;
+  color: #4a4a4a;
+  margin-bottom: 0;
 }
 
 .texte-survol:hover {
-  color: #d0863c; /* Ton ocre/curcuma */
+  color: #d0863c;
   opacity: 1;
 }
 
-/* --- 6. ÉTAPES (COULEUR #efece6) --- */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 0 20px;
-}
-
-.card-step {
-  background-color: #efece6;
-  padding: 45px 25px;
-  border-top: 5px solid #71815a;
-  transition: transform 0.4s ease;
-}
-
-.card-step:hover { transform: translateY(-8px); }
-
-.step-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-  font-weight: 700;
-  color: #d0863c;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.card-step h4 {
-  font-family: 'Cormorant Garamond', serif;
-  color: #71815a;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 15px;
-}
-
-.soleil-reveal { color: #d0863c; font-weight: 700; }
-
-/* --- 7. FOOTER & BOUTON GITHUB --- */
-.credits { 
-  border-top: 1px solid #eeeeee; 
-  padding: 70px 0 100px 0;
+/* Style spécifique pour ton nom en bas (exactement comme le contexte) */
+.credits h2.texte-survol {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .btn-github {
@@ -172,7 +93,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
   display: inline-block;
 }
 
-.btn-github:hover { 
+.btn-github:hover {
   background-color: #71815a;
   color: #ffffff;
 }
