@@ -9,11 +9,11 @@ html, body {
   align-items: center; 
   text-align: center;
   color: #4a4a4a;
+  /* Correction du nom avec espace si nécessaire */
   cursor: url('fleur svg.svg') 16 16, auto !important;
   overflow-x: hidden; 
 }
 
-/* Conteneur pour aligner proprement tous les blocs de texte */
 .section-wrapper {
   width: 100%;
   max-width: 1100px;
@@ -33,7 +33,7 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   padding: 35px 0;
   display: flex;
   justify-content: center;
-  margin: 0 0 80px 0; /* Écart fixe après le bandeau */
+  margin: 0 0 80px 0;
 }
 
 .logo {
@@ -42,9 +42,9 @@ a, button, .card-step, .btn-github, .soleil-reveal, .logo, .bandeau-header {
   filter: brightness(0) invert(1);
 }
 
-/* --- ESPACEMENT HARMONISÉ ENTRE LES SECTIONS --- */
+/* --- RYTHME DE PAGE (ÉCARTS) --- */
 header, section, .credits {
-  margin-bottom: 80px; /* Écart identique partout sur la page */
+  margin-bottom: 80px;
 }
 
 /* --- TITRES --- */
@@ -58,7 +58,7 @@ header, section, .credits {
 .titre-kit { font-size: 52px; }
 .titre-section { font-size: 42px; }
 
-/* --- STYLE INTRO (Phrase Bienvenue) --- */
+/* --- STYLE INTRO --- */
 .intro-text-style {
   font-family: 'Cormorant Garamond', serif;
   color: #71815a;
@@ -95,7 +95,7 @@ header, section, .credits {
   margin: 0;
 }
 
-/* --- PROCESSUS DE CRÉATION --- */
+/* --- CARTES ÉTAPES (#efece6) --- */
 .phrase-magique {
   margin-top: 30px;
   margin-bottom: 50px;
@@ -152,12 +152,12 @@ header, section, .credits {
 
 .soleil-reveal { color: #d0863c; font-weight: 700; }
 
-/* --- FOOTER & BOUTON --- */
+/* --- FOOTER & BOUTON GITHUB (BLANC -> VERT) --- */
 .credits { 
   border-top: 1px solid #eee; 
   width: 100%; 
   padding-top: 60px;
-  margin-bottom: 100px; /* Espace en fin de page */
+  margin-bottom: 100px;
 }
 
 .credits h2 { 
@@ -171,7 +171,7 @@ header, section, .credits {
 .btn-github {
   font-family: 'Montserrat', sans-serif;
   color: #71815a;
-  background-color: #efece6;
+  background-color: #ffffff; /* Fond blanc pur */
   text-decoration: none;
   border: 1px solid #71815a;
   padding: 14px 32px;
@@ -184,8 +184,8 @@ header, section, .credits {
 }
 
 .btn-github:hover { 
-  background-color: #71815a; 
-  color: #efece6; 
+  background-color: #71815a; /* Devient vert au survol */
+  color: #ffffff; /* Le texte passe en blanc */
 }
 
 /* --- ANIMATIONS --- */
