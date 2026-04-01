@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&family=EB+Garamond:ital@1&display=swap');
+/* --- 1. IMPORT DES POLICES --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Inter:wght@400;700&family=EB+Garamond:ital@1&display=swap');
 
+/* --- 2. STYLE GÉNÉRAL --- */
 body {
   background-color: #fcf4d9;
   font-family: 'Inter', sans-serif;
@@ -10,47 +12,68 @@ body {
   text-align: center;
 }
 
+/* --- 3. LE LOGO --- */
 .logo {
-  width: 150px; /* On le limite ici pour qu'il ne soit plus géant */
+  width: 80px; 
   height: auto;
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 
+/* --- 4. TITRE (Cormorant Garamond Gras) --- */
 .titre-kit {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
   color: #d0863c;
-  font-size: 40px;
-  margin-top: 20px;
+  font-size: 48px;
+  margin: 0;
 }
 
+/* --- 5. SLOGAN (Italique) --- */
 .slogan {
   color: #d0863c;
-  font-weight: 700;
+  font-style: italic; /* Passage en italique */
   font-size: 18px;
+  margin-top: 10px;
 }
 
+/* --- 6. BLOC CONTEXTE (Carré Vert #71815a) --- */
 .contexte {
-  background-color: rgba(208, 134, 60, 0.1);
-  padding: 20px;
-  max-width: 600px;
-  border-radius: 10px;
-  margin-top: 30px;
-  font-size: 14px;
+  background-color: rgba(113, 129, 90, 0.15); /* Couleur #71815a à 15% d'opacité */
+  padding: 30px;
+  max-width: 550px;
+  margin-top: 40px;
+  border-radius: 4px; /* Un carré avec des angles très légèrement adoucis */
 }
 
+.contexte p {
+  color: #4a4a4a;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- 7. BIENVENUE & KIT --- */
 .divider {
-  width: 50px;
-  height: 2px;
-  background: #d0863c;
-  margin: 40px 0;
+  width: 40px;
+  height: 1px;
+  background-color: #d0863c;
+  margin: 40px auto;
+  opacity: 0.5;
+}
+
+.intro-text {
+  font-size: 17px;
+  color: #4a4a4a;
+  max-width: 600px;
 }
 
 .kit-box {
   border: 1px solid #d0863c;
-  padding: 30px;
+  padding: 40px 30px;
+  background-color: rgba(208, 134, 60, 0.05);
   max-width: 500px;
-  margin-bottom: 40px;
+  margin-top: 30px;
 }
 
 .highlight {
@@ -58,9 +81,20 @@ body {
   font-weight: 700;
 }
 
-h2 { font-size: 18px; margin-top: 40px; }
-a { color: #d0863c; text-decoration: none; font-weight: bold; }
+/* --- 8. FOOTER --- */
+h2 {
+  color: #4a4a4a; 
+  font-size: 16px;
+  margin-top: 80px;    
+  font-weight: 400; /* Jardins des Martels (h2) n'est plus en gras */
+}
+
+a {
+  color: #d0863c;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 .credits {
-    padding-bottom: 50px;
+  padding-bottom: 60px;
 }
