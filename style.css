@@ -1,7 +1,4 @@
-/* --- 1. IMPORT DES POLICES --- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Inter:wght@400;700&family=EB+Garamond:ital@1&display=swap');
-
-/* --- 2. STYLE GÉNÉRAL --- */
+/* --- 1. CONFIGURATION GÉNÉRALE --- */
 body {
   background-color: #fcf4d9;
   font-family: 'Inter', sans-serif;
@@ -10,9 +7,10 @@ body {
   flex-direction: column;
   align-items: center; 
   text-align: center;
+  color: #4a4a4a;
 }
 
-/* --- 3. LE LOGO --- */
+/* --- 2. HEADER & LOGO --- */
 .logo {
   width: 80px; 
   height: auto;
@@ -20,7 +18,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* --- 4. TITRE (Cormorant Garamond Gras) --- */
 .titre-kit {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
@@ -29,43 +26,41 @@ body {
   margin: 0;
 }
 
-/* --- 5. SLOGAN (Italique) --- */
 .slogan {
   color: #d0863c;
-  font-style: italic; /* Passage en italique */
+  font-style: italic;
   font-size: 18px;
   margin-top: 10px;
 }
 
-/* --- 6. BLOC CONTEXTE (Carré Vert #71815a) --- */
+/* --- 3. BLOC CONTEXTE (VERT) --- */
 .contexte {
-  background-color: rgba(113, 129, 90, 0.15); /* Couleur #71815a à 15% d'opacité */
+  background-color: rgba(113, 129, 90, 0.15); 
   padding: 30px;
   max-width: 550px;
   margin-top: 40px;
-  border-radius: 4px; /* Un carré avec des angles très légèrement adoucis */
+  border-radius: 4px;
 }
 
 .contexte p {
-  color: #4a4a4a;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   margin: 0;
 }
 
-/* --- 7. BIENVENUE & KIT --- */
 .divider {
   width: 40px;
   height: 1px;
   background-color: #d0863c;
-  margin: 40px auto;
+  margin: 50px auto;
   opacity: 0.5;
 }
 
+/* --- 4. BIENVENUE & KIT --- */
 .intro-text {
   font-size: 17px;
-  color: #4a4a4a;
   max-width: 600px;
+  margin-bottom: 30px;
 }
 
 .kit-box {
@@ -73,28 +68,105 @@ body {
   padding: 40px 30px;
   background-color: rgba(208, 134, 60, 0.05);
   max-width: 500px;
-  margin-top: 30px;
 }
 
 .highlight {
   color: #d0863c;
   font-weight: 700;
+  transition: color 0.3s;
 }
 
-/* --- 8. FOOTER --- */
-h2 {
-  color: #4a4a4a; 
+.highlight:hover {
+  color: #71815a;
+}
+
+/* --- 5. NOTICE (NUMÉROS ÉLÉGANTS) --- */
+.guide-anthotype {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.titre-section {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  color: #d0863c;
+  margin-bottom: 40px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card-step {
+  background: white;
+  padding: 40px 20px;
+  border-bottom: 4px solid #71815a;
+  transition: transform 0.3s ease;
+}
+
+.card-step:hover {
+  transform: translateY(-10px);
+}
+
+/* Style pour les numéros au lieu des emojis */
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-style: italic;
+  color: #d0863c;
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0.6;
+}
+
+.card-step h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #71815a;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-step p { font-size: 13px; line-height: 1.5; }
+
+.tip {
+  display: block;
+  margin-top: 15px;
+  font-style: italic;
+  color: #d0863c;
+  font-size: 12px;
+  border-top: 1px solid rgba(208, 134, 60, 0.1);
+  padding-top: 10px;
+}
+
+/* --- 6. FOOTER --- */
+.credits {
+  margin-top: 50px;
+  padding-bottom: 80px;
+}
+
+.credits h2 {
   font-size: 16px;
-  margin-top: 80px;    
-  font-weight: 400; /* Jardins des Martels (h2) n'est plus en gras */
+  font-weight: 400;
+  margin-bottom: 25px;
 }
 
-a {
+.btn-github {
   color: #d0863c;
   text-decoration: none;
   font-weight: bold;
+  border: 1px solid #d0863c;
+  padding: 12px 25px;
+  transition: all 0.3s;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 
-.credits {
-  padding-bottom: 60px;
+.btn-github:hover {
+  background: #d0863c;
+  color: #fcf4d9;
 }
