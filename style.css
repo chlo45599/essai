@@ -1,4 +1,3 @@
-/* --- CONFIGURATION GÉNÉRALE --- */
 body {
   background-color: #fcf4d9;
   font-family: 'Inter', sans-serif;
@@ -10,7 +9,6 @@ body {
   color: #4a4a4a;
 }
 
-/* --- HEADER --- */
 .logo {
   width: 85px; 
   height: auto;
@@ -18,13 +16,14 @@ body {
   margin-bottom: 20px;
 }
 
-.titre-kit {
+.titre-kit, .titre-section {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
   color: #d0863c;
-  font-size: 48px;
-  margin: 0;
 }
+
+.titre-kit { font-size: 48px; margin: 0; }
+.titre-section { font-size: 42px; margin-top: 20px; margin-bottom: 20px; }
 
 .slogan {
   color: #d0863c;
@@ -33,7 +32,6 @@ body {
   margin-top: 10px;
 }
 
-/* --- NOTE DE CONTEXTE --- */
 .contexte-note {
   max-width: 600px;
   margin-top: 25px;
@@ -41,11 +39,7 @@ body {
   opacity: 0.6;
 }
 
-.contexte-note p {
-  font-size: 11px;
-  font-style: italic;
-  line-height: 1.6;
-}
+.contexte-note p { font-size: 11px; font-style: italic; line-height: 1.6; }
 
 .divider {
   width: 40px;
@@ -55,11 +49,9 @@ body {
   opacity: 0.3;
 }
 
-/* --- PHRASE MAGIQUE --- */
-.phrase-magique {
-  margin: 40px auto 60px auto;
-}
+.intro-text { font-size: 17px; margin-bottom: 10px; }
 
+.phrase-magique { margin: 40px auto 60px auto; }
 .phrase-magique p {
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
@@ -69,25 +61,10 @@ body {
   color: #5a5a5a;
 }
 
-.soleil-reveal {
-  color: #d0863c;
-  font-weight: 700;
-  transition: all 0.5s ease;
-}
+.soleil-reveal { color: #d0863c; font-weight: 700; transition: 0.5s; }
+.soleil-reveal:hover { text-shadow: 0 0 15px rgba(208, 134, 60, 0.4); }
 
-/* --- SECTION PROCESSUS (TITRE STYLISÉ) --- */
-.guide-anthotype {
-  max-width: 1000px;
-  margin-bottom: 80px;
-}
-
-.titre-section {
-  font-family: 'Cormorant Garamond', serif; /* Même police que le haut */
-  font-weight: 700;
-  color: #d0863c; /* Même couleur ocre */
-  font-size: 42px; /* Taille généreuse */
-  margin-bottom: 20px;
-}
+.guide-anthotype { max-width: 1000px; margin-bottom: 80px; }
 
 .steps-grid {
   display: grid;
@@ -100,13 +77,10 @@ body {
   background-color: #ffffff;
   padding: 40px 25px;
   border-bottom: 3px solid #71815a;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-.card-step:hover { 
-  transform: translateY(-8px); 
-  box-shadow: 0 10px 20px rgba(113, 129, 90, 0.08);
-}
+.card-step:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 
 .step-num {
   font-family: 'Cormorant Garamond', serif;
@@ -121,14 +95,11 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #71815a;
   font-size: 13px;
-  margin-bottom: 15px;
   text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
-.card-step p { 
-  font-size: 13px; 
-  line-height: 1.6;
-}
+.card-step p { font-size: 13px; line-height: 1.6; }
 
 .tip {
   display: block;
@@ -140,7 +111,6 @@ body {
   padding-top: 10px;
 }
 
-/* --- FOOTER --- */
 .credits { margin-top: 60px; margin-bottom: 80px; }
 .credits h2 { font-size: 14px; font-weight: 400; margin-bottom: 25px; }
 
@@ -153,10 +123,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
-  transition: all 0.3s;
+  transition: 0.3s;
 }
 
-.btn-github:hover {
-  background: #d0863c;
-  color: #fcf4d9;
-}
+.btn-github:hover { background: #d0863c; color: #fcf4d9; }
