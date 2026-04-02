@@ -20,6 +20,8 @@
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
         </div>
     </div>
 
@@ -55,7 +57,7 @@
                 <div class="card-step">
                     <span class="step-num">01</span>
                     <h4>Préparer votre feuille</h4>
-                    <p>Posez votre feuille pré‑imprégnée de curcuma sur une surface plane. Choisissez quelques éléments naturels à déposer dessus.</p>
+                    <p>Posez votre feuille pré‑imprégnée de curcuma sur une surface plane. Choisissez quelques éléments naturels à déposer dessus pour créer votre composition.</p>
                 </div>
 
                 <div class="card-step">
@@ -67,7 +69,7 @@
                 <div class="card-step">
                     <span class="step-num">03</span>
                     <h4>Découvrir votre empreinte</h4>
-                    <p>Retirez doucement les éléments. Rincez avec de l’eau et du bicarbonate de soude pour fixer le motif.</p>
+                    <p>Retirez doucement les éléments. Rincez légèrement avec un mélange d’eau et de bicarbonate de soude pour fixer le motif.</p>
                 </div>
 
                 <div class="card-step">
@@ -90,7 +92,9 @@
         const bulle = document.getElementById('def-bubble');
 
         function revealDef() {
+            // Animation d'éjection avec bascule
             btn.style.animation = "intenseSwipeOut 0.5s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045)";
+            
             setTimeout(() => {
                 btn.style.display = 'none';
                 bulle.style.display = 'flex';
@@ -98,6 +102,7 @@
             }, 500);
         }
 
+        // Reset au scroll vers le haut
         window.onscroll = function() {
             if (window.scrollY < 80 && btn.style.display === 'none') {
                 btn.style.display = 'block';
