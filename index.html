@@ -3,137 +3,58 @@
 <head>
     <meta charset="utf-8">
     <title>L'éveil du Printemps - Kit Anthotype</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="bandeau-header">
-        <img src="jdl.png" alt="Logo Jardins des Martels" class="logo">
+        <img src="jdl.png" alt="Logo" class="logo">
     </div>
 
     <div class="marquee-container">
         <div class="marquee-content">
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;&nbsp; </span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;&nbsp; </span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;&nbsp; </span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;&nbsp; </span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;&nbsp; </span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;&nbsp; </span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;&nbsp; </span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;&nbsp; </span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
         </div>
     </div>
 
     <div class="section-wrapper">
-        
-        <header class="main-header" id="trigger-reset">
+        <header class="main-header">
             <h1 class="titre-kit">Le Kit de l’Éveil du Printemps</h1>
-            <p class="slogan style-poetique">Regarde le printemps s’éveiller sur ta feuille !</p>
+            <p class="slogan">Regarde le printemps s’éveiller sur ta feuille !</p>
         </header>
 
         <section class="contexte-note">
             <div id="container-anthotype">
-                
                 <button id="btn-reveal" onclick="revealDef()">L'ANTHOTYPE C'EST QUOI ?</button>
-                
                 <div id="def-bubble" class="bulle-definition" style="display:none;">
-                    <span class="guillemet guillemet-gauche">“</span>
-                    <p class="texte-definition">
-                        C'est un processus photographique qui permet de créer des images à partir de la réaction entre les pigments contenus dans les végétaux et la lumière du soleil.
-                    </p>
-                    <span class="guillemet guillemet-droite">”</span>
+                    <span class="guillemet">“</span>
+                    <p class="texte-definition">C'est un processus photographique qui permet de créer des images à partir de la réaction entre les pigments contenus dans les végétaux et la lumière du soleil.</p>
+                    <span class="guillemet">”</span>
                 </div>
             </div>
-            
-            <p class="texte-survol" style="margin-top: 50px;">
-                Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels (1er avril 2026), basée sur la technique de l’anthotype. J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé. Cette page est accessible via un QR code présent dans ce kit et accompagne cette expérience.
-            </p>
+            <p class="texte-survol">Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels (1er avril 2026)...</p>
         </section>
-
-        <section class="guide-anthotype">
-            <h2 class="titre-section">Processus de création</h2>
-            
-            <div class="phrase-magique">
-                <p class="style-poetique">
-                    Semez votre empreinte sur cette feuille,<br> 
-                    laissez le <span class="soleil-reveal">soleil</span> la révéler<br> 
-                    et regardez le printemps s'éveiller sous vos yeux.
-                </p>
-            </div>
-
-            <div class="steps-grid">
-                <div class="card-step">
-                    <span class="step-num">01</span>
-                    <h4>Préparer votre feuille</h4>
-                    <p>Posez votre feuille pré‑imprégnée de curcuma sur une surface plane. Choisissez quelques éléments naturels à déposer dessus pour créer votre composition.</p>
-                    <span class="tip">Chaque arrangement est unique.</span>
-                </div>
-
-                <div class="card-step">
-                    <span class="step-num">02</span>
-                    <h4>Laisser le soleil révéler</h4>
-                    <p>Exposez votre feuille au soleil pendant quelques heures. Observez les formes et nuances se révéler peu à peu.</p>
-                </div>
-
-                <div class="card-step">
-                    <span class="step-num">03</span>
-                    <h4>Découvrir votre empreinte</h4>
-                    <p>Retirez doucement les éléments. Rincez légèrement avec un mélange d’eau et de bicarbonate de soude pour fixer le motif.</p>
-                </div>
-
-                <div class="card-step">
-                    <span class="step-num">04</span>
-                    <h4>Conserver ou partager</h4>
-                    <p>Votre création devient un joli souvenir à garder ou à offrir ! Le jardin reste avec vous.</p>
-                </div>
-            </div>
-        </section>
-
-        <footer class="credits">
-            <h2 class="texte-survol">Par Chloé Matukiewicz</h2>
-            <a href="https://chlo45599.github.io/essai/index.html" class="btn-github">Ma page GitHub</a>
-        </footer>
-
     </div>
 
     <script>
-        const btn = document.getElementById('btn-reveal');
-        const bulle = document.getElementById('def-bubble');
-
         function revealDef() {
-            // Animation de sortie rapide du bouton
-            btn.style.animation = "swipeOut 0.4s forwards cubic-bezier(0.4, 0, 0.2, 1)";
-            
-            // Apparition de la bulle
+            const btn = document.getElementById('btn-reveal');
+            const bulle = document.getElementById('def-bubble');
+            btn.style.animation = "swipeOut 0.4s forwards";
             setTimeout(() => {
                 btn.style.display = 'none';
-                bulle.style.display = 'flex'; // On utilise flex pour aligner les guillemets
+                bulle.style.display = 'flex';
                 bulle.style.animation = "fadeInDef 0.6s forwards";
             }, 400);
         }
-
-        // Reset au Scroll (remonter en haut)
-        window.onscroll = function() {
-            if (window.scrollY < 80) { // Un peu plus sensible
-                if (btn.style.display === 'none') {
-                    // Remettre le bouton
-                    btn.style.display = 'block';
-                    btn.style.animation = "fadeInDef 0.5s forwards";
-                    // Cacher la bulle
-                    bulle.style.display = 'none';
-                    bulle.style.animation = "none"; // Reset animation
-                }
-            }
-        };
     </script>
-
 </body>
 </html>
