@@ -8,12 +8,27 @@ body.large {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23d0863c"/></svg>') 10 10, pointer;
 }
 
-/* --- BANDES VERTES --- */
+/* --- BANDES VERTES & MARQUEE --- */
 .bandeau-header { background: #71815a; padding: 20px; }
 .logo { height: 60px; filter: brightness(0) invert(1); max-width: 90%; }
-.marquee-container { background: #71815a; color: white; padding: 15px 0; overflow: hidden; width: 100vw; }
-.marquee-content { display: inline-block; animation: scroll-infinite 30s linear infinite; font-family: 'Averia Serif Libre', serif; font-size: 18px; }
-@keyframes scroll-infinite { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.marquee-container { 
+    background: #71815a; color: white; padding: 15px 0; 
+    overflow: hidden; white-space: nowrap; width: 100vw;
+    display: flex;
+}
+.marquee-content { 
+    display: inline-flex; 
+    animation: scroll-infinite 30s linear infinite; 
+    font-family: 'Averia Serif Libre', serif; font-size: 18px;
+    align-items: center;
+}
+.marquee-content span { flex-shrink: 0; padding-right: 10px; }
+
+@keyframes scroll-infinite { 
+    from { transform: translateX(0); } 
+    to { transform: translateX(-50%); } 
+}
 
 /* --- CONTENU --- */
 .section-wrapper { max-width: 900px; margin: 50px auto; padding: 0 20px; }
@@ -24,34 +39,25 @@ body.large {
 /* --- BOUTON & BULLE --- */
 #container-anthotype { min-height: 100px; display: flex; justify-content: center; align-items: center; margin-bottom: 30px; position: relative; overflow: hidden; }
 #btn-reveal { background: #d0863c; color: white; border: none; padding: 15px 35px; border-radius: 40px; font-weight: bold; font-family: 'Montserrat'; cursor: pointer; z-index: 2; transition: transform 0.3s ease; }
-#btn-reveal:hover { transform: scale(1.05); } /* Petit zoom sur le bouton aussi */
-
 .bulle-definition { background: #d0863c; color: white; border-radius: 30px; padding: 15px 25px; display: inline-flex; font-style: italic; max-width: 90%; margin: 0 auto; font-size: 14px; }
 
 /* --- ÉTAPES AVEC EFFET LÉVITATION --- */
 .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-top: 60px; }
-
 .card-step { 
-    background: #efece6; 
-    padding: 30px; 
-    border-radius: 30px; 
-    border-top: 5px solid #71815a; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transition fluide avec un léger rebond */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Ombre légère de base */
+    background: #efece6; padding: 30px; border-radius: 30px; border-top: 5px solid #71815a; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
 }
-
-/* L'effet au survol */
 .card-step:hover { 
-    transform: translateY(-12px); /* La carte se soulève de 12px */
-    background: #f7f5f0; /* Elle s'éclaire très légèrement */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08); /* L'ombre devient plus profonde */
+    transform: translateY(-12px); 
+    background: #f7f5f0; 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08); 
 }
-
 .step-num { font-family: 'Averia Serif Libre', serif; font-size: 28px; color: #d0863c; font-weight: bold; }
 .card-step h4 { font-family: 'Montserrat'; color: #71815a; text-transform: uppercase; margin: 10px 0; font-size: 14px; }
 .card-step p { font-size: 13px; line-height: 1.5; }
 
-/* --- FOOTER & ANIMATIONS --- */
+/* --- ANIMATIONS & FOOTER --- */
 @keyframes swipeOut { 0% { transform: translateX(0) rotate(0); opacity: 1; } 100% { transform: translateX(1200px) rotate(20deg); opacity: 0; } }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
