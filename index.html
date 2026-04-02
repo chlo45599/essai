@@ -3,17 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>L'éveil du Printemps - Kit Anthotype</title>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="main-body">
 
     <div class="bandeau-header">
         <img src="jdl.png" alt="Logo Jardins des Martels" class="logo">
@@ -25,106 +20,84 @@
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
         </div>
     </div>
 
     <div class="section-wrapper">
-        
         <header class="main-header">
             <h1 class="titre-kit">Le Kit de l’Éveil du Printemps</h1>
-            <p class="slogan style-poetique">Regarde le printemps s’éveiller sur ta feuille !</p>
+            <p class="style-poetique">Regarde le printemps s’éveiller sur ta feuille !</p>
         </header>
 
         <section class="contexte-note">
             <div id="container-anthotype">
-                
-                <button id="btn-reveal" onclick="revealDef()">L'ANTHOTYPE C'EST QUOI ?</button>
+                <button id="btn-reveal" 
+                        onclick="revealDef()" 
+                        onmouseenter="growCursor()" 
+                        onmouseleave="shrinkCursor()">
+                    L'ANTHOTYPE C'EST QUOI ?
+                </button>
                 
                 <div id="def-bubble" class="bulle-definition" style="display:none;">
-                    <span class="guillemet guillemet-gauche">“</span>
-                    <p class="texte-definition">
-                        C'est un processus photographique qui permet de créer des images à partir de la réaction entre les pigments contenus dans les végétaux et la lumière du soleil.
-                    </p>
-                    <span class="guillemet guillemet-droite">”</span>
+                    <span class="guillemet">“</span>
+                    <p class="texte-definition">C'est un processus photographique qui permet de créer des images à partir de la réaction entre les pigments végétaux et la lumière.</p>
+                    <span class="guillemet">”</span>
                 </div>
             </div>
-            
-            <p class="texte-survol" style="margin-top: 50px;">
-                Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels (1er avril 2026), basée sur la technique de l’anthotype. J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé. Cette page est accessible via un QR code présent dans ce kit et accompagne cette expérience.
-            </p>
+            <p class="texte-survol">Dans le cadre de mon projet...</p>
         </section>
 
         <section class="guide-anthotype">
             <h2 class="titre-section">Processus de création</h2>
-            
             <div class="steps-grid">
-                <div class="card-step">
+                <div class="card-step" onmouseenter="growCursor()" onmouseleave="shrinkCursor()">
                     <span class="step-num">01</span>
                     <h4>Préparer votre feuille</h4>
-                    <p>Posez votre feuille pré‑imprégnée de curcuma sur une surface plane. Choisissez quelques éléments naturels à déposer dessus pour créer votre composition.</p>
+                    <p>Posez votre feuille pré‑imprégnée sur une surface plane...</p>
                 </div>
-
-                <div class="card-step">
+                <div class="card-step" onmouseenter="growCursor()" onmouseleave="shrinkCursor()">
                     <span class="step-num">02</span>
                     <h4>Laisser le soleil révéler</h4>
-                    <p>Exposez votre feuille au soleil pendant quelques heures. Observez les formes et nuances se révéler peu à peu.</p>
+                    <p>Exposez votre feuille au soleil pendant quelques heures...</p>
                 </div>
-
-                <div class="card-step">
-                    <span class="step-num">03</span>
-                    <h4>Découvrir votre empreinte</h4>
-                    <p>Retirez doucement les éléments. Rincez légèrement avec un mélange d’eau et de bicarbonate de soude pour fixer le motif.</p>
                 </div>
-
-                <div class="card-step">
-                    <span class="step-num">04</span>
-                    <h4>Conserver ou partager</h4>
-                    <p>Votre création devient un joli souvenir à garder ou à offrir ! Le jardin reste avec vous.</p>
-                </div>
-            </div>
         </section>
 
         <footer class="credits">
-            <h2 class="texte-survol">Par Chloé Matukiewicz</h2>
-            <a href="https://chlo45599.github.io/essai/index.html" class="btn-github">Ma page GitHub</a>
+            <a href="#" class="btn-github" onmouseenter="growCursor()" onmouseleave="shrinkCursor()">Ma page GitHub</a>
         </footer>
-
     </div>
 
     <script>
+        const body = document.getElementById('main-body');
         const btn = document.getElementById('btn-reveal');
         const bulle = document.getElementById('def-bubble');
 
+        // Fonctions pour changer la taille du curseur
+        function growCursor() {
+            body.classList.add('cursor-large');
+        }
+        function shrinkCursor() {
+            body.classList.remove('cursor-large');
+        }
+
         function revealDef() {
-            // Animation d'éjection intense avec bascule (0.5s)
             btn.style.animation = "intenseSwipeOut 0.5s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045)";
-            
-            // Apparition de la bulle
             setTimeout(() => {
                 btn.style.display = 'none';
-                bulle.style.display = 'flex'; // On utilise flex pour aligner les guillemets
+                bulle.style.display = 'flex';
                 bulle.style.animation = "fadeInDef 0.6s forwards";
             }, 500);
         }
 
-        // Reset au Scroll (remonter en haut pour faire revenir le bouton)
         window.onscroll = function() {
-            if (window.scrollY < 80) { // Si on est presque en haut
-                if (btn.style.display === 'none') {
-                    // Remettre le bouton
-                    btn.style.display = 'block';
-                    btn.style.animation = "fadeInDef 0.5s forwards";
-                    // Cacher la bulle
-                    bulle.style.display = 'none';
-                    bulle.style.animation = "none"; // Reset animation
-                }
+            if (window.scrollY < 80 && btn.style.display === 'none') {
+                btn.style.display = 'block';
+                bulle.style.display = 'none';
             }
         };
     </script>
-
 </body>
 </html>
