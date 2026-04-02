@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>L'éveil du Printemps - Kit Anthotype</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="main-body">
@@ -26,6 +28,7 @@
     </div>
 
     <div class="section-wrapper">
+        
         <header class="main-header">
             <h1 class="titre-kit">Le Kit de l’Éveil du Printemps</h1>
             <p class="style-poetique">Regarde le printemps s’éveiller sur ta feuille !</p>
@@ -42,32 +45,53 @@
                 
                 <div id="def-bubble" class="bulle-definition" style="display:none;">
                     <span class="guillemet">“</span>
-                    <p class="texte-definition">C'est un processus photographique qui permet de créer des images à partir de la réaction entre les pigments végétaux et la lumière.</p>
+                    <p class="texte-definition">
+                        C'est un processus photographique qui permet de créer des images à partir de la réaction entre les pigments contenus dans les végétaux et la lumière du soleil.
+                    </p>
                     <span class="guillemet">”</span>
                 </div>
             </div>
-            <p class="texte-survol">Dans le cadre de mon projet...</p>
+            
+            <p class="texte-survol" style="margin-top: 50px;">
+                Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels (1er avril 2026), basée sur la technique de l’anthotype. J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé.
+            </p>
         </section>
 
         <section class="guide-anthotype">
             <h2 class="titre-section">Processus de création</h2>
+            
             <div class="steps-grid">
                 <div class="card-step" onmouseenter="growCursor()" onmouseleave="shrinkCursor()">
                     <span class="step-num">01</span>
                     <h4>Préparer votre feuille</h4>
-                    <p>Posez votre feuille pré‑imprégnée sur une surface plane...</p>
+                    <p>Posez votre feuille pré‑imprégnée de curcuma sur une surface plane. Choisissez quelques éléments naturels à déposer dessus.</p>
                 </div>
+
                 <div class="card-step" onmouseenter="growCursor()" onmouseleave="shrinkCursor()">
                     <span class="step-num">02</span>
                     <h4>Laisser le soleil révéler</h4>
-                    <p>Exposez votre feuille au soleil pendant quelques heures...</p>
+                    <p>Exposez votre feuille au soleil pendant quelques heures. Observez les formes et nuances se révéler peu à peu.</p>
                 </div>
+
+                <div class="card-step" onmouseenter="growCursor()" onmouseleave="shrinkCursor()">
+                    <span class="step-num">03</span>
+                    <h4>Découvrir votre empreinte</h4>
+                    <p>Retirez doucement les éléments. Rincez légèrement avec un mélange d’eau et de bicarbonate de soude.</p>
                 </div>
+
+                <div class="card-step" onmouseenter="growCursor()" onmouseleave="shrinkCursor()">
+                    <span class="step-num">04</span>
+                    <h4>Conserver ou partager</h4>
+                    <p>Votre création devient un joli souvenir à garder ou à offrir ! Le jardin reste avec vous.</p>
+                </div>
+            </div>
         </section>
 
         <footer class="credits">
+            <h2 class="texte-survol">Par Chloé Matukiewicz</h2>
             <a href="#" class="btn-github" onmouseenter="growCursor()" onmouseleave="shrinkCursor()">Ma page GitHub</a>
         </footer>
+
     </div>
 
     <script>
@@ -75,13 +99,8 @@
         const btn = document.getElementById('btn-reveal');
         const bulle = document.getElementById('def-bubble');
 
-        // Fonctions pour changer la taille du curseur
-        function growCursor() {
-            body.classList.add('cursor-large');
-        }
-        function shrinkCursor() {
-            body.classList.remove('cursor-large');
-        }
+        function growCursor() { body.classList.add('cursor-large'); }
+        function shrinkCursor() { body.classList.remove('cursor-large'); }
 
         function revealDef() {
             btn.style.animation = "intenseSwipeOut 0.5s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045)";
@@ -95,9 +114,11 @@
         window.onscroll = function() {
             if (window.scrollY < 80 && btn.style.display === 'none') {
                 btn.style.display = 'block';
+                btn.style.animation = "fadeInDef 0.5s forwards";
                 bulle.style.display = 'none';
             }
         };
     </script>
+
 </body>
 </html>
