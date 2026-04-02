@@ -11,12 +11,23 @@ body.large {
 /* --- BANDES VERTES --- */
 .bandeau-header { background: #71815a; padding: 20px; }
 .logo { height: 60px; filter: brightness(0) invert(1); max-width: 90%; }
-.marquee-container { background: #71815a; color: white; padding: 12px 0; overflow: hidden; }
+
+/* BANDEAU DÉFILANT INFINI */
+.marquee-container { 
+    background: #71815a; color: white; padding: 15px 0; 
+    overflow: hidden; white-space: nowrap; width: 100vw;
+}
 .marquee-content { 
-    display: inline-block; white-space: nowrap; animation: scroll 25s linear infinite; 
+    display: inline-block; 
+    animation: scroll-infinite 30s linear infinite; 
     font-family: 'Averia Serif Libre', serif; font-size: 18px;
 }
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-content span { display: inline-block; padding-right: 0px; }
+
+@keyframes scroll-infinite { 
+    from { transform: translateX(0); } 
+    to { transform: translateX(-50%); } 
+}
 
 /* --- CONTENU --- */
 .section-wrapper { max-width: 900px; margin: 50px auto; padding: 0 20px; }
@@ -24,23 +35,15 @@ body.large {
 .style-poetique { font-family: 'Averia Serif Libre', serif; font-style: italic; color: #71815a; font-size: clamp(18px, 5vw, 22px); margin-bottom: 40px; }
 .description-projet { margin: 40px auto; font-size: 14px; line-height: 1.6; color: #666; font-style: italic; max-width: 700px; }
 
-/* --- BOUTON & BULLE (LE COEUR DU FIX) --- */
+/* --- BOUTON & BULLE --- */
 #container-anthotype { 
-    min-height: 100px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden; /* Pour que le bouton disparaisse proprement à droite */
+    min-height: 100px; display: flex; justify-content: center; align-items: center; 
+    margin-bottom: 30px; position: relative; overflow: hidden;
 }
-
 #btn-reveal { 
     background: #d0863c; color: white; border: none; padding: 15px 35px; 
-    border-radius: 40px; font-weight: bold; font-family: 'Montserrat'; 
-    cursor: pointer; position: relative; z-index: 2;
+    border-radius: 40px; font-weight: bold; font-family: 'Montserrat'; cursor: pointer; z-index: 2;
 }
-
 .bulle-definition { 
     background: #d0863c; color: white; border-radius: 30px; padding: 15px 25px;
     display: inline-flex; font-style: italic; max-width: 90%; margin: 0 auto; font-size: 14px;
@@ -49,9 +52,8 @@ body.large {
 /* --- ANIMATIONS --- */
 @keyframes swipeOut {
     0% { transform: translateX(0) rotate(0); opacity: 1; }
-    100% { transform: translateX(1000px) rotate(20deg); opacity: 0; }
+    100% { transform: translateX(1200px) rotate(20deg); opacity: 0; }
 }
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
