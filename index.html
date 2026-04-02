@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>L'éveil du Printemps - Kit Anthotype</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,8 +16,6 @@
 
     <div class="marquee-container">
         <div class="marquee-content">
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
@@ -92,9 +92,7 @@
         const bulle = document.getElementById('def-bubble');
 
         function revealDef() {
-            // Animation d'éjection avec bascule
             btn.style.animation = "intenseSwipeOut 0.5s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045)";
-            
             setTimeout(() => {
                 btn.style.display = 'none';
                 bulle.style.display = 'flex';
@@ -102,7 +100,6 @@
             }, 500);
         }
 
-        // Reset au scroll vers le haut
         window.onscroll = function() {
             if (window.scrollY < 80 && btn.style.display === 'none') {
                 btn.style.display = 'block';
