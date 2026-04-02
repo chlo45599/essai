@@ -1,17 +1,36 @@
-/* --- CONFIGURATION GÉNÉRALE --- */
+/* --- 1. CONFIGURATION GÉNÉRALE & NOUVEAU CURSEUR --- */
 html, body {
   background-color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  margin: 0; padding: 0;
-  display: flex; flex-direction: column; align-items: center; 
-  text-align: center; color: #4a4a4a;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  color: #4a4a4a;
+  overflow-x: hidden; 
+
+  /* LE CURSEUR POINT (GRAINE) OCRE - SVG encodé directement */
+  /* Un point de 8px de diamètre à Bordeaux (#d0863c) */
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="%23d0863c"/></svg>') 5 5, auto !important;
 }
 
-/* --- BANDEAUX --- */
-.bandeau-header { width: 100vw; background-color: #71815a; padding: 30px 0; }
-.logo { height: 70px; filter: brightness(0) invert(1); }
+/* On force le même curseur sur TOUS les éléments cliquables */
+a, button, .card-step, .btn-github, .logo, .bandeau-header, .texte-survol, .marquee-container, .bulle-definition {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="%23d0863c"/></svg>') 5 5, pointer !important;
+}
 
+/* --- 2. STRUCTURE & ESPACEMENTS --- */
+.section-wrapper { width: 100%; max-width: 950px; margin: 0 auto; }
+.marquee-container, .main-header, .contexte-note, .guide-anthotype { margin-bottom: 90px; }
+
+/* --- 3. BANDEAUX & LOGO --- */
+.bandeau-header { width: 100vw; background-color: #71815a; padding: 35px 0; display: flex; justify-content: center; }
+.logo { height: 75px; filter: brightness(0) invert(1); transition: transform 0.3s ease; }
+.logo:hover { transform: scale(1.05); }
+
+/* --- BANDEAU DÉFILANT (SUR UNE LIGNE) --- */
 .marquee-container {
     width: 100vw;
     background-color: #71815a;
@@ -19,108 +38,86 @@ html, body {
     overflow: hidden;
     white-space: nowrap;
     display: flex;
+    align-items: center;
     padding: 15px 0;
+    margin-bottom: 90px;
+    border-top: 1px solid rgba(255,255,255,0.2);
 }
 
 .marquee-content { display: flex; animation: scroll-loop 30s linear infinite; }
 .marquee-content span { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 18px; padding-right: 50px; }
-
 @keyframes scroll-loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* --- TITRES PRINCIPAUX --- */
-.section-wrapper { width: 100%; max-width: 950px; margin: 90px auto; }
-.titre-kit { font-family: 'Cormorant Garamond', serif; color: #71815a; font-size: 52px; margin-bottom: 10px; }
-.titre-section { font-family: 'Cormorant Garamond', serif; color: #71815a; font-size: 42px; margin-bottom: 40px; }
+/* --- 4. TITRES & POLICES --- */
+h1, h2, h3, h4, p { margin-top: 0; }
+.titre-kit { font-family: 'Cormorant Garamond', serif; color: #71815a; font-weight: 700; font-size: 52px; margin-bottom: 10px; }
+.titre-section { font-family: 'Cormorant Garamond', serif; color: #71815a; font-weight: 700; font-size: 42px; margin-bottom: 40px; }
 .style-poetique { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: #71815a; margin-bottom: 60px; }
 
-/* --- BOUTON ANTHOTYPE (Montserrat Gras) --- */
-#container-anthotype {
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
+/* --- 5. BOUTON OCRE ÉJECTABLE & BULLE FINALE --- */
+#container-anthotype { min-height: 120px; display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative; width: 100%; }
 
 #btn-reveal {
-    background-color: #d0863c;
-    color: white;
-    border: none;
-    padding: 15px 45px;
-    border-radius: 40px;
-    /* Mise à jour Montserrat Gras */
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700; 
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    z-index: 2;
+    background-color: #d0863c; color: #ffffff; border: none;
+    padding: 15px 45px; border-radius: 40px;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px;
+    letter-spacing: 1.5px; z-index: 2; position: absolute; transition: all 0.3s ease;
 }
+#btn-reveal:hover { transform: scale(1.05); background-color: #bc7632; box-shadow: 0 8px 20px rgba(208, 134, 60, 0.3); }
 
+/* La Bulle de Définition Ocre AFFINÉE ET FINE */
 .bulle-definition {
-    background-color: #d0863c;
-    border-radius: 35px;
-    padding: 12px 30px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    max-width: 650px;
+    background-color: #d0863c; border-radius: 35px;
+    padding: 12px 30px; display: flex; align-items: center; gap: 12px;
+    max-width: 650px; box-shadow: 0 6px 15px rgba(208, 134, 60, 0.15);
+    position: relative; z-index: 1;
 }
 
-.texte-definition { color: white; font-size: 13px; margin: 0; font-weight: 500; font-style: italic; }
-.guillemet { color: rgba(255,255,255,0.4); font-size: 40px; font-family: serif; line-height: 1; }
-
-/* --- CARTES ÉTAPES (Titres Montserrat Gras 71815a) --- */
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    padding: 40px 20px;
+.guillemet { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: rgba(255, 255, 255, 0.4); line-height: 1; }
+.texte-definition {
+    font-family: 'Montserrat', sans-serif; font-size: 13px; line-height: 1.7;
+    color: #ffffff; font-weight: 500; font-style: italic;
+    margin: 0; flex: 1; letter-spacing: 0.5px;
 }
 
-.card-step {
-    background-color: #efece6;
-    padding: 40px 25px;
-    border-radius: 30px;
-    border-top: 6px solid #71815a;
-    transition: transform 0.3s ease;
-}
-
-.card-step:hover { transform: translateY(-10px); }
-
-.step-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: #d0863c; display: block; margin-bottom: 10px; }
-
-/* Mise à jour Montserrat Gras + Couleur 71815a */
-.card-step h4 { 
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 700; 
-    color: #71815a; 
-    text-transform: uppercase; 
-    margin-bottom: 15px; 
-    font-size: 15px; 
-    letter-spacing: 0.5px;
-}
-
-.card-step p { font-size: 13px; line-height: 1.6; color: #4a4a4a; font-family: 'Montserrat', sans-serif; }
-
-/* --- ANIMATIONS --- */
+/* Animations Bouton & Définition */
 @keyframes intenseSwipeOut {
     0% { transform: translateX(0) rotate(0); opacity: 1; }
     100% { transform: translateX(1200px) rotate(45deg) scale(0.7); opacity: 0; }
 }
+@keyframes fadeInDef { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-@keyframes fadeInDef {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Style du texte contexte (Survol ocre) */
+.texte-survol { font-size: 13.5px; line-height: 1.8; font-style: italic; opacity: 0.7; color: #4a4a4a; transition: all 0.5s ease; }
+.texte-survol:hover { color: #d0863c; opacity: 1; }
+
+/* --- 6. ÉTAPES --- */
+.steps-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px; padding: 40px 20px;
 }
+.card-step {
+    background-color: #efece6; padding: 40px 25px;
+    border-radius: 30px; border-top: 6px solid #71815a;
+    transition: transform 0.3s ease;
+}
+.card-step:hover { transform: translateY(-10px); }
 
-.texte-survol { font-size: 13.5px; font-style: italic; opacity: 0.7; line-height: 1.8; }
+.step-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: #d0863c; display: block; margin-bottom: 10px; }
+.card-step h4 {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; color: #71815a;
+    text-transform: uppercase; margin-bottom: 15px; font-size: 15px; letter-spacing: 0.5px;
+}
+.card-step p { font-size: 13px; line-height: 1.6; color: #4a4a4a; font-family: 'Montserrat', sans-serif; }
 
-/* --- FOOTER --- */
+/* --- 7. FOOTER --- */
 .credits { padding: 80px 0; border-top: 1px solid #eee; margin-top: 60px; }
+.credits h2.texte-survol { font-family: 'Montserrat', sans-serif; font-weight: 400; margin-bottom: 30px; }
+
 .btn-github {
     text-decoration: none; color: #71815a; border: 1px solid #71815a;
     padding: 12px 30px; border-radius: 30px;
     font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    transition: all 0.3s ease; display: inline-block;
 }
+.btn-github:hover { background: #71815a; color: white; }
