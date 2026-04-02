@@ -16,6 +16,7 @@
     <div class="marquee-container">
         <div class="marquee-content">
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
         </div>
     </div>
 
@@ -77,10 +78,7 @@
         function shrink() { body.classList.remove('large'); }
 
         function revealDef() {
-            // On lance l'animation d'éjection
             btn.style.animation = "swipeOut 0.6s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045)";
-            
-            // On attend la fin de l'animation pour afficher la bulle
             setTimeout(() => {
                 btn.style.display = 'none';
                 bulle.style.display = 'flex';
@@ -91,7 +89,7 @@
         window.onscroll = () => {
             if (window.scrollY < 50 && btn.style.display === 'none') {
                 btn.style.display = 'inline-block';
-                btn.style.animation = "fadeIn 0.5s forwards"; // Retour en douceur
+                btn.style.animation = "fadeIn 0.5s forwards";
                 bulle.style.display = 'none';
             }
         };
