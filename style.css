@@ -8,51 +8,32 @@ html, body {
   overflow-x: hidden;
 }
 
-/* --- BANDEAUX (DROITS) --- */
-.bandeau-header { 
-    width: 100vw; 
-    background-color: #71815a; 
-    padding: 30px 0; 
-}
+/* --- BANDEAUX --- */
+.bandeau-header { width: 100vw; background-color: #71815a; padding: 30px 0; }
 .logo { height: 70px; filter: brightness(0) invert(1); }
 
 .marquee-container {
-    width: 100vw; /* Bord à bord comme demandé */
+    width: 100vw;
     background-color: #71815a;
     color: #ffffff;
     overflow: hidden;
     white-space: nowrap;
     display: flex;
-    align-items: center;
     padding: 15px 0;
-    border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-.marquee-content {
-    display: flex; 
-    animation: scroll-loop 30s linear infinite;
-}
+.marquee-content { display: flex; animation: scroll-loop 30s linear infinite; }
+.marquee-content span { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 18px; padding-right: 50px; }
 
-.marquee-content span {
-    display: inline-block;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: 2px;
-    padding-right: 50px;
-}
+@keyframes scroll-loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-@keyframes scroll-loop {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* --- STRUCTURE --- */
+/* --- TITRES PRINCIPAUX --- */
 .section-wrapper { width: 100%; max-width: 950px; margin: 90px auto; }
 .titre-kit { font-family: 'Cormorant Garamond', serif; color: #71815a; font-size: 52px; margin-bottom: 10px; }
+.titre-section { font-family: 'Cormorant Garamond', serif; color: #71815a; font-size: 42px; margin-bottom: 40px; }
 .style-poetique { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: #71815a; margin-bottom: 60px; }
 
-/* --- BOUTON & BULLE (ARRONDIS) --- */
+/* --- BOUTON ANTHOTYPE (Montserrat Gras) --- */
 #container-anthotype {
     min-height: 100px;
     display: flex;
@@ -67,29 +48,30 @@ html, body {
     color: white;
     border: none;
     padding: 15px 45px;
-    border-radius: 40px; /* Bouton bien arrondi */
-    font-weight: 700;
+    border-radius: 40px;
+    /* Mise à jour Montserrat Gras */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; 
     font-size: 13px;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px;
     cursor: pointer;
     z-index: 2;
 }
 
 .bulle-definition {
     background-color: #d0863c;
-    border-radius: 35px; /* Bulle bien arrondie */
+    border-radius: 35px;
     padding: 12px 30px;
     display: flex;
     align-items: center;
     gap: 12px;
     max-width: 650px;
-    z-index: 1;
 }
 
 .texte-definition { color: white; font-size: 13px; margin: 0; font-weight: 500; font-style: italic; }
 .guillemet { color: rgba(255,255,255,0.4); font-size: 40px; font-family: serif; line-height: 1; }
 
-/* --- CARTES ÉTAPES (ARRONDIES) --- */
+/* --- CARTES ÉTAPES (Titres Montserrat Gras 71815a) --- */
 .steps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -100,7 +82,7 @@ html, body {
 .card-step {
     background-color: #efece6;
     padding: 40px 25px;
-    border-radius: 30px; /* Coins des cartes très arrondis */
+    border-radius: 30px;
     border-top: 6px solid #71815a;
     transition: transform 0.3s ease;
 }
@@ -108,8 +90,19 @@ html, body {
 .card-step:hover { transform: translateY(-10px); }
 
 .step-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: #d0863c; display: block; margin-bottom: 10px; }
-.card-step h4 { font-family: 'Cormorant Garamond', serif; color: #71815a; text-transform: uppercase; margin-bottom: 15px; font-size: 16px; }
-.card-step p { font-size: 13px; line-height: 1.6; color: #4a4a4a; }
+
+/* Mise à jour Montserrat Gras + Couleur 71815a */
+.card-step h4 { 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700; 
+    color: #71815a; 
+    text-transform: uppercase; 
+    margin-bottom: 15px; 
+    font-size: 15px; 
+    letter-spacing: 0.5px;
+}
+
+.card-step p { font-size: 13px; line-height: 1.6; color: #4a4a4a; font-family: 'Montserrat', sans-serif; }
 
 /* --- ANIMATIONS --- */
 @keyframes intenseSwipeOut {
@@ -128,6 +121,6 @@ html, body {
 .credits { padding: 80px 0; border-top: 1px solid #eee; margin-top: 60px; }
 .btn-github {
     text-decoration: none; color: #71815a; border: 1px solid #71815a;
-    padding: 12px 30px; border-radius: 30px; /* Bouton footer arrondi */
-    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    padding: 12px 30px; border-radius: 30px;
+    font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase;
 }
