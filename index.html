@@ -31,13 +31,13 @@
             <div id="def-bubble" class="bulle-definition" style="display:none;">
                 <p>“ C'est un processus photographique qui utilise les pigments des végétaux et la lumière du soleil. ”</p>
             </div>
-            
-            <div class="description-projet">
-                <p>Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels le 1er avril 2026, basée sur la technique de l’anthotype.</p>
-                <p>J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé.</p>
-                <p>Cette page est accessible via un QR code présent dans ce kit et accompagne cette expérience.</p>
-            </div>
         </section>
+
+        <div class="description-projet">
+            <p>Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels le 1er avril 2026, basée sur la technique de l’anthotype.</p>
+            <p>J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé.</p>
+            <p>Cette page est accessible via un QR code présent dans ce kit et accompagne cette expérience.</p>
+        </div>
 
         <section class="steps-grid">
             <div class="card-step" onmouseenter="grow()" onmouseleave="shrink()">
@@ -77,13 +77,21 @@
         function shrink() { body.classList.remove('large'); }
 
         function revealDef() {
-            btn.style.display = 'none';
-            bulle.style.display = 'flex';
+            // On lance l'animation d'éjection
+            btn.style.animation = "swipeOut 0.6s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045)";
+            
+            // On attend la fin de l'animation pour afficher la bulle
+            setTimeout(() => {
+                btn.style.display = 'none';
+                bulle.style.display = 'flex';
+                bulle.style.animation = "fadeIn 0.5s forwards";
+            }, 500);
         }
 
         window.onscroll = () => {
-            if (window.scrollY < 50) {
-                btn.style.display = 'block';
+            if (window.scrollY < 50 && btn.style.display === 'none') {
+                btn.style.display = 'inline-block';
+                btn.style.animation = "fadeIn 0.5s forwards"; // Retour en douceur
                 bulle.style.display = 'none';
             }
         };
