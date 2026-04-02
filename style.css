@@ -1,13 +1,20 @@
-/* --- CONFIGURATION & CURSEUR --- */
+/* --- CONFIGURATION DU CURSEUR POINT --- */
 body {
     margin: 0; text-align: center; color: #4a4a4a; overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><circle cx="5" cy="5" r="4" fill="%23d0863c"/></svg>') 5 5, auto;
-}
-body.large {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23d0863c"/></svg>') 10 10, pointer;
+    /* Petit curseur par défaut sur toute la page */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><circle cx="5" cy="5" r="4" fill="%23d0863c"/></svg>') 5 5, auto !important;
 }
 
+/* --- EFFET AU SURVOL (Gros curseur) --- */
+/* Cette règle force le gros curseur sur ABSOLUMENT TOUT (boutons, cartes, liens) 
+   quand la classe 'large' est active sur le body */
+body.large, 
+body.large a, 
+body.large button, 
+body.large .card-step {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23d0863c"/></svg>') 10 10, pointer !important;
+}
 /* --- BANDES VERTES --- */
 .bandeau-header { background: #71815a; padding: 20px; }
 .logo { height: 60px; filter: brightness(0) invert(1); max-width: 90%; }
