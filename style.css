@@ -1,99 +1,58 @@
-/* --- CONFIGURATION DU CURSEUR POINT --- */
+/* --- CURSEUR & BASE --- */
 body {
     margin: 0; text-align: center; color: #4a4a4a; overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
-    /* Petit curseur par défaut sur toute la page */
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><circle cx="5" cy="5" r="4" fill="%23d0863c"/></svg>') 5 5, auto !important;
 }
 
-/* --- EFFET AU SURVOL (Gros curseur) --- */
-/* Cette règle force le gros curseur sur ABSOLUMENT TOUT (boutons, cartes, liens) 
-   quand la classe 'large' est active sur le body */
-body.large, 
-body.large a, 
-body.large button, 
-body.large .card-step {
+/* Force le gros curseur sur TOUT quand la classe 'large' est active */
+body.large, body.large button, body.large .card-step, body.large .description-projet, body.large a {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23d0863c"/></svg>') 10 10, pointer !important;
 }
-/* --- BANDES VERTES --- */
+
+/* --- BANDES VERTES & MARQUEE --- */
 .bandeau-header { background: #71815a; padding: 20px; }
 .logo { height: 60px; filter: brightness(0) invert(1); max-width: 90%; }
-
-/* BANDEAU DÉFILANT INFINI (FIXÉ) */
-.marquee-container { 
-    background: #71815a; 
-    color: white; 
-    padding: 15px 0; 
-    overflow: hidden; 
-    width: 100%;
-}
-.marquee-content { 
-    display: inline-block; 
-    white-space: nowrap; /* Force une seule ligne */
-    animation: scroll-infinite 30s linear infinite; 
-    font-family: 'Averia Serif Libre', serif; 
-    font-size: 18px;
-}
-.marquee-content span { 
-    display: inline-block; 
-    padding-right: 50px; /* Espace entre les blocs */
-}
-
-@keyframes scroll-infinite { 
-    from { transform: translateX(0); } 
-    to { transform: translateX(-50%); } 
-}
+.marquee-container { background: #71815a; color: white; padding: 15px 0; overflow: hidden; width: 100vw; }
+.marquee-content { display: inline-block; white-space: nowrap; animation: scroll-infinite 30s linear infinite; font-family: 'Averia Serif Libre', serif; font-size: 18px; }
+.marquee-content span { display: inline-block; padding-right: 50px; }
+@keyframes scroll-infinite { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* --- CONTENU --- */
 .section-wrapper { max-width: 900px; margin: 50px auto; padding: 0 20px; }
 .titre-kit { font-family: 'Averia Serif Libre', serif; color: #71815a; font-size: clamp(30px, 8vw, 45px); margin-bottom: 5px; }
 .style-poetique { font-family: 'Averia Serif Libre', serif; font-style: italic; color: #71815a; font-size: clamp(18px, 5vw, 22px); margin-bottom: 40px; }
-.description-projet { margin: 40px auto; font-size: 14px; line-height: 1.6; color: #666; font-style: italic; max-width: 700px; }
+
+/* BLOC DESCRIPTION AVEC CHANGEMENT DE COULEUR */
+.description-projet { 
+    margin: 40px auto; 
+    font-size: 14px; 
+    line-height: 1.6; 
+    color: #666; 
+    font-style: italic; 
+    max-width: 700px;
+    transition: color 0.4s ease; /* Transition douce pour la couleur */
+}
+.description-projet:hover {
+    color: #d0863c; /* La couleur ocre au survol */
+}
 
 /* --- BOUTON & BULLE --- */
-#container-anthotype { 
-    min-height: 100px; display: flex; justify-content: center; align-items: center; 
-    margin-bottom: 30px; position: relative; overflow: hidden;
-}
-#btn-reveal { 
-    background: #d0863c; color: white; border: none; padding: 15px 35px; 
-    border-radius: 40px; font-weight: bold; font-family: 'Montserrat'; cursor: pointer; z-index: 2;
-}
-.bulle-definition { 
-    background: #d0863c; color: white; border-radius: 30px; padding: 15px 25px;
-    display: inline-flex; font-style: italic; max-width: 90%; margin: 0 auto; font-size: 14px;
-}
+#container-anthotype { min-height: 100px; display: flex; justify-content: center; align-items: center; margin-bottom: 30px; position: relative; overflow: hidden; }
+#btn-reveal { background: #d0863c; color: white; border: none; padding: 15px 35px; border-radius: 40px; font-weight: bold; font-family: 'Montserrat'; z-index: 2; transition: transform 0.3s ease; }
+.bulle-definition { background: #d0863c; color: white; border-radius: 30px; padding: 15px 25px; display: inline-flex; font-style: italic; max-width: 90%; margin: 0 auto; font-size: 14px; }
 
 /* --- ÉTAPES AVEC EFFET LÉVITATION --- */
-.steps-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 25px; 
-    margin-top: 60px; 
-}
-.card-step { 
-    background: #efece6; padding: 30px; border-radius: 30px; border-top: 5px solid #71815a; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
-}
-.card-step:hover { 
-    transform: translateY(-12px); 
-    background: #f7f5f0; 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08); 
-}
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-top: 60px; }
+.card-step { background: #efece6; padding: 30px; border-radius: 30px; border-top: 5px solid #71815a; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+.card-step:hover { transform: translateY(-12px); background: #f7f5f0; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
 .step-num { font-family: 'Averia Serif Libre', serif; font-size: 28px; color: #d0863c; font-weight: bold; }
 .card-step h4 { font-family: 'Montserrat'; color: #71815a; text-transform: uppercase; margin: 10px 0; font-size: 14px; }
 .card-step p { font-size: 13px; line-height: 1.5; }
 
 /* --- ANIMATIONS & FOOTER --- */
-@keyframes swipeOut { 
-    0% { transform: translateX(0) rotate(0); opacity: 1; } 
-    100% { transform: translateX(1200px) rotate(20deg); opacity: 0; } 
-}
-@keyframes fadeIn { 
-    from { opacity: 0; transform: translateY(10px); } 
-    to { opacity: 1; transform: translateY(0); } 
-}
+@keyframes swipeOut { 0% { transform: translateX(0) rotate(0); opacity: 1; } 100% { transform: translateX(1200px) rotate(20deg); opacity: 0; } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 .texte-survol { font-style: italic; opacity: 0.7; margin-top: 30px; font-size: 13px; }
 .btn-github { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #71815a; border-radius: 20px; text-decoration: none; color: #71815a; font-size: 12px; font-weight: bold; }
