@@ -1,4 +1,4 @@
-/* --- CURSEUR & BASE --- */
+/* --- CONFIGURATION & CURSEUR --- */
 body {
     margin: 0; text-align: center; color: #4a4a4a; overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
@@ -8,22 +8,29 @@ body.large {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23d0863c"/></svg>') 10 10, pointer;
 }
 
-/* --- BANDES VERTES & MARQUEE --- */
+/* --- BANDES VERTES --- */
 .bandeau-header { background: #71815a; padding: 20px; }
 .logo { height: 60px; filter: brightness(0) invert(1); max-width: 90%; }
 
+/* BANDEAU DÉFILANT INFINI (FIXÉ) */
 .marquee-container { 
-    background: #71815a; color: white; padding: 15px 0; 
-    overflow: hidden; white-space: nowrap; width: 100vw;
-    display: flex;
+    background: #71815a; 
+    color: white; 
+    padding: 15px 0; 
+    overflow: hidden; 
+    width: 100%;
 }
 .marquee-content { 
-    display: inline-flex; 
+    display: inline-block; 
+    white-space: nowrap; /* Force une seule ligne */
     animation: scroll-infinite 30s linear infinite; 
-    font-family: 'Averia Serif Libre', serif; font-size: 18px;
-    align-items: center;
+    font-family: 'Averia Serif Libre', serif; 
+    font-size: 18px;
 }
-.marquee-content span { flex-shrink: 0; padding-right: 10px; }
+.marquee-content span { 
+    display: inline-block; 
+    padding-right: 50px; /* Espace entre les blocs */
+}
 
 @keyframes scroll-infinite { 
     from { transform: translateX(0); } 
@@ -37,12 +44,26 @@ body.large {
 .description-projet { margin: 40px auto; font-size: 14px; line-height: 1.6; color: #666; font-style: italic; max-width: 700px; }
 
 /* --- BOUTON & BULLE --- */
-#container-anthotype { min-height: 100px; display: flex; justify-content: center; align-items: center; margin-bottom: 30px; position: relative; overflow: hidden; }
-#btn-reveal { background: #d0863c; color: white; border: none; padding: 15px 35px; border-radius: 40px; font-weight: bold; font-family: 'Montserrat'; cursor: pointer; z-index: 2; transition: transform 0.3s ease; }
-.bulle-definition { background: #d0863c; color: white; border-radius: 30px; padding: 15px 25px; display: inline-flex; font-style: italic; max-width: 90%; margin: 0 auto; font-size: 14px; }
+#container-anthotype { 
+    min-height: 100px; display: flex; justify-content: center; align-items: center; 
+    margin-bottom: 30px; position: relative; overflow: hidden;
+}
+#btn-reveal { 
+    background: #d0863c; color: white; border: none; padding: 15px 35px; 
+    border-radius: 40px; font-weight: bold; font-family: 'Montserrat'; cursor: pointer; z-index: 2;
+}
+.bulle-definition { 
+    background: #d0863c; color: white; border-radius: 30px; padding: 15px 25px;
+    display: inline-flex; font-style: italic; max-width: 90%; margin: 0 auto; font-size: 14px;
+}
 
 /* --- ÉTAPES AVEC EFFET LÉVITATION --- */
-.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-top: 60px; }
+.steps-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 25px; 
+    margin-top: 60px; 
+}
 .card-step { 
     background: #efece6; padding: 30px; border-radius: 30px; border-top: 5px solid #71815a; 
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
@@ -58,11 +79,16 @@ body.large {
 .card-step p { font-size: 13px; line-height: 1.5; }
 
 /* --- ANIMATIONS & FOOTER --- */
-@keyframes swipeOut { 0% { transform: translateX(0) rotate(0); opacity: 1; } 100% { transform: translateX(1200px) rotate(20deg); opacity: 0; } }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes swipeOut { 
+    0% { transform: translateX(0) rotate(0); opacity: 1; } 
+    100% { transform: translateX(1200px) rotate(20deg); opacity: 0; } 
+}
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
 
 .texte-survol { font-style: italic; opacity: 0.7; margin-top: 30px; font-size: 13px; }
-.btn-github { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #71815a; border-radius: 20px; text-decoration: none; color: #71815a; font-size: 12px; font-weight: bold; transition: 0.3s; }
-.btn-github:hover { background: #71815a; color: white; }
+.btn-github { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #71815a; border-radius: 20px; text-decoration: none; color: #71815a; font-size: 12px; font-weight: bold; }
 
 @media (max-width: 600px) { .steps-grid { grid-template-columns: 1fr; } }
