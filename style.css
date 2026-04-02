@@ -1,34 +1,46 @@
 /* --- CONFIGURATION GÉNÉRALE --- */
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Crucial pour éviter le scroll horizontal */
-    font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff;
-    text-align: center;
+html, body {
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  color: #4a4a4a;
+  cursor: url('fleur svg.svg') 16 16, auto !important;
+  overflow-x: hidden; /* Crucial pour cacher la sortie du bouton */
 }
 
-/* --- LE BANDEAU VERT (LOGO) --- */
-.bandeau-header {
-    background-color: #71815a;
-    padding: 30px 0;
+a, button, .card-step, .btn-github, .logo, .bandeau-header, .texte-survol, .marquee-container, .titre-kit, .titre-section, .bulle-definition {
+  cursor: url('fleur svg.svg') 16 16, pointer !important;
 }
-.logo { height: 60px; filter: brightness(0) invert(1); }
 
-/* --- LE BANDEAU DÉFILANT (L'EXPÉRIENCE COMMENCE ICI) --- */
+/* --- STRUCTURE & ESPACEMENTS --- */
+.section-wrapper { width: 100%; max-width: 900px; margin: 0 auto; }
+.marquee-container, .main-header, .contexte-note, .guide-anthotype { margin-bottom: 90px; }
+
+/* --- BANDEAUX & LOGO --- */
+.bandeau-header { width: 100vw; background-color: #71815a; padding: 35px 0; display: flex; justify-content: center; }
+.logo { height: 75px; filter: brightness(0) invert(1); transition: transform 0.3s ease; }
+.logo:hover { transform: scale(1.05); }
+
+/* --- BANDEAU DÉFILANT (SUR UNE LIGNE) --- */
 .marquee-container {
     width: 100vw;
     background-color: #71815a;
     color: #ffffff;
-    padding: 15px 0;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    overflow: hidden; /* Cache ce qui dépasse de l'écran */
+    overflow: hidden;
+    white-space: nowrap; /* Empêche le retour à la ligne vu sur ta capture */
     display: flex;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 90px;
 }
 
 .marquee-content {
     display: flex; 
-    white-space: nowrap; /* Empêche le retour à la ligne ! */
     animation: scroll-loop 30s linear infinite;
 }
 
@@ -38,61 +50,113 @@ body {
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 2px;
-    padding-right: 50px; /* Espace entre chaque phrase */
+    padding-right: 50px; /* Espace entre les phrases */
 }
 
 @keyframes scroll-loop {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* On décale de la moitié pour la boucle infinie */
+    100% { transform: translateX(-50%); }
 }
 
-/* --- LE CONTENU --- */
-.section-wrapper { max-width: 900px; margin: 90px auto; padding: 0 20px; }
+/* --- TITRES --- */
+h1, h2, h3, h4, p { margin-top: 0; }
+.titre-kit, .titre-section { font-family: 'Cormorant Garamond', serif; color: #71815a; font-weight: 700; margin-bottom: 20px; transition: color 0.5s ease; }
+.titre-kit { font-size: 52px; }
+.titre-section { font-size: 42px; }
+.titre-kit:hover, .titre-section:hover { color: #d0863c; }
 
-.titre-kit {
-    font-family: 'Cormorant Garamond', serif;
-    color: #71815a;
-    font-size: 52px;
-    margin-bottom: 10px;
-}
+.style-poetique { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: #71815a; line-height: 1.6; }
 
-/* --- BOUTON ET BULLE --- */
+/* --- 5. BOUTON OCRE ÉJECTABLE & BULLE DÉFINITION --- */
 #container-anthotype {
-    min-height: 100px;
+    min-height: 120px; /* Évite que la page ne saute */
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* C'est ici que le bouton disparaît visuellement */
     position: relative;
-    margin: 40px 0;
+    width: 100%;
 }
 
+/* Le bouton affiné (on garde ton style ocre) */
 #btn-reveal {
     background-color: #d0863c;
-    color: white;
+    color: #ffffff;
     border: none;
-    padding: 15px 40px;
-    border-radius: 40px;
+    padding: 15px 45px;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    cursor: pointer;
     font-size: 13px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    border-radius: 40px;
+    box-shadow: 0 6px 15px rgba(208, 134, 60, 0.2);
+    transition: all 0.3s ease;
+    z-index: 2;
+    position: absolute; /* Important pour l'éjection et le reset */
 }
 
+#btn-reveal:hover {
+    transform: scale(1.05);
+    background-color: #bc7632;
+}
+
+/* NOUVEAU : ANIMATION D'ÉJECTION INTENSE AVEC BASCULE */
+@keyframes intenseSwipeOut {
+    0% { 
+        transform: translateX(0) rotate(0deg) scale(1); 
+        opacity: 1; 
+    }
+    15% {
+        /* Petit recul pour prendre de l'élan avant l'expulsion */
+        transform: translateX(-15px) rotate(-3deg) scale(1.02); 
+    }
+    100% { 
+        /* Expulsé loin à droite avec une forte rotation (bascule) */
+        transform: translateX(1200px) rotate(45deg) scale(0.7); 
+        opacity: 0; 
+    }
+}
+
+/* NOUVEAU : La Bulle de Définition Ocre AFFINÉE ET FINE (conservée) */
 .bulle-definition {
     background-color: #d0863c;
-    border-radius: 40px;
-    padding: 15px 30px;
+    border-radius: 40px; 
+    padding: 12px 30px; 
     display: flex;
-    align-items: center;
-    gap: 15px;
-    max-width: 650px;
+    align-items: center; 
+    gap: 12px;
+    max-width: 650px; 
+    box-shadow: 0 6px 15px rgba(208, 134, 60, 0.15);
+    position: relative;
+    z-index: 1;
 }
 
-.texte-definition { color: white; font-size: 14px; margin: 0; font-weight: 500; font-style: italic; }
-.guillemet { color: rgba(255,255,255,0.5); font-size: 40px; font-family: serif; }
+/* Les Gros Guillemets AFFINÉS (conservés) */
+.guillemet {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; 
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4); 
+    line-height: 1;
+}
 
-/* Animations */
-@keyframes swipeOut { to { transform: translateX(100vw); opacity: 0; } }
-@keyframes fadeInDef { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+/* Le texte de la définition AFFINÉ (conservé) */
+.texte-definition {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px; 
+    line-height: 1.7;
+    color: #ffffff; 
+    font-weight: 500; 
+    font-style: italic; 
+    margin: 0;
+    flex: 1; 
+    letter-spacing: 0.5px;
+}
 
-.texte-survol { font-style: italic; opacity: 0.7; font-size: 14px; line-height: 1.6; }
+@keyframes fadeInDef { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Style du texte contexte (conservé) */
+.texte-survol { font-size: 13.5px; line-height: 1.8; font-style: italic; opacity: 0.7; color: #4a4a4a; transition: all 0.5s ease; }
+.texte-survol:hover { color: #d0863c; opacity: 1; }
+
+/* (Le reste de tes styles, grille, footer...) */
