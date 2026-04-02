@@ -18,43 +18,71 @@
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
             <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;&nbsp;•&nbsp;</span>
         </div>
     </div>
 
     <div class="section-wrapper">
         <header class="main-header">
             <h1 class="titre-kit">Le Kit de l’Éveil du Printemps</h1>
-            <p class="slogan">Regarde le printemps s’éveiller sur ta feuille !</p>
+            <p class="slogan style-poetique">Regarde le printemps s’éveiller sur ta feuille !</p>
         </header>
 
         <section class="contexte-note">
             <div id="container-anthotype">
+                
                 <button id="btn-reveal" onclick="revealDef()">L'ANTHOTYPE C'EST QUOI ?</button>
+                
                 <div id="def-bubble" class="bulle-definition" style="display:none;">
-                    <span class="guillemet">“</span>
-                    <p class="texte-definition">C'est un processus photographique qui permet de créer des images à partir de la réaction entre les pigments contenus dans les végétaux et la lumière du soleil.</p>
-                    <span class="guillemet">”</span>
+                    <span class="guillemet guillemet-gauche">“</span>
+                    <p class="texte-definition">
+                        C'est un processus photographique qui permet de créer des images à partir de la réaction entre les pigments contenus dans les végétaux et la lumière du soleil.
+                    </p>
+                    <span class="guillemet guillemet-droite">”</span>
                 </div>
             </div>
-            <p class="texte-survol">Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels (1er avril 2026)...</p>
+            
+            <p class="texte-survol" style="margin-top: 50px;">
+                Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels (1er avril 2026), basée sur la technique de l’anthotype. J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé. Cette page est accessible via un QR code présent dans ce kit et accompagne cette expérience.
+            </p>
         </section>
-    </div>
+
+        </div>
 
     <script>
+        const btn = document.getElementById('btn-reveal');
+        const bulle = document.getElementById('def-bubble');
+
         function revealDef() {
-            const btn = document.getElementById('btn-reveal');
-            const bulle = document.getElementById('def-bubble');
-            btn.style.animation = "swipeOut 0.4s forwards";
+            // 1. On lance l'animation de sortie intense et rapide
+            // (0.5s est assez long pour voir la bascule, assez court pour être dynamique)
+            btn.style.animation = "intenseSwipeOut 0.5s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045)";
+            
+            // 2. On attend la fin de l'animation pour switcher
             setTimeout(() => {
                 btn.style.display = 'none';
-                bulle.style.display = 'flex';
+                bulle.style.display = 'flex'; // On utilise flex pour aligner les guillemets
                 bulle.style.animation = "fadeInDef 0.6s forwards";
-            }, 400);
+            }, 500);
         }
+
+        // Reset au Scroll (remonter en haut pour faire revenir le bouton)
+        window.onscroll = function() {
+            if (window.scrollY < 80) {
+                if (btn.style.display === 'none') {
+                    // Remettre le bouton
+                    btn.style.display = 'block';
+                    btn.style.animation = "fadeInDef 0.5s forwards";
+                    // Cacher la bulle
+                    bulle.style.display = 'none';
+                    bulle.style.animation = "none"; // Reset animation
+                }
+            }
+        };
     </script>
+
 </body>
 </html>
