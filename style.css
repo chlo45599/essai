@@ -1,4 +1,4 @@
-/* --- CONFIGURATION --- */
+/* --- CONFIGURATION GÉNÉRALE --- */
 html, body {
   background-color: #ffffff;
   font-family: 'Montserrat', sans-serif;
@@ -8,82 +8,126 @@ html, body {
   overflow-x: hidden;
 }
 
-/* --- BANDEAUX --- */
-.bandeau-header { width: 100vw; background-color: #71815a; padding: 30px 0; }
+/* --- BANDEAUX (DROITS) --- */
+.bandeau-header { 
+    width: 100vw; 
+    background-color: #71815a; 
+    padding: 30px 0; 
+}
 .logo { height: 70px; filter: brightness(0) invert(1); }
 
 .marquee-container {
-    width: 95vw; /* Légèrement plus court pour l'effet arrondi sur les côtés */
+    width: 100vw; /* Bord à bord comme demandé */
     background-color: #71815a;
     color: #ffffff;
     overflow: hidden;
     white-space: nowrap;
     display: flex;
+    align-items: center;
     padding: 15px 0;
-    margin: 20px auto 90px auto;
-    border-radius: 50px; /* Coins arrondis pour le bandeau défilant */
+    border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-.marquee-content { display: flex; animation: scroll-loop 30s linear infinite; }
-.marquee-content span { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 18px; padding-right: 50px; }
+.marquee-content {
+    display: flex; 
+    animation: scroll-loop 30s linear infinite;
+}
 
-@keyframes scroll-loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.marquee-content span {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding-right: 50px;
+}
 
-/* --- TITRES --- */
-.section-wrapper { width: 100%; max-width: 950px; margin: 0 auto; }
-.titre-kit { font-family: 'Cormorant Garamond', serif; color: #71815a; font-size: 52px; margin-bottom: 10px; transition: color 0.3s; }
-.titre-kit:hover { color: #d0863c; }
-.style-poetique { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: #71815a; }
+@keyframes scroll-loop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- STRUCTURE --- */
+.section-wrapper { width: 100%; max-width: 950px; margin: 90px auto; }
+.titre-kit { font-family: 'Cormorant Garamond', serif; color: #71815a; font-size: 52px; margin-bottom: 10px; }
+.style-poetique { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: #71815a; margin-bottom: 60px; }
 
 /* --- BOUTON & BULLE (ARRONDIS) --- */
-#container-anthotype { min-height: 100px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
+#container-anthotype {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
 
 #btn-reveal {
-    background-color: #d0863c; color: white; border: none;
-    padding: 15px 45px; border-radius: 40px; /* Bouton bien arrondi */
-    font-weight: 700; cursor: pointer; transition: 0.3s;
+    background-color: #d0863c;
+    color: white;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 40px; /* Bouton bien arrondi */
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    z-index: 2;
 }
 
 .bulle-definition {
-    background-color: #d0863c; border-radius: 35px; /* Coins arrondis définition */
-    padding: 15px 35px; display: flex; align-items: center; gap: 15px; max-width: 650px;
+    background-color: #d0863c;
+    border-radius: 35px; /* Bulle bien arrondie */
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 650px;
+    z-index: 1;
 }
 
-.texte-definition { color: white; font-size: 14px; margin: 0; font-weight: 500; font-style: italic; }
-.guillemet { color: rgba(255,255,255,0.4); font-size: 40px; font-family: serif; }
+.texte-definition { color: white; font-size: 13px; margin: 0; font-weight: 500; font-style: italic; }
+.guillemet { color: rgba(255,255,255,0.4); font-size: 40px; font-family: serif; line-height: 1; }
 
 /* --- CARTES ÉTAPES (ARRONDIES) --- */
 .steps-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px; padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
 }
 
 .card-step {
     background-color: #efece6;
     padding: 40px 25px;
-    border-radius: 25px; /* LES COINS ARRONDIS ICI */
-    border-top: 6px solid #71815a; /* Garde ton trait de couleur */
+    border-radius: 30px; /* Coins des cartes très arrondis */
+    border-top: 6px solid #71815a;
     transition: transform 0.3s ease;
 }
 
 .card-step:hover { transform: translateY(-10px); }
 
 .step-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: #d0863c; display: block; margin-bottom: 10px; }
-.card-step h4 { font-family: 'Cormorant Garamond', serif; color: #71815a; text-transform: uppercase; margin-bottom: 15px; }
-.card-step p { font-size: 13.5px; line-height: 1.6; }
+.card-step h4 { font-family: 'Cormorant Garamond', serif; color: #71815a; text-transform: uppercase; margin-bottom: 15px; font-size: 16px; }
+.card-step p { font-size: 13px; line-height: 1.6; color: #4a4a4a; }
 
 /* --- ANIMATIONS --- */
 @keyframes intenseSwipeOut {
     0% { transform: translateX(0) rotate(0); opacity: 1; }
-    100% { transform: translateX(1000px) rotate(30deg); opacity: 0; }
+    100% { transform: translateX(1200px) rotate(45deg) scale(0.7); opacity: 0; }
 }
-@keyframes fadeInDef { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+@keyframes fadeInDef {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.texte-survol { font-size: 13.5px; font-style: italic; opacity: 0.7; line-height: 1.8; }
 
 /* --- FOOTER --- */
-.credits { padding: 60px 0; border-top: 1px solid #eee; margin-top: 50px; }
+.credits { padding: 80px 0; border-top: 1px solid #eee; margin-top: 60px; }
 .btn-github {
     text-decoration: none; color: #71815a; border: 1px solid #71815a;
-    padding: 10px 25px; border-radius: 30px; /* Bouton footer arrondi */
-    font-size: 12px; font-weight: 700; transition: 0.3s;
+    padding: 12px 30px; border-radius: 30px; /* Bouton footer arrondi */
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
 }
-.btn-github:hover { background: #71815a; color: white; }
