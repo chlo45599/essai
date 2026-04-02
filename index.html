@@ -10,7 +10,7 @@
 <body id="main-body">
 
     <div class="bandeau-header">
-        <img src="jdl.png" alt="Logo Jardins des Martels" class="logo">
+        <img src="jdl.png" alt="Logo" class="logo">
     </div>
 
     <div class="marquee-container">
@@ -33,7 +33,7 @@
             </div>
         </section>
 
-        <div class="description-projet">
+        <div class="description-projet" onmouseenter="grow()" onmouseleave="shrink()">
             <p>Dans le cadre de mon projet, j’ai conçu une campagne de communication pour la réouverture des Jardins des Martels le 1er avril 2026, basée sur la technique de l’anthotype.</p>
             <p>J’ai choisi de prolonger cette démarche en proposant aux visiteurs de créer leur propre image grâce à un kit d’anthotype que j’ai imaginé.</p>
             <p>Cette page est accessible via un QR code présent dans ce kit et accompagne cette expérience.</p>
@@ -53,12 +53,12 @@
             <div class="card-step" onmouseenter="grow()" onmouseleave="shrink()">
                 <span class="step-num">03</span>
                 <h4>Découvrir votre empreinte</h4>
-                <p>Retirez les éléments et rincez légèrement avec un mélange d’eau et de bicarbonate de soude pour fixer le motif.</p>
+                <p>Retirez les éléments et fixez avec un peu de bicarbonate.</p>
             </div>
             <div class="card-step" onmouseenter="grow()" onmouseleave="shrink()">
                 <span class="step-num">04</span>
                 <h4>Conserver ou partager</h4>
-                <p>Votre création devient un souvenir précieux de votre jardin, à garder ou à transmettre.</p>
+                <p>Votre création devient un souvenir précieux du jardin.</p>
             </div>
         </section>
 
@@ -77,12 +77,10 @@
         function shrink() { body.classList.remove('large'); }
 
         function revealDef() {
-            // Animation d'éjection vers la droite
             btn.style.animation = "swipeOut 0.6s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045)";
             setTimeout(() => {
                 btn.style.display = 'none';
                 bulle.style.display = 'flex';
-                bulle.style.animation = "fadeIn 0.5s forwards";
             }, 500);
         }
 
