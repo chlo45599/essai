@@ -16,25 +16,33 @@ body.large, body.large button, body.large .card-step, body.large a {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23d0863c"/></svg>') 10 10, pointer !important;
 }
 
-/* --- BANDES VERTES & MARQUEE --- */
+/* --- HEADER & MARQUEE --- */
 .bandeau-header { background: #71815a; padding: 20px; }
 .logo { height: 60px; filter: brightness(0) invert(1); }
 .marquee-container { background: #71815a; color: white; padding: 15px 0; overflow: hidden; }
+
 .marquee-content { 
     display: inline-block; white-space: nowrap; animation: scroll-infinite 30s linear infinite; 
     font-family: 'Coolvetica'; font-size: 20px; text-transform: uppercase;
+    letter-spacing: 2px; /* INTERLETTRAGE PLUS LARGE ICI */
 }
 .marquee-content span { padding-right: 50px; }
 @keyframes scroll-infinite { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* --- CONTENU --- */
 .section-wrapper { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
-.titre-kit { font-family: 'Coolvetica'; color: #71815a; font-size: clamp(35px, 8vw, 55px); margin: 0; }
+
+.titre-kit { 
+    font-family: 'Coolvetica'; color: #71815a; 
+    font-size: clamp(35px, 8vw, 55px); margin: 0; 
+    letter-spacing: 1.5px; /* INTERLETTRAGE PLUS LARGE ICI */
+}
+
 .style-poetique { font-style: italic; color: #71815a; font-size: 20px; margin-bottom: 40px; }
 .description-projet { margin: 30px auto; max-width: 700px; font-style: italic; color: #666; transition: 0.4s; }
 .description-projet:hover { color: #d0863c; }
 
-/* --- SYSTÈME DE CARTES (FLIP) --- */
+/* --- SYSTÈME DE CARTES --- */
 .steps-grid { 
     display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
     gap: 30px; margin-top: 50px; perspective: 1000px; 
@@ -53,41 +61,36 @@ body.large, body.large button, body.large .card-step, body.large a {
 }
 .card-front { background: #efece6; border-top: 6px solid #71815a; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
-/* --- CORRECTION ICI POUR VOIR LES PHOTOS ENTIÈRES --- */
 .card-back { 
-    background: #71815a; /* Fond vert de la carte */
-    transform: rotateY(180deg); 
-    overflow: hidden; 
-    padding: 10px; /* Ajoute un petit espace de 10px tout autour pour ne pas toucher le bord vert */
-    justify-content: center; /* Centre verticalement la photo */
+    background: #71815a; transform: rotateY(180deg); 
+    overflow: hidden; padding: 15px; justify-content: center;
 }
-
 .card-back img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: contain; /* REMPLACEMENT de 'cover' par 'contain' : REDUIT la photo pour la voir entière sans recadrage */
-    border-radius: 20px; /* Optionnel : arrondit un peu la photo elle-même pour la douceur */
+    width: 100%; height: 100%; object-fit: contain; border-radius: 20px;
 }
 
-/* --- RESTE DU STYLE --- */
-.step-num { font-family: 'Coolvetica'; font-size: 40px; color: #d0863c; }
-.card-front h4 { font-family: 'Coolvetica'; color: #71815a; text-transform: uppercase; margin: 10px 0; }
+.step-num { 
+    font-family: 'Coolvetica'; font-size: 40px; color: #d0863c; 
+    letter-spacing: 1px; /* AJUSTEMENT LÉGER */
+}
+
+.card-front h4 { 
+    font-family: 'Coolvetica'; color: #71815a; text-transform: uppercase; 
+    margin: 10px 0; letter-spacing: 1.2px; /* INTERLETTRAGE PLUS LARGE ICI */
+}
 
 .hint-click { 
-    font-family: 'Inter', sans-serif; 
-    font-weight: 500;
-    font-style: italic;
-    color: #71815a; 
-    font-size: 12px;
-    text-transform: lowercase; 
-    margin-top: 15px;
-    opacity: 0.8;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-style: italic;
+    color: #71815a; font-size: 12px; text-transform: lowercase; 
+    margin-top: 15px; opacity: 0.8;
 }
 
+/* --- BOUTON REVEAL --- */
 #container-anthotype { min-height: 100px; margin: 40px 0; }
 #btn-reveal { 
     background: #d0863c; color: white; border: none; padding: 15px 35px; 
     border-radius: 40px; font-family: 'Coolvetica'; font-size: 16px; transition: 0.3s; 
+    letter-spacing: 1.5px; /* INTERLETTRAGE PLUS LARGE ICI */
 }
 .bulle-definition { background: #d0863c; color: white; border-radius: 20px; padding: 20px; font-style: italic; }
 
@@ -98,7 +101,7 @@ body.large, body.large button, body.large .card-step, body.large a {
 .btn-github { 
     display: inline-block; margin-top: 20px; padding: 10px 25px; 
     border: 2px solid #71815a; border-radius: 30px; text-decoration: none; 
-    color: #71815a; font-family: 'Coolvetica'; 
+    color: #71815a; font-family: 'Coolvetica'; letter-spacing: 1px;
 }
 
 @media (max-width: 600px) { .steps-grid { grid-template-columns: 1fr; } }
