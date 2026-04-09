@@ -24,30 +24,31 @@ body.large, body.large button, body.large .card-step, body.large a {
 .marquee-content { 
     display: inline-block; white-space: nowrap; animation: scroll-infinite 30s linear infinite; 
     font-family: 'Coolvetica'; font-size: 20px; text-transform: uppercase;
-    letter-spacing: 2px; /* INTERLETTRAGE PLUS LARGE ICI */
+    letter-spacing: 2px; /* Interlettrage aéré */
 }
 .marquee-content span { padding-right: 50px; }
 @keyframes scroll-infinite { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* --- CONTENU --- */
-.section-wrapper { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+.section-wrapper { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
 
 .titre-kit { 
     font-family: 'Coolvetica'; color: #71815a; 
     font-size: clamp(35px, 8vw, 55px); margin: 0; 
-    letter-spacing: 1.5px; /* INTERLETTRAGE PLUS LARGE ICI */
+    letter-spacing: 1.5px; /* Interlettrage aéré */
 }
 
 .style-poetique { font-style: italic; color: #71815a; font-size: 20px; margin-bottom: 40px; }
 .description-projet { margin: 30px auto; max-width: 700px; font-style: italic; color: #666; transition: 0.4s; }
 .description-projet:hover { color: #d0863c; }
 
-/* --- SYSTÈME DE CARTES --- */
+/* --- SYSTÈME DE CARTES (FLIP) --- */
 .steps-grid { 
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Un peu plus large pour 5 cartes */
     gap: 30px; margin-top: 50px; perspective: 1000px; 
 }
-.card-step { height: 350px; cursor: pointer; border-radius: 30px; }
+.card-step { height: 380px; cursor: pointer; border-radius: 30px; }
 .card-inner { 
     position: relative; width: 100%; height: 100%; 
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; 
@@ -57,7 +58,7 @@ body.large, body.large button, body.large .card-step, body.large a {
 .card-front, .card-back { 
     position: absolute; width: 100%; height: 100%; 
     backface-visibility: hidden; border-radius: 30px; 
-    display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; 
+    display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 25px; box-sizing: border-box; 
 }
 .card-front { background: #efece6; border-top: 6px solid #71815a; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
@@ -66,23 +67,24 @@ body.large, body.large button, body.large .card-step, body.large a {
     overflow: hidden; padding: 15px; justify-content: center;
 }
 .card-back img { 
-    width: 100%; height: 100%; object-fit: contain; border-radius: 20px;
+    width: 100%; height: 100%; object-fit: contain; /* Photo entière */
+    border-radius: 20px;
 }
 
 .step-num { 
     font-family: 'Coolvetica'; font-size: 40px; color: #d0863c; 
-    letter-spacing: 1px; /* AJUSTEMENT LÉGER */
+    letter-spacing: 1px;
 }
 
 .card-front h4 { 
     font-family: 'Coolvetica'; color: #71815a; text-transform: uppercase; 
-    margin: 10px 0; letter-spacing: 1.2px; /* INTERLETTRAGE PLUS LARGE ICI */
+    margin: 10px 0; letter-spacing: 1.2px; /* Interlettrage aéré */
 }
 
 .hint-click { 
     font-family: 'Inter', sans-serif; font-weight: 500; font-style: italic;
     color: #71815a; font-size: 12px; text-transform: lowercase; 
-    margin-top: 15px; opacity: 0.8;
+    margin-top: 20px; opacity: 0.8;
 }
 
 /* --- BOUTON REVEAL --- */
@@ -90,7 +92,7 @@ body.large, body.large button, body.large .card-step, body.large a {
 #btn-reveal { 
     background: #d0863c; color: white; border: none; padding: 15px 35px; 
     border-radius: 40px; font-family: 'Coolvetica'; font-size: 16px; transition: 0.3s; 
-    letter-spacing: 1.5px; /* INTERLETTRAGE PLUS LARGE ICI */
+    letter-spacing: 1.5px;
 }
 .bulle-definition { background: #d0863c; color: white; border-radius: 20px; padding: 20px; font-style: italic; }
 
