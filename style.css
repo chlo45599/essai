@@ -49,28 +49,41 @@ body.large, body.large button, body.large .card-step, body.large a {
 .card-front, .card-back { 
     position: absolute; width: 100%; height: 100%; 
     backface-visibility: hidden; border-radius: 30px; 
-    display: flex; flex-direction: column; justify-content: center; padding: 20px; box-sizing: border-box; 
+    display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; 
 }
 .card-front { background: #efece6; border-top: 6px solid #71815a; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-.card-back { background: #71815a; transform: rotateY(180deg); overflow: hidden; padding: 0; }
-.card-back img { width: 100%; height: 100%; object-fit: cover; }
 
+/* --- CORRECTION ICI POUR VOIR LES PHOTOS ENTIÈRES --- */
+.card-back { 
+    background: #71815a; /* Fond vert de la carte */
+    transform: rotateY(180deg); 
+    overflow: hidden; 
+    padding: 10px; /* Ajoute un petit espace de 10px tout autour pour ne pas toucher le bord vert */
+    justify-content: center; /* Centre verticalement la photo */
+}
+
+.card-back img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; /* REMPLACEMENT de 'cover' par 'contain' : REDUIT la photo pour la voir entière sans recadrage */
+    border-radius: 20px; /* Optionnel : arrondit un peu la photo elle-même pour la douceur */
+}
+
+/* --- RESTE DU STYLE --- */
 .step-num { font-family: 'Coolvetica'; font-size: 40px; color: #d0863c; }
 .card-front h4 { font-family: 'Coolvetica'; color: #71815a; text-transform: uppercase; margin: 10px 0; }
 
-/* MODIFICATION DEMANDÉE : TEXTE CLIQUE */
 .hint-click { 
     font-family: 'Inter', sans-serif; 
-    font-weight: 500; /* Medium */
+    font-weight: 500;
     font-style: italic;
-    color: #71815a; /* Couleur verte demandée */
+    color: #71815a; 
     font-size: 12px;
-    text-transform: lowercase; /* Minuscule */
+    text-transform: lowercase; 
     margin-top: 15px;
     opacity: 0.8;
 }
 
-/* --- BOUTON & FOOTER --- */
 #container-anthotype { min-height: 100px; margin: 40px 0; }
 #btn-reveal { 
     background: #d0863c; color: white; border: none; padding: 15px 35px; 
