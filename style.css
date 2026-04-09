@@ -1,9 +1,11 @@
+/* --- POLICES --- */
 @font-face {
     font-family: 'Coolvetica';
     src: url('coolvetica.woff2') format('woff2');
     font-weight: normal; font-style: normal;
 }
 
+/* --- BASE --- */
 body {
     margin: 0; text-align: center; color: #4a4a4a; overflow-x: hidden;
     font-family: 'Inter', sans-serif; background-color: #F9F7F2;
@@ -14,7 +16,7 @@ body.large, body.large button, body.large .card-step, body.large a {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23d0863c"/></svg>') 10 10, pointer !important;
 }
 
-/* --- HEADER & MARQUEE --- */
+/* --- BANDES VERTES & MARQUEE --- */
 .bandeau-header { background: #71815a; padding: 20px; }
 .logo { height: 60px; filter: brightness(0) invert(1); }
 .marquee-container { background: #71815a; color: white; padding: 15px 0; overflow: hidden; }
@@ -25,19 +27,19 @@ body.large, body.large button, body.large .card-step, body.large a {
 .marquee-content span { padding-right: 50px; }
 @keyframes scroll-infinite { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* --- SECTIONS --- */
+/* --- CONTENU --- */
 .section-wrapper { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
 .titre-kit { font-family: 'Coolvetica'; color: #71815a; font-size: clamp(35px, 8vw, 55px); margin: 0; }
-.style-poetique { font-style: italic; color: #71815a; font-size: 20px; }
+.style-poetique { font-style: italic; color: #71815a; font-size: 20px; margin-bottom: 40px; }
 .description-projet { margin: 30px auto; max-width: 700px; font-style: italic; color: #666; transition: 0.4s; }
 .description-projet:hover { color: #d0863c; }
 
-/* --- FLIP CARDS --- */
+/* --- SYSTÈME DE CARTES (FLIP) --- */
 .steps-grid { 
     display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
     gap: 30px; margin-top: 50px; perspective: 1000px; 
 }
-.card-step { height: 350px; cursor: pointer; }
+.card-step { height: 350px; cursor: pointer; border-radius: 30px; }
 .card-inner { 
     position: relative; width: 100%; height: 100%; 
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; 
@@ -55,9 +57,20 @@ body.large, body.large button, body.large .card-step, body.large a {
 
 .step-num { font-family: 'Coolvetica'; font-size: 40px; color: #d0863c; }
 .card-front h4 { font-family: 'Coolvetica'; color: #71815a; text-transform: uppercase; margin: 10px 0; }
-.hint-click { font-size: 11px; text-transform: uppercase; opacity: 0.5; margin-top: 15px; }
 
-/* --- BOUTON REVEAL --- */
+/* MODIFICATION DEMANDÉE : TEXTE CLIQUE */
+.hint-click { 
+    font-family: 'Inter', sans-serif; 
+    font-weight: 500; /* Medium */
+    font-style: italic;
+    color: #71815a; /* Couleur verte demandée */
+    font-size: 12px;
+    text-transform: lowercase; /* Minuscule */
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+/* --- BOUTON & FOOTER --- */
 #container-anthotype { min-height: 100px; margin: 40px 0; }
 #btn-reveal { 
     background: #d0863c; color: white; border: none; padding: 15px 35px; 
@@ -65,9 +78,10 @@ body.large, body.large button, body.large .card-step, body.large a {
 }
 .bulle-definition { background: #d0863c; color: white; border-radius: 20px; padding: 20px; font-style: italic; }
 
-/* --- FOOTER & ANIM --- */
 @keyframes swipeOut { 100% { transform: translateX(1000px) rotate(20deg); opacity: 0; } }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.texte-survol { font-style: italic; opacity: 0.7; margin-top: 40px; font-size: 14px; }
 .btn-github { 
     display: inline-block; margin-top: 20px; padding: 10px 25px; 
     border: 2px solid #71815a; border-radius: 30px; text-decoration: none; 
