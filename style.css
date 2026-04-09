@@ -5,7 +5,7 @@
     font-weight: normal; font-style: normal;
 }
 
-/* --- BASE --- */
+/* --- BASE & CURSEUR --- */
 body {
     margin: 0; text-align: center; color: #4a4a4a; overflow-x: hidden;
     font-family: 'Inter', sans-serif; background-color: #F9F7F2;
@@ -29,7 +29,7 @@ body.large, body.large button, body.large .card-step, body.large a {
 .marquee-content span { padding-right: 50px; }
 @keyframes scroll-infinite { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* --- CONTENU --- */
+/* --- TYPOGRAPHIE ET TEXTES --- */
 .section-wrapper { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
 
 .titre-kit { 
@@ -39,20 +39,61 @@ body.large, body.large button, body.large .card-step, body.large a {
 }
 
 .style-poetique { font-style: italic; color: #71815a; font-size: 20px; margin-bottom: 40px; }
-.description-projet { margin: 30px auto; max-width: 700px; font-style: italic; color: #666; transition: 0.4s; }
-.description-projet:hover { color: #d0863c; }
 
-/* --- SYSTÈME DE CARTES (FLIP) --- */
+.description-projet { margin: 30px auto; max-width: 700px; font-style: italic; color: #666; transition: 0.4s; }
+
+/* --- SECTION CAMPAGNE & TIRAGE --- */
+.campagne-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin: 60px auto;
+    max-width: 950px;
+    padding: 20px;
+    text-align: left;
+}
+
+.campagne-image {
+    flex: 1;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 1px solid rgba(113, 129, 90, 0.2);
+    background: #71815a; /* Fond pour le contain */
+}
+
+.campagne-image img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.campagne-texte flex: 1.2;
+
+.campagne-texte h3 {
+    font-family: 'Coolvetica'; color: #71815a; font-size: 28px;
+    text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0;
+}
+
+.campagne-texte p {
+    font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 15px;
+}
+
+.signature-poetique { color: #d0863c; font-style: italic; font-weight: 500; }
+
+/* --- FLIP CARDS (5 ÉTAPES) --- */
 .steps-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Un peu plus large pour 5 cartes */
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px; margin-top: 50px; perspective: 1000px; 
 }
+
 .card-step { height: 380px; cursor: pointer; border-radius: 30px; }
+
 .card-inner { 
     position: relative; width: 100%; height: 100%; 
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; 
 }
+
 .card-step.is-flipped .card-inner { transform: rotateY(180deg); }
 
 .card-front, .card-back { 
@@ -60,34 +101,27 @@ body.large, body.large button, body.large .card-step, body.large a {
     backface-visibility: hidden; border-radius: 30px; 
     display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 25px; box-sizing: border-box; 
 }
+
 .card-front { background: #efece6; border-top: 6px solid #71815a; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
-.card-back { 
-    background: #71815a; transform: rotateY(180deg); 
-    overflow: hidden; padding: 15px; justify-content: center;
-}
-.card-back img { 
-    width: 100%; height: 100%; object-fit: contain; /* Photo entière */
-    border-radius: 20px;
-}
+.card-back { background: #71815a; transform: rotateY(180deg); overflow: hidden; padding: 15px; }
 
-.step-num { 
-    font-family: 'Coolvetica'; font-size: 40px; color: #d0863c; 
-    letter-spacing: 1px;
-}
+.card-back img { width: 100%; height: 100%; object-fit: contain; border-radius: 20px; }
+
+.step-num { font-family: 'Coolvetica'; font-size: 40px; color: #d0863c; letter-spacing: 1px; }
 
 .card-front h4 { 
     font-family: 'Coolvetica'; color: #71815a; text-transform: uppercase; 
-    margin: 10px 0; letter-spacing: 1.2px; /* Interlettrage aéré */
+    margin: 10px 0; letter-spacing: 1.2px; 
 }
 
 .hint-click { 
     font-family: 'Inter', sans-serif; font-weight: 500; font-style: italic;
-    color: #71815a; font-size: 12px; text-transform: lowercase; 
+    color: #71815a; font-size: 12px; text-transform: lowercase; /* Minuscule demandée */
     margin-top: 20px; opacity: 0.8;
 }
 
-/* --- BOUTON REVEAL --- */
+/* --- BOUTON DEFINITION --- */
 #container-anthotype { min-height: 100px; margin: 40px 0; }
 #btn-reveal { 
     background: #d0863c; color: white; border: none; padding: 15px 35px; 
@@ -96,14 +130,17 @@ body.large, body.large button, body.large .card-step, body.large a {
 }
 .bulle-definition { background: #d0863c; color: white; border-radius: 20px; padding: 20px; font-style: italic; }
 
+/* --- ANIMATIONS & FOOTER --- */
 @keyframes swipeOut { 100% { transform: translateX(1000px) rotate(20deg); opacity: 0; } }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-.texte-survol { font-style: italic; opacity: 0.7; margin-top: 40px; font-size: 14px; }
 .btn-github { 
     display: inline-block; margin-top: 20px; padding: 10px 25px; 
     border: 2px solid #71815a; border-radius: 30px; text-decoration: none; 
     color: #71815a; font-family: 'Coolvetica'; letter-spacing: 1px;
 }
 
-@media (max-width: 600px) { .steps-grid { grid-template-columns: 1fr; } }
+@media (max-width: 850px) {
+    .campagne-container { flex-direction: column; text-align: center; gap: 30px; }
+    .steps-grid { grid-template-columns: 1fr; }
+}
