@@ -39,7 +39,7 @@ body.large, body.large button, body.large .card-step, body.large a {
 .style-poetique { font-style: italic; color: #71815a; font-size: 20px; margin-bottom: 40px; }
 .description-projet { margin: 30px auto; max-width: 700px; font-style: italic; color: #666; transition: 0.4s; }
 
-/* --- SECTION CAMPAGNE & TIRAGE (CORRIGÉE) --- */
+/* --- SECTION CAMPAGNE & TIRAGE (MODIFIÉE) --- */
 .campagne-container {
     display: flex;
     align-items: center;
@@ -54,19 +54,21 @@ body.large, body.large button, body.large .card-step, body.large a {
     flex: 1;
     border-radius: 30px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    border: 1px solid rgba(113, 129, 90, 0.2);
-    background: #71815a;
+    /* Suppression des contours, ombres et fond vert */
+    background: transparent;
+    box-shadow: none;
+    border: none;
 }
 
 .campagne-image img {
     width: 100%;
     display: block;
     transition: transform 0.6s ease;
+    border-radius: 30px; /* Conserve juste les coins arrondis */
 }
 
 .campagne-container:hover .campagne-image img {
-    transform: scale(1.05);
+    transform: scale(1.03); /* Zoom plus léger sans contour */
 }
 
 .campagne-texte {
