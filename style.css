@@ -1,60 +1,159 @@
-/* --- CURSEUR & BASE --- */
+/* --- POLICES & BASE --- */
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('coolvetica.woff2') format('woff2'); /* Assure-toi que le fichier est à la racine */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    margin: 0; text-align: center; color: #4a4a4a; overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
+    margin: 0; 
+    text-align: center; 
+    color: #4a4a4a; 
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    background-color: #F9F7F2; /* Fond blanc cassé organique */
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><circle cx="5" cy="5" r="4" fill="%23d0863c"/></svg>') 5 5, auto !important;
 }
 
-/* Force le gros curseur sur TOUT quand la classe 'large' est active */
+/* Curseur large au survol */
 body.large, body.large button, body.large .card-step, body.large .description-projet, body.large a {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23d0863c"/></svg>') 10 10, pointer !important;
 }
 
-/* --- BANDES VERTES & MARQUEE --- */
+/* --- HEADER & MARQUEE --- */
 .bandeau-header { background: #71815a; padding: 20px; }
 .logo { height: 60px; filter: brightness(0) invert(1); max-width: 90%; }
-.marquee-container { background: #71815a; color: white; padding: 15px 0; overflow: hidden; width: 100vw; }
-.marquee-content { display: inline-block; white-space: nowrap; animation: scroll-infinite 30s linear infinite; font-family: 'Averia Serif Libre', serif; font-size: 18px; }
+
+.marquee-container { 
+    background: #71815a; 
+    color: white; 
+    padding: 15px 0; 
+    overflow: hidden; 
+    width: 100vw; 
+}
+.marquee-content { 
+    display: inline-block; 
+    white-space: nowrap; 
+    animation: scroll-infinite 30s linear infinite; 
+    font-family: 'Coolvetica', sans-serif; 
+    font-size: 20px; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 .marquee-content span { display: inline-block; padding-right: 50px; }
 @keyframes scroll-infinite { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* --- CONTENU --- */
+/* --- SECTIONS --- */
 .section-wrapper { max-width: 900px; margin: 50px auto; padding: 0 20px; }
-.titre-kit { font-family: 'Averia Serif Libre', serif; color: #71815a; font-size: clamp(30px, 8vw, 45px); margin-bottom: 5px; }
-.style-poetique { font-family: 'Averia Serif Libre', serif; font-style: italic; color: #71815a; font-size: clamp(18px, 5vw, 22px); margin-bottom: 40px; }
 
-/* BLOC DESCRIPTION AVEC CHANGEMENT DE COULEUR */
+.titre-kit { 
+    font-family: 'Coolvetica', sans-serif; 
+    color: #71815a; 
+    font-size: clamp(35px, 9vw, 55px); 
+    margin-bottom: 5px; 
+    letter-spacing: -0.5px;
+}
+.style-poetique { 
+    font-family: 'Inter', sans-serif; 
+    font-style: italic; 
+    color: #71815a; 
+    font-size: clamp(17px, 4vw, 21px); 
+    margin-bottom: 40px; 
+}
+
 .description-projet { 
     margin: 40px auto; 
-    font-size: 14px; 
-    line-height: 1.6; 
+    font-size: 15px; 
+    line-height: 1.7; 
     color: #666; 
     font-style: italic; 
     max-width: 700px;
-    transition: color 0.4s ease; /* Transition douce pour la couleur */
+    transition: color 0.4s ease;
 }
-.description-projet:hover {
-    color: #d0863c; /* La couleur ocre au survol */
+.description-projet:hover { color: #d0863c; }
+
+/* --- BOUTON REVEAL --- */
+#container-anthotype { min-height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 30px; position: relative; }
+
+#btn-reveal { 
+    background: #d0863c; 
+    color: white; 
+    border: none; 
+    padding: 18px 40px; 
+    border-radius: 40px; 
+    font-weight: bold; 
+    font-family: 'Coolvetica', sans-serif; 
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    z-index: 2; 
+    transition: transform 0.3s ease; 
 }
 
-/* --- BOUTON & BULLE --- */
-#container-anthotype { min-height: 100px; display: flex; justify-content: center; align-items: center; margin-bottom: 30px; position: relative; overflow: hidden; }
-#btn-reveal { background: #d0863c; color: white; border: none; padding: 15px 35px; border-radius: 40px; font-weight: bold; font-family: 'Montserrat'; z-index: 2; transition: transform 0.3s ease; }
-.bulle-definition { background: #d0863c; color: white; border-radius: 30px; padding: 15px 25px; display: inline-flex; font-style: italic; max-width: 90%; margin: 0 auto; font-size: 14px; }
+.bulle-definition { 
+    background: #d0863c; 
+    color: white; 
+    border-radius: 30px; 
+    padding: 20px 30px; 
+    display: inline-flex; 
+    font-style: italic; 
+    max-width: 85%; 
+    font-size: 15px; 
+    line-height: 1.5;
+}
 
-/* --- ÉTAPES AVEC EFFET LÉVITATION --- */
+/* --- GRILLE ÉTAPES --- */
 .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-top: 60px; }
-.card-step { background: #efece6; padding: 30px; border-radius: 30px; border-top: 5px solid #71815a; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
-.card-step:hover { transform: translateY(-12px); background: #f7f5f0; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
-.step-num { font-family: 'Averia Serif Libre', serif; font-size: 28px; color: #d0863c; font-weight: bold; }
-.card-step h4 { font-family: 'Montserrat'; color: #71815a; text-transform: uppercase; margin: 10px 0; font-size: 14px; }
-.card-step p { font-size: 13px; line-height: 1.5; }
 
-/* --- ANIMATIONS & FOOTER --- */
-@keyframes swipeOut { 0% { transform: translateX(0) rotate(0); opacity: 1; } 100% { transform: translateX(1200px) rotate(20deg); opacity: 0; } }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.card-step { 
+    background: #efece6; 
+    padding: 30px; 
+    border-radius: 30px; 
+    border-top: 6px solid #71815a; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+}
+.card-step:hover { transform: translateY(-12px); background: #f7f5f0; box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
 
-.texte-survol { font-style: italic; opacity: 0.7; margin-top: 30px; font-size: 13px; }
-.btn-github { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #71815a; border-radius: 20px; text-decoration: none; color: #71815a; font-size: 12px; font-weight: bold; }
+.step-num { 
+    font-family: 'Coolvetica', sans-serif; 
+    font-size: 34px; 
+    color: #d0863c; 
+}
+.card-step h4 { 
+    font-family: 'Coolvetica', sans-serif; 
+    color: #71815a; 
+    text-transform: uppercase; 
+    margin: 12px 0; 
+    font-size: 16px; 
+}
+.card-step p { font-size: 14px; line-height: 1.6; font-family: 'Inter', sans-serif; }
+
+/* --- FOOTER --- */
+.texte-survol { font-style: italic; opacity: 0.7; margin-top: 40px; font-size: 14px; }
+
+.btn-github { 
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 12px 28px; 
+    border: 2px solid #71815a; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    color: #71815a; 
+    font-family: 'Coolvetica', sans-serif;
+    font-size: 14px; 
+    transition: all 0.3s ease;
+}
+.btn-github:hover { background: #71815a; color: white; }
+
+/* --- ANIMATIONS --- */
+@keyframes swipeOut { 
+    0% { transform: translateX(0) rotate(0); opacity: 1; } 
+    100% { transform: translateX(1200px) rotate(20deg); opacity: 0; } 
+}
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
 
 @media (max-width: 600px) { .steps-grid { grid-template-columns: 1fr; } }
