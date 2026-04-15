@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'éveil du Printemps - Kit Anthotype</title>
+    <title>L'éveil du Printemps - Micro-projet Étudiant</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="main-body">
 
     <div class="bandeau-header">
-        <img src="jdl.png" alt="Logo Jardins des Martels" class="logo">
+        <img src="jdl.png" alt="Logo" class="logo">
     </div>
 
     <div class="marquee-container">
         <div class="marquee-content">
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
-            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; MICRO-PROJET D'ÉTUDES &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
+            <span>L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp; MICRO-PROJET D'ÉTUDES &nbsp;•&nbsp; L'EXPÉRIENCE COMMENCE ICI &nbsp;•&nbsp;</span>
         </div>
     </div>
 
@@ -27,103 +27,46 @@
         </header>
 
         <section id="container-anthotype">
-            <button id="btn-reveal" onclick="revealDef()" onmouseenter="grow()" onmouseleave="shrink()">L'ANTHOTYPE C'EST QUOI ?</button>
+            <button id="btn-reveal" onclick="revealDef()">L'ANTHOTYPE C'EST QUOI ?</button>
             <div id="def-bubble" class="bulle-definition" style="display:none;">
                 <p>“ C'est un processus photographique qui utilise les pigments des végétaux et la lumière du soleil. ”</p>
             </div>
         </section>
 
-        <div class="description-projet" onmouseenter="grow()" onmouseleave="shrink()">
-            <p>À l’occasion de la réouverture printanière des <strong>Jardins des Martels</strong> le 1er avril 2026, ce kit a été imaginé pour vous inviter à capturer la poésie du lieu par vous-même.</p>
+        <div class="description-projet">
+            <p>Dans le cadre de mes <strong>études en design graphique</strong>, j'ai réalisé ce micro-projet qui consiste à imaginer la communication pour la réouverture printanière d'un jardin botanique.</p>
         </div>
 
-        <section class="campagne-container" onmouseenter="grow()" onmouseleave="shrink()">
+        <section class="campagne-container">
             <div class="campagne-image">
-                <img src="mon-tirage.jpg" alt="Mon tirage anthotype personnel">
+                <img src="mon-tirage.jpg" alt="Mon tirage personnel">
             </div>
             <div class="campagne-texte">
                 <h3>Mon expérimentation au service du jardin</h3>
-                <p>Ce visuel est le fruit de mon travail personnel avec l'anthotype. J'ai réalisé ce tirage en expérimentant avec les pigments naturels du jardin et la lumière du soleil.</p>
-                <p>C'est cette création originale, vivante et organique, qui a été choisie pour devenir l'image de la campagne et l'affiche officielle de cette réouverture 2026.</p>
-                <p class="signature-poetique">Je vous invite aujourd'hui à vivre cette même expérience créative avec ce kit.</p>
+                <p>Ce visuel est le fruit de mon travail personnel avec l'anthotype. J'ai réalisé ce tirage en expérimentant avec les pigments naturels et la lumière du soleil.</p>
+                <p>C'est cette création originale, vivante et organique, qui a été déclinée pour devenir l'image de la campagne et l'affiche officielle de cette réouverture.</p>
+                <p class="signature-poetique">Je vous invite à vivre cette même expérience créative avec ce kit.</p>
             </div>
         </section>
 
         <section class="steps-grid">
-            <div class="card-step" onclick="this.classList.toggle('is-flipped')" onmouseenter="grow()" onmouseleave="shrink()">
+            <div class="card-step" onclick="this.classList.toggle('is-flipped')">
                 <div class="card-inner">
                     <div class="card-front">
                         <span class="step-num">01</span>
                         <h4>Préparez votre feuille</h4>
-                        <p>Prenez la feuille du kit, déjà imprégnée de pigment vegetal.</p>
+                        <p>Prenez la feuille du kit, déjà imprégnée de pigment végétal.</p>
                         <p class="hint-click">clique pour voir la photo</p>
                     </div>
-                    <div class="card-back">
-                        <img src="antho11.jpg" alt="Étape 1">
-                    </div>
+                    <div class="card-back"><img src="antho11.jpg"></div>
                 </div>
             </div>
-
-            <div class="card-step" onclick="this.classList.toggle('is-flipped')" onmouseenter="grow()" onmouseleave="shrink()">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <span class="step-num">02</span>
-                        <h4>Cueillez vos éléments</h4>
-                        <p>Composez votre cueillette comme un bouquet : feuilles, fleurs, graines... laissez parler votre regard.</p>
-                        <p class="hint-click">clique pour voir la photo</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="antho22.jpg" alt="Étape 2">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-step" onclick="this.classList.toggle('is-flipped')" onmouseenter="grow()" onmouseleave="shrink()">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <span class="step-num">03</span>
-                        <h4>Composez et exposez</h4>
-                        <p>Disposez vos éléments sous une plaque de verre. Au soleil, le jaune s'éclaircit : l'image apparaît.</p>
-                        <p class="hint-click">clique pour voir la photo</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="antho33.jpg" alt="Étape 3">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-step" onclick="this.classList.toggle('is-flipped')" onmouseenter="grow()" onmouseleave="shrink()">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <span class="step-num">04</span>
-                        <h4>Révélez votre image</h4>
-                        <p>Lorsque la feuille est devenue plus claire, retirez délicatement vos éléments végétaux.</p>
-                        <p class="hint-click">clique pour voir la photo</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="antho44.jpg" alt="Étape 4">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-step" onclick="this.classList.toggle('is-flipped')" onmouseenter="grow()" onmouseleave="shrink()">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <span class="step-num">05</span>
-                        <h4>Fixez votre création</h4>
-                        <p>Vaporisez un mélange d'eau et de bicarbonate jusqu'à ce que l'image se révèle complètement.</p>
-                        <p class="hint-click">clique pour voir la photo</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="antho55.jpg" alt="Étape 5">
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
         <footer>
+            <p class="texte-etudes">Projet réalisé dans un cadre pédagogique — 2026</p>
             <p class="texte-survol">Par Chloé Matukiewicz</p>
-            <a href="#" class="btn-github" onmouseenter="grow()" onmouseleave="shrink()">GitHub</a>
+            <a href="https://github.com/" class="btn-github">GitHub</a>
         </footer>
     </div>
 
@@ -134,22 +77,15 @@
 
         function grow() { body.classList.add('large'); }
         function shrink() { body.classList.remove('large'); }
+        // Ajoute onmouseenter="grow()" onmouseleave="shrink()" sur tes éléments interactifs
 
         function revealDef() {
-            btn.style.animation = "swipeOut 0.6s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045)";
+            btn.style.animation = "swipeOut 0.6s forwards";
             setTimeout(() => {
                 btn.style.display = 'none';
                 bulle.style.display = 'flex';
             }, 500);
         }
-
-        window.onscroll = () => {
-            if (window.scrollY < 50 && btn.style.display === 'none') {
-                btn.style.display = 'inline-block';
-                btn.style.animation = "fadeIn 0.5s forwards";
-                bulle.style.display = 'none';
-            }
-        };
     </script>
 </body>
 </html>
