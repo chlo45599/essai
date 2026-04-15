@@ -1,60 +1,8 @@
-/* --- POLICES --- */
-@font-face {
-    font-family: 'Coolvetica';
-    src: url('coolvetica.woff2') format('woff2');
-    font-weight: normal; font-style: normal;
-}
-
-/* --- BASE & CURSEUR --- */
-body {
-    margin: 0; text-align: center; color: #4a4a4a; overflow-x: hidden;
-    font-family: 'Inter', sans-serif; background-color: #F9F7F2;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><circle cx="5" cy="5" r="4" fill="%23d0863c"/></svg>') 5 5, auto !important;
-}
-
-body.large, body.large button, body.large .card-step, body.large a {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23d0863c"/></svg>') 10 10, pointer !important;
-}
-
-/* --- HEADER & MARQUEE --- */
-.bandeau-header { background: #71815a; padding: 20px; }
-.logo { height: 60px; filter: brightness(0) invert(1); }
-.marquee-container { background: #71815a; color: white; padding: 15px 0; overflow: hidden; }
-
-.marquee-content { 
-    display: inline-block; white-space: nowrap; animation: scroll-infinite 30s linear infinite; 
-    font-family: 'Coolvetica'; font-size: 20px; text-transform: uppercase;
-    letter-spacing: 2px;
-}
-.marquee-content span { padding-right: 50px; }
-@keyframes scroll-infinite { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* --- TYPOGRAPHIE --- */
-.section-wrapper { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
-.titre-kit { 
-    font-family: 'Coolvetica'; color: #71815a; 
-    font-size: clamp(35px, 8vw, 55px); margin: 0; 
-    letter-spacing: 1.5px;
-}
-.style-poetique { font-style: italic; color: #71815a; font-size: 20px; margin-bottom: 40px; }
-.description-projet { margin: 30px auto; max-width: 700px; font-style: italic; color: #666; transition: 0.4s; }
-
-/* --- SECTION CAMPAGNE & TIRAGE (MODIFIÉE) --- */
-.campagne-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin: 60px auto;
-    max-width: 950px;
-    padding: 20px;
-    text-align: left;
-}
-
+/* Suppression du contour vert et de l'ombre sur l'image principale */
 .campagne-image {
     flex: 1;
     border-radius: 30px;
     overflow: hidden;
-    /* Suppression des contours, ombres et fond vert */
     background: transparent;
     box-shadow: none;
     border: none;
@@ -63,77 +11,36 @@ body.large, body.large button, body.large .card-step, body.large a {
 .campagne-image img {
     width: 100%;
     display: block;
+    border-radius: 30px;
     transition: transform 0.6s ease;
-    border-radius: 30px; /* Conserve juste les coins arrondis */
 }
 
-.campagne-container:hover .campagne-image img {
-    transform: scale(1.03); /* Zoom plus léger sans contour */
+/* Interlettrage aéré */
+.marquee-content, .titre-kit, .step-num {
+    letter-spacing: 2px;
 }
 
-.campagne-texte {
-    flex: 1.2;
+/* Texte "clique" minuscule vert et italique */
+.hint-click {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    color: #71815a;
+    font-size: 12px;
+    text-transform: lowercase;
+    margin-top: 15px;
 }
 
-.campagne-texte h3 {
-    font-family: 'Coolvetica'; color: #71815a; font-size: 28px;
-    text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0;
+/* Footer et mention études */
+footer {
+    margin-top: 80px;
+    padding-bottom: 40px;
+    border-top: 1px solid rgba(113, 129, 90, 0.1);
+    padding-top: 30px;
 }
 
-.campagne-texte p {
-    font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 15px;
-}
-
-.signature-poetique { color: #d0863c; font-style: italic; font-weight: 500; }
-
-/* --- FLIP CARDS --- */
-.steps-grid { 
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 30px; margin-top: 50px; perspective: 1000px; 
-}
-.card-step { height: 380px; cursor: pointer; border-radius: 30px; }
-.card-inner { 
-    position: relative; width: 100%; height: 100%; 
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; 
-}
-.card-step.is-flipped .card-inner { transform: rotateY(180deg); }
-.card-front, .card-back { 
-    position: absolute; width: 100%; height: 100%; 
-    backface-visibility: hidden; border-radius: 30px; 
-    display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 25px; box-sizing: border-box; 
-}
-.card-front { background: #efece6; border-top: 6px solid #71815a; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-.card-back { background: #71815a; transform: rotateY(180deg); overflow: hidden; padding: 15px; }
-.card-back img { width: 100%; height: 100%; object-fit: contain; border-radius: 20px; }
-
-.step-num { font-family: 'Coolvetica'; font-size: 40px; color: #d0863c; letter-spacing: 1px; }
-.card-front h4 { font-family: 'Coolvetica'; color: #71815a; text-transform: uppercase; margin: 10px 0; letter-spacing: 1.2px; }
-
-.hint-click { 
-    font-family: 'Inter', sans-serif; font-weight: 500; font-style: italic;
-    color: #71815a; font-size: 12px; text-transform: lowercase; 
-    margin-top: 20px; opacity: 0.8;
-}
-
-/* --- BOUTON DEFINITION --- */
-#container-anthotype { min-height: 100px; margin: 40px 0; }
-#btn-reveal { 
-    background: #d0863c; color: white; border: none; padding: 15px 35px; 
-    border-radius: 40px; font-family: 'Coolvetica'; font-size: 16px; transition: 0.3s; 
-    letter-spacing: 1.5px;
-}
-.bulle-definition { background: #d0863c; color: white; border-radius: 20px; padding: 20px; font-style: italic; }
-
-@keyframes swipeOut { 100% { transform: translateX(1000px) rotate(20deg); opacity: 0; } }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-.btn-github { 
-    display: inline-block; margin-top: 20px; padding: 10px 25px; 
-    border: 2px solid #71815a; border-radius: 30px; text-decoration: none; 
-    color: #71815a; font-family: 'Coolvetica'; letter-spacing: 1px;
-}
-
-@media (max-width: 850px) {
-    .campagne-container { flex-direction: column; text-align: center; gap: 30px; }
-    .steps-grid { grid-template-columns: 1fr; }
+.texte-etudes {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
