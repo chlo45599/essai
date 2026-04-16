@@ -1,46 +1,21 @@
-/* Suppression du contour vert et de l'ombre sur l'image principale */
-.campagne-image {
-    flex: 1;
-    border-radius: 30px;
-    overflow: hidden;
-    background: transparent;
-    box-shadow: none;
-    border: none;
-}
-
-.campagne-image img {
-    width: 100%;
-    display: block;
-    border-radius: 30px;
-    transition: transform 0.6s ease;
-}
-
-/* Interlettrage aéré */
-.marquee-content, .titre-kit, .step-num {
-    letter-spacing: 2px;
-}
-
-/* Texte "clique" minuscule vert et italique */
-.hint-click {
-    font-family: 'Inter', sans-serif;
-    font-style: italic;
-    color: #71815a;
-    font-size: 12px;
-    text-transform: lowercase;
-    margin-top: 15px;
-}
-
-/* Footer et mention études */
+/* --- FOOTER & MENTIONS --- */
 footer {
-    margin-top: 80px;
-    padding-bottom: 40px;
+    margin-top: 100px;
+    padding: 40px 0;
     border-top: 1px solid rgba(113, 129, 90, 0.1);
-    padding-top: 30px;
 }
 
-.texte-etudes {
+.mention-ecole {
     font-size: 11px;
     color: #999;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.texte-survol {
+    font-family: 'Coolvetica', sans-serif;
+    color: #71815a;
+    font-size: 18px;
+    margin: 5px 0;
 }
